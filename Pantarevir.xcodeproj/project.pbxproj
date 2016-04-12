@@ -1,1117 +1,585 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>3A50AB161CBD1C5000BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB211CBD1C5000BD7B1B</string>
-				<string>3A50AB361CBD1C5100BD7B1B</string>
-				<string>3A50AB411CBD1C5100BD7B1B</string>
-				<string>3A50AB201CBD1C5000BD7B1B</string>
-				<string>D9FFC7A48B8AA5DD85261D71</string>
-				<string>DC981F1BF50E04D75D67B869</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB171CBD1C5000BD7B1B</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>PonyCorp Inc.</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>3A50AB1E1CBD1C5000BD7B1B</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-					</dict>
-					<key>3A50AB321CBD1C5100BD7B1B</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>3A50AB1E1CBD1C5000BD7B1B</string>
-					</dict>
-					<key>3A50AB3D1CBD1C5100BD7B1B</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3</string>
-						<key>TestTargetID</key>
-						<string>3A50AB1E1CBD1C5000BD7B1B</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>3A50AB1A1CBD1C5000BD7B1B</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>3A50AB161CBD1C5000BD7B1B</string>
-			<key>productRefGroup</key>
-			<string>3A50AB201CBD1C5000BD7B1B</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>3A50AB1E1CBD1C5000BD7B1B</string>
-				<string>3A50AB321CBD1C5100BD7B1B</string>
-				<string>3A50AB3D1CBD1C5100BD7B1B</string>
-			</array>
-		</dict>
-		<key>3A50AB1A1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3A50AB451CBD1C5100BD7B1B</string>
-				<string>3A50AB461CBD1C5100BD7B1B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A50AB1B1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A50AB251CBD1C5000BD7B1B</string>
-				<string>3A50AB231CBD1C5000BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB1C1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>52CCED67302B48158E12C7ED</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB1D1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A50AB2D1CBD1C5100BD7B1B</string>
-				<string>3A50AB2A1CBD1C5100BD7B1B</string>
-				<string>3A50AB281CBD1C5000BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB1E1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3A50AB471CBD1C5100BD7B1B</string>
-			<key>buildPhases</key>
-			<array>
-				<string>A711253BF1EFBB18C4292FE1</string>
-				<string>3A50AB1B1CBD1C5000BD7B1B</string>
-				<string>3A50AB1C1CBD1C5000BD7B1B</string>
-				<string>3A50AB1D1CBD1C5000BD7B1B</string>
-				<string>C58E043A75B23271B28139B8</string>
-				<string>77487F3D1D30ADA9BBAC614E</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pantarevir</string>
-			<key>productName</key>
-			<string>Pantarevir</string>
-			<key>productReference</key>
-			<string>3A50AB1F1CBD1C5000BD7B1B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>3A50AB1F1CBD1C5000BD7B1B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pantarevir.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3A50AB201CBD1C5000BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB1F1CBD1C5000BD7B1B</string>
-				<string>3A50AB331CBD1C5100BD7B1B</string>
-				<string>3A50AB3E1CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB211CBD1C5000BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB221CBD1C5000BD7B1B</string>
-				<string>3A50AB241CBD1C5000BD7B1B</string>
-				<string>3A50AB261CBD1C5000BD7B1B</string>
-				<string>3A50AB291CBD1C5100BD7B1B</string>
-				<string>3A50AB2B1CBD1C5100BD7B1B</string>
-				<string>3A50AB2E1CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Pantarevir</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB221CBD1C5000BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB231CBD1C5000BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB221CBD1C5000BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB241CBD1C5000BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB251CBD1C5000BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB241CBD1C5000BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB261CBD1C5000BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB271CBD1C5000BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB271CBD1C5000BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB281CBD1C5000BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB261CBD1C5000BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB291CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB2A1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB291CBD1C5100BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB2B1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB2C1CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB2C1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB2D1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB2B1CBD1C5100BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB2E1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB2F1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A50AB381CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB301CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB311CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB321CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3A50AB4A1CBD1C5100BD7B1B</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3A50AB2F1CBD1C5100BD7B1B</string>
-				<string>3A50AB301CBD1C5100BD7B1B</string>
-				<string>3A50AB311CBD1C5100BD7B1B</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>3A50AB351CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PantarevirTests</string>
-			<key>productName</key>
-			<string>PantarevirTests</string>
-			<key>productReference</key>
-			<string>3A50AB331CBD1C5100BD7B1B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>3A50AB331CBD1C5100BD7B1B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PantarevirTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3A50AB341CBD1C5100BD7B1B</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>3A50AB171CBD1C5000BD7B1B</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3A50AB1E1CBD1C5000BD7B1B</string>
-			<key>remoteInfo</key>
-			<string>Pantarevir</string>
-		</dict>
-		<key>3A50AB351CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>3A50AB1E1CBD1C5000BD7B1B</string>
-			<key>targetProxy</key>
-			<string>3A50AB341CBD1C5100BD7B1B</string>
-		</dict>
-		<key>3A50AB361CBD1C5100BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB371CBD1C5100BD7B1B</string>
-				<string>3A50AB391CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PantarevirTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB371CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PantarevirTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB381CBD1C5100BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB371CBD1C5100BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB391CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB3A1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3A50AB431CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB3B1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB3C1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3A50AB3D1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3A50AB4D1CBD1C5100BD7B1B</string>
-			<key>buildPhases</key>
-			<array>
-				<string>3A50AB3A1CBD1C5100BD7B1B</string>
-				<string>3A50AB3B1CBD1C5100BD7B1B</string>
-				<string>3A50AB3C1CBD1C5100BD7B1B</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>3A50AB401CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PantarevirUITests</string>
-			<key>productName</key>
-			<string>PantarevirUITests</string>
-			<key>productReference</key>
-			<string>3A50AB3E1CBD1C5100BD7B1B</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>3A50AB3E1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PantarevirUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3A50AB3F1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>3A50AB171CBD1C5000BD7B1B</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3A50AB1E1CBD1C5000BD7B1B</string>
-			<key>remoteInfo</key>
-			<string>Pantarevir</string>
-		</dict>
-		<key>3A50AB401CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>3A50AB1E1CBD1C5000BD7B1B</string>
-			<key>targetProxy</key>
-			<string>3A50AB3F1CBD1C5100BD7B1B</string>
-		</dict>
-		<key>3A50AB411CBD1C5100BD7B1B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3A50AB421CBD1C5100BD7B1B</string>
-				<string>3A50AB441CBD1C5100BD7B1B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PantarevirUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB421CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>PantarevirUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB431CBD1C5100BD7B1B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3A50AB421CBD1C5100BD7B1B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3A50AB441CBD1C5100BD7B1B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3A50AB451CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3A50AB461CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3A50AB471CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3A50AB481CBD1C5100BD7B1B</string>
-				<string>3A50AB491CBD1C5100BD7B1B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A50AB481CBD1C5100BD7B1B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E1901AB9E4B130491AED80F5</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Pantarevir/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.Pantarevir</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3A50AB491CBD1C5100BD7B1B</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>500D809DD0C2AE3391037C7A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Pantarevir/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.Pantarevir</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3A50AB4A1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3A50AB4B1CBD1C5100BD7B1B</string>
-				<string>3A50AB4C1CBD1C5100BD7B1B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A50AB4B1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PantarevirTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.PantarevirTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3A50AB4C1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PantarevirTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.PantarevirTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3A50AB4D1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3A50AB4E1CBD1C5100BD7B1B</string>
-				<string>3A50AB4F1CBD1C5100BD7B1B</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3A50AB4E1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PantarevirUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.PantarevirUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Pantarevir</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3A50AB4F1CBD1C5100BD7B1B</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>PantarevirUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>PonyCorp.PantarevirUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Pantarevir</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>500D809DD0C2AE3391037C7A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>52CCED67302B48158E12C7ED</key>
-		<dict>
-			<key>fileRef</key>
-			<string>CFC13975D2AA81C9331ADD0B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>77487F3D1D30ADA9BBAC614E</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A711253BF1EFBB18C4292FE1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C58E043A75B23271B28139B8</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>CFC13975D2AA81C9331ADD0B</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D9FFC7A48B8AA5DD85261D71</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E1901AB9E4B130491AED80F5</string>
-				<string>500D809DD0C2AE3391037C7A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DC981F1BF50E04D75D67B869</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>CFC13975D2AA81C9331ADD0B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E1901AB9E4B130491AED80F5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>3A50AB171CBD1C5000BD7B1B</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */; };
+		3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */; };
+		3A50AB281CBD1C5000BD7B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB261CBD1C5000BD7B1B /* Main.storyboard */; };
+		3A50AB2A1CBD1C5100BD7B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */; };
+		3A50AB2D1CBD1C5100BD7B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */; };
+		3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */; };
+		3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */; };
+		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A50AB341CBD1C5100BD7B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50AB1E1CBD1C5000BD7B1B;
+			remoteInfo = Pantarevir;
+		};
+		3A50AB3F1CBD1C5100BD7B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50AB1E1CBD1C5000BD7B1B;
+			remoteInfo = Pantarevir;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantarevir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3A50AB271CBD1C5000BD7B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A50AB2C1CBD1C5100BD7B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A50AB2E1CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantarevirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirTests.swift; sourceTree = "<group>"; };
+		3A50AB391CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantarevirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirUITests.swift; sourceTree = "<group>"; };
+		3A50AB441CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A50AB1C1CBD1C5000BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB301CBD1C5100BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3B1CBD1C5100BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A50AB161CBD1C5000BD7B1B = {
+			isa = PBXGroup;
+			children = (
+				3A50AB211CBD1C5000BD7B1B /* Pantarevir */,
+				3A50AB361CBD1C5100BD7B1B /* PantarevirTests */,
+				3A50AB411CBD1C5100BD7B1B /* PantarevirUITests */,
+				3A50AB201CBD1C5000BD7B1B /* Products */,
+				D9FFC7A48B8AA5DD85261D71 /* Pods */,
+				DC981F1BF50E04D75D67B869 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3A50AB201CBD1C5000BD7B1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */,
+				3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */,
+				3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A50AB211CBD1C5000BD7B1B /* Pantarevir */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
+				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
+				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
+				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
+				3A50AB2E1CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = Pantarevir;
+			sourceTree = "<group>";
+		};
+		3A50AB361CBD1C5100BD7B1B /* PantarevirTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */,
+				3A50AB391CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = PantarevirTests;
+			sourceTree = "<group>";
+		};
+		3A50AB411CBD1C5100BD7B1B /* PantarevirUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */,
+				3A50AB441CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = PantarevirUITests;
+			sourceTree = "<group>";
+		};
+		D9FFC7A48B8AA5DD85261D71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */,
+				500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DC981F1BF50E04D75D67B869 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC13975D2AA81C9331ADD0B /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB471CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "Pantarevir" */;
+			buildPhases = (
+				A711253BF1EFBB18C4292FE1 /* Check Pods Manifest.lock */,
+				3A50AB1B1CBD1C5000BD7B1B /* Sources */,
+				3A50AB1C1CBD1C5000BD7B1B /* Frameworks */,
+				3A50AB1D1CBD1C5000BD7B1B /* Resources */,
+				C58E043A75B23271B28139B8 /* Embed Pods Frameworks */,
+				77487F3D1D30ADA9BBAC614E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pantarevir;
+			productName = Pantarevir;
+			productReference = 3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A50AB321CBD1C5100BD7B1B /* PantarevirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB4A1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirTests" */;
+			buildPhases = (
+				3A50AB2F1CBD1C5100BD7B1B /* Sources */,
+				3A50AB301CBD1C5100BD7B1B /* Frameworks */,
+				3A50AB311CBD1C5100BD7B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50AB351CBD1C5100BD7B1B /* PBXTargetDependency */,
+			);
+			name = PantarevirTests;
+			productName = PantarevirTests;
+			productReference = 3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A50AB3D1CBD1C5100BD7B1B /* PantarevirUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB4D1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirUITests" */;
+			buildPhases = (
+				3A50AB3A1CBD1C5100BD7B1B /* Sources */,
+				3A50AB3B1CBD1C5100BD7B1B /* Frameworks */,
+				3A50AB3C1CBD1C5100BD7B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50AB401CBD1C5100BD7B1B /* PBXTargetDependency */,
+			);
+			name = PantarevirUITests;
+			productName = PantarevirUITests;
+			productReference = 3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A50AB171CBD1C5000BD7B1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "PonyCorp Inc.";
+				TargetAttributes = {
+					3A50AB1E1CBD1C5000BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3A50AB321CBD1C5100BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A50AB1E1CBD1C5000BD7B1B;
+					};
+					3A50AB3D1CBD1C5100BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A50AB1E1CBD1C5000BD7B1B;
+					};
+				};
+			};
+			buildConfigurationList = 3A50AB1A1CBD1C5000BD7B1B /* Build configuration list for PBXProject "Pantarevir" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A50AB161CBD1C5000BD7B1B;
+			productRefGroup = 3A50AB201CBD1C5000BD7B1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */,
+				3A50AB321CBD1C5100BD7B1B /* PantarevirTests */,
+				3A50AB3D1CBD1C5100BD7B1B /* PantarevirUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A50AB1D1CBD1C5000BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB2D1CBD1C5100BD7B1B /* LaunchScreen.storyboard in Resources */,
+				3A50AB2A1CBD1C5100BD7B1B /* Assets.xcassets in Resources */,
+				3A50AB281CBD1C5000BD7B1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB311CBD1C5100BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3C1CBD1C5100BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		77487F3D1D30ADA9BBAC614E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A711253BF1EFBB18C4292FE1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C58E043A75B23271B28139B8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A50AB1B1CBD1C5000BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
+				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB2F1CBD1C5100BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3A1CBD1C5100BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A50AB351CBD1C5100BD7B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */;
+			targetProxy = 3A50AB341CBD1C5100BD7B1B /* PBXContainerItemProxy */;
+		};
+		3A50AB401CBD1C5100BD7B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */;
+			targetProxy = 3A50AB3F1CBD1C5100BD7B1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A50AB261CBD1C5000BD7B1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50AB271CBD1C5000BD7B1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50AB2C1CBD1C5100BD7B1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A50AB451CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A50AB461CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A50AB481CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pantarevir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3A50AB491CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pantarevir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3A50AB4B1CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PantarevirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir";
+			};
+			name = Debug;
+		};
+		3A50AB4C1CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PantarevirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir";
+			};
+			name = Release;
+		};
+		3A50AB4E1CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PantarevirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pantarevir;
+			};
+			name = Debug;
+		};
+		3A50AB4F1CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PantarevirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pantarevir;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A50AB1A1CBD1C5000BD7B1B /* Build configuration list for PBXProject "Pantarevir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB451CBD1C5100BD7B1B /* Debug */,
+				3A50AB461CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50AB471CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "Pantarevir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB481CBD1C5100BD7B1B /* Debug */,
+				3A50AB491CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50AB4A1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB4B1CBD1C5100BD7B1B /* Debug */,
+				3A50AB4C1CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50AB4D1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB4E1CBD1C5100BD7B1B /* Debug */,
+				3A50AB4F1CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+}
