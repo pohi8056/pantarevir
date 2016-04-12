@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0d-Tn-HQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="-353"/>
+            <point key="canvasLocation" x="439" y="-429"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -40,10 +40,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="3O5-CG-oOq">
+            <objects>
+                <viewController id="mFN-gL-Uup" customClass="MainMenuViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NF3-yN-7Rz"/>
+                        <viewControllerLayoutGuide type="bottom" id="lDV-CE-j1R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oZU-XK-DQB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2eG-TK-ILQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="387"/>
+        </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
             <objects>
-                <viewController id="t2r-lU-S5q" customClass="CreateAccountViewController" sceneMemberID="viewController">
+                <viewController id="t2r-lU-S5q" customClass="CreateAccountViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jz6-pn-8qd"/>
                         <viewControllerLayoutGuide type="bottom" id="QMM-vj-9Sl"/>
@@ -56,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXD-p7-cGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439" y="1094"/>
+            <point key="canvasLocation" x="439" y="1144"/>
         </scene>
     </scenes>
 </document>

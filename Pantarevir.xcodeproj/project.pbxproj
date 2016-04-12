@@ -15,6 +15,8 @@
 		3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */; };
 		3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */; };
 		3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */; };
+		3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8B41CBD2A2D00D32D65 /* MainMenuViewController.swift */; };
+		3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirUITests.swift; sourceTree = "<group>"; };
 		3A50AB441CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		3A90A8B41CBD2A2D00D32D65 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,9 +110,11 @@
 		3A50AB211CBD1C5000BD7B1B /* Pantarevir */ = {
 			isa = PBXGroup;
 			children = (
+				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				3A90A8B41CBD2A2D00D32D65 /* MainMenuViewController.swift */,
 				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
 				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
 				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
@@ -334,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
+				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
