@@ -14,6 +14,7 @@
 		3A50AB2D1CBD1C5100BD7B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */; };
 		3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */; };
 		3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */; };
+		3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantarevirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirUITests.swift; sourceTree = "<group>"; };
 		3A50AB441CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
 				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
 				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
 				3A50AB2E1CBD1C5100BD7B1B /* Info.plist */,
@@ -333,6 +336,7 @@
 			files = (
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
+				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
