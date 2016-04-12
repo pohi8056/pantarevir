@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */; };
+		3A50AB251CBD1C5000BD7B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB241CBD1C5000BD7B1B /* ViewController.swift */; };
+		3A50AB281CBD1C5000BD7B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB261CBD1C5000BD7B1B /* Main.storyboard */; };
+		3A50AB2A1CBD1C5100BD7B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */; };
+		3A50AB2D1CBD1C5100BD7B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */; };
+		3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */; };
+		3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A50AB341CBD1C5100BD7B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50AB1E1CBD1C5000BD7B1B;
+			remoteInfo = Pantarevir;
+		};
+		3A50AB3F1CBD1C5100BD7B1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A50AB1E1CBD1C5000BD7B1B;
+			remoteInfo = Pantarevir;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantarevir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A50AB241CBD1C5000BD7B1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A50AB271CBD1C5000BD7B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A50AB2C1CBD1C5100BD7B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A50AB2E1CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantarevirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirTests.swift; sourceTree = "<group>"; };
+		3A50AB391CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantarevirUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantarevirUITests.swift; sourceTree = "<group>"; };
+		3A50AB441CBD1C5100BD7B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A50AB1C1CBD1C5000BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB301CBD1C5100BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3B1CBD1C5100BD7B1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A50AB161CBD1C5000BD7B1B = {
+			isa = PBXGroup;
+			children = (
+				3A50AB211CBD1C5000BD7B1B /* Pantarevir */,
+				3A50AB361CBD1C5100BD7B1B /* PantarevirTests */,
+				3A50AB411CBD1C5100BD7B1B /* PantarevirUITests */,
+				3A50AB201CBD1C5000BD7B1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A50AB201CBD1C5000BD7B1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */,
+				3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */,
+				3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A50AB211CBD1C5000BD7B1B /* Pantarevir */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
+				3A50AB241CBD1C5000BD7B1B /* ViewController.swift */,
+				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
+				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
+				3A50AB2E1CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = Pantarevir;
+			sourceTree = "<group>";
+		};
+		3A50AB361CBD1C5100BD7B1B /* PantarevirTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB371CBD1C5100BD7B1B /* PantarevirTests.swift */,
+				3A50AB391CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = PantarevirTests;
+			sourceTree = "<group>";
+		};
+		3A50AB411CBD1C5100BD7B1B /* PantarevirUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A50AB421CBD1C5100BD7B1B /* PantarevirUITests.swift */,
+				3A50AB441CBD1C5100BD7B1B /* Info.plist */,
+			);
+			path = PantarevirUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB471CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "Pantarevir" */;
+			buildPhases = (
+				3A50AB1B1CBD1C5000BD7B1B /* Sources */,
+				3A50AB1C1CBD1C5000BD7B1B /* Frameworks */,
+				3A50AB1D1CBD1C5000BD7B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pantarevir;
+			productName = Pantarevir;
+			productReference = 3A50AB1F1CBD1C5000BD7B1B /* Pantarevir.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A50AB321CBD1C5100BD7B1B /* PantarevirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB4A1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirTests" */;
+			buildPhases = (
+				3A50AB2F1CBD1C5100BD7B1B /* Sources */,
+				3A50AB301CBD1C5100BD7B1B /* Frameworks */,
+				3A50AB311CBD1C5100BD7B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50AB351CBD1C5100BD7B1B /* PBXTargetDependency */,
+			);
+			name = PantarevirTests;
+			productName = PantarevirTests;
+			productReference = 3A50AB331CBD1C5100BD7B1B /* PantarevirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A50AB3D1CBD1C5100BD7B1B /* PantarevirUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A50AB4D1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirUITests" */;
+			buildPhases = (
+				3A50AB3A1CBD1C5100BD7B1B /* Sources */,
+				3A50AB3B1CBD1C5100BD7B1B /* Frameworks */,
+				3A50AB3C1CBD1C5100BD7B1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A50AB401CBD1C5100BD7B1B /* PBXTargetDependency */,
+			);
+			name = PantarevirUITests;
+			productName = PantarevirUITests;
+			productReference = 3A50AB3E1CBD1C5100BD7B1B /* PantarevirUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A50AB171CBD1C5000BD7B1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "PonyCorp Inc.";
+				TargetAttributes = {
+					3A50AB1E1CBD1C5000BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3A50AB321CBD1C5100BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A50AB1E1CBD1C5000BD7B1B;
+					};
+					3A50AB3D1CBD1C5100BD7B1B = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A50AB1E1CBD1C5000BD7B1B;
+					};
+				};
+			};
+			buildConfigurationList = 3A50AB1A1CBD1C5000BD7B1B /* Build configuration list for PBXProject "Pantarevir" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A50AB161CBD1C5000BD7B1B;
+			productRefGroup = 3A50AB201CBD1C5000BD7B1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */,
+				3A50AB321CBD1C5100BD7B1B /* PantarevirTests */,
+				3A50AB3D1CBD1C5100BD7B1B /* PantarevirUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A50AB1D1CBD1C5000BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB2D1CBD1C5100BD7B1B /* LaunchScreen.storyboard in Resources */,
+				3A50AB2A1CBD1C5100BD7B1B /* Assets.xcassets in Resources */,
+				3A50AB281CBD1C5000BD7B1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB311CBD1C5100BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3C1CBD1C5100BD7B1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A50AB1B1CBD1C5000BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB251CBD1C5000BD7B1B /* ViewController.swift in Sources */,
+				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB2F1CBD1C5100BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB381CBD1C5100BD7B1B /* PantarevirTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A50AB3A1CBD1C5100BD7B1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A50AB431CBD1C5100BD7B1B /* PantarevirUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A50AB351CBD1C5100BD7B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */;
+			targetProxy = 3A50AB341CBD1C5100BD7B1B /* PBXContainerItemProxy */;
+		};
+		3A50AB401CBD1C5100BD7B1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A50AB1E1CBD1C5000BD7B1B /* Pantarevir */;
+			targetProxy = 3A50AB3F1CBD1C5100BD7B1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A50AB261CBD1C5000BD7B1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50AB271CBD1C5000BD7B1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A50AB2C1CBD1C5100BD7B1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A50AB451CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A50AB461CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A50AB481CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pantarevir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3A50AB491CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pantarevir/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3A50AB4B1CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PantarevirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir";
+			};
+			name = Debug;
+		};
+		3A50AB4C1CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PantarevirTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pantarevir.app/Pantarevir";
+			};
+			name = Release;
+		};
+		3A50AB4E1CBD1C5100BD7B1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PantarevirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pantarevir;
+			};
+			name = Debug;
+		};
+		3A50AB4F1CBD1C5100BD7B1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PantarevirUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pantarevir;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A50AB1A1CBD1C5000BD7B1B /* Build configuration list for PBXProject "Pantarevir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB451CBD1C5100BD7B1B /* Debug */,
+				3A50AB461CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A50AB471CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "Pantarevir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB481CBD1C5100BD7B1B /* Debug */,
+				3A50AB491CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A50AB4A1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB4B1CBD1C5100BD7B1B /* Debug */,
+				3A50AB4C1CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A50AB4D1CBD1C5100BD7B1B /* Build configuration list for PBXNativeTarget "PantarevirUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A50AB4E1CBD1C5100BD7B1B /* Debug */,
+				3A50AB4F1CBD1C5100BD7B1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A50AB171CBD1C5000BD7B1B /* Project object */;
+}
