@@ -67,7 +67,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         }else{
             nameField.borderStyle = UITextBorderStyle.None
             nameField.layer.borderWidth = 0
-
         }
         if validateTextField(surnameField.text!){
             setTextFieldBorderColor(surnameField)
@@ -93,8 +92,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             password2Field.borderStyle = UITextBorderStyle.None
             password2Field.layer.borderWidth = 0
         }
-        
-        
     }
     
     
