@@ -59,14 +59,14 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZP-QQ-Bql">
                                 <rect key="frame" x="20" y="512" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Registrera dig"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-vI-NXe">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49506870567375888" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Glömt lösenord"/>
                             </button>
@@ -111,6 +111,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Logga in"/>
+                                <connections>
+                                    <segue destination="mFN-gL-Uup" kind="show" identifier="fromLoginToMainMenuSegue" id="mjZ-rM-wrj"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotext" translatesAutoresizingMaskIntoConstraints="NO" id="h6Q-46-2ni">
                                 <rect key="frame" x="176" y="20" width="249" height="252"/>
@@ -165,63 +168,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-Iw-afB">
+                                <rect key="frame" x="19" y="0.0" width="560" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="Nol-h0-ty0"/>
+                                    <constraint firstAttribute="height" constant="600" id="uWT-Ci-Ks9"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du har pantat för:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFH-Us-Ri6">
                                 <rect key="frame" x="20" y="28" width="119" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="342 kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-7d-7Gh">
                                 <rect key="frame" x="20" y="51" width="54" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Välkommen tillbaka," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-7K-Dwe">
                                 <rect key="frame" x="445" y="28" width="134.5" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-dZ-esk">
                                 <rect key="frame" x="530" y="51" width="50" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-Tr-uKP">
                                 <rect key="frame" x="194" y="191" width="213" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="PANTA DITT REVIR">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onw-NE-fnt">
                                 <rect key="frame" x="228" y="265" width="145" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="REVIRKARTA">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGm-C2-chQ">
                                 <rect key="frame" x="219" y="318" width="163" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="DIN STATISTIK">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y29-US-6ug">
                                 <rect key="frame" x="237" y="371" width="125" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="TOPPLISTA">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpu-vy-CAV">
                                 <rect key="frame" x="237" y="484" width="126" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="LOGGA UT">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="fromMainMenuToLoginSegue" id="Kmd-9J-u3B"/>
@@ -234,6 +244,12 @@
                                     <constraint firstAttribute="width" constant="107" id="c2S-60-szR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-1o-3gr">
+                                <rect key="frame" x="20" y="191" width="560" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,6 +261,7 @@
                             <constraint firstItem="onw-NE-fnt" firstAttribute="top" secondItem="Hs3-Tr-uKP" secondAttribute="bottom" constant="29" id="9VZ-HO-mJb"/>
                             <constraint firstItem="lDV-CE-j1R" firstAttribute="top" secondItem="NYy-D8-OdS" secondAttribute="bottom" constant="20" id="BGd-hC-jeU"/>
                             <constraint firstItem="Hpu-vy-CAV" firstAttribute="top" secondItem="y29-US-6ug" secondAttribute="bottom" constant="68" id="CF3-PL-pWQ"/>
+                            <constraint firstItem="G9T-Iw-afB" firstAttribute="top" secondItem="oZU-XK-DQB" secondAttribute="topMargin" id="DwK-3o-yOe"/>
                             <constraint firstItem="sGm-C2-chQ" firstAttribute="top" secondItem="onw-NE-fnt" secondAttribute="bottom" constant="8" id="F8q-2w-Ku4"/>
                             <constraint firstItem="3Jz-7d-7Gh" firstAttribute="top" secondItem="RFH-Us-Ri6" secondAttribute="bottom" constant="2" id="Nmv-N2-kJq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HhI-dZ-esk" secondAttribute="trailing" id="RXz-0K-fd5"/>
@@ -255,7 +272,10 @@
                             <constraint firstItem="Hs3-Tr-uKP" firstAttribute="centerX" secondItem="oZU-XK-DQB" secondAttribute="centerX" id="jLB-Tc-lb5"/>
                             <constraint firstItem="y29-US-6ug" firstAttribute="top" secondItem="sGm-C2-chQ" secondAttribute="bottom" constant="8" id="jda-h7-SbE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="3Jz-7d-7Gh" secondAttribute="leading" id="mPL-0S-RnV"/>
+                            <constraint firstItem="lDV-CE-j1R" firstAttribute="top" secondItem="G9T-Iw-afB" secondAttribute="bottom" id="p7q-VL-AYh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G9T-Iw-afB" secondAttribute="trailing" constant="1" id="pD8-d8-pmF"/>
                             <constraint firstItem="NeM-7K-Dwe" firstAttribute="top" secondItem="NF3-yN-7Rz" secondAttribute="bottom" constant="8" id="q1V-Rh-p8l"/>
+                            <constraint firstItem="G9T-Iw-afB" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-1" id="umg-ok-BRK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NYy-D8-OdS" secondAttribute="trailing" id="z9Z-eC-Ug0"/>
                         </constraints>
                     </view>
