@@ -10,6 +10,22 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBAction func PantaDittRevirButton(sender: UIButton) {
+    }
+    
+    @IBAction func RevirkartaButton(sender: UIButton) {
+    }
+    
+    @IBAction func DinStatistikButton(sender: UIButton) {
+    }
+    
+    @IBAction func TopplistaButton(sender: UIButton) {
+    }
+    
+    @IBAction func LoggaUtButton(sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
