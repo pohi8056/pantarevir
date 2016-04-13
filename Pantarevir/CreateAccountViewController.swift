@@ -46,9 +46,8 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     func setTextFieldBorderColor(textField: UITextField){
         textField.borderStyle = UITextBorderStyle.Line
         //textField.layer.masksToBounds = true
-        textField.layer.borderColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 150/255).CGColor
+        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 150/255).CGColor
         textField.layer.borderWidth = 2
-
     }
     
     /* Checks whether the passwords match. */
@@ -86,14 +85,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             password2Field.borderStyle = UITextBorderStyle.None
             password2Field.layer.borderWidth = 0
         }
-        /*
-        if validateTextField(password2Field.text!){
-            setTextFieldBorderColor(password2Field)
-        }else{
-            password2Field.borderStyle = UITextBorderStyle.None
-            password2Field.layer.borderWidth = 0
-        }
-         */
     }
     
     
