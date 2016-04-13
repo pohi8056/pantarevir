@@ -34,7 +34,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
   
     
     /* Checks whether the textfield has any input */
-    
     func validateTextField(textField : String) -> Bool{
         if textField == ""{
             return true
@@ -46,7 +45,10 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     /* Changes the border color of the textfield to red. */
     func setTextFieldBorderColor(textField: UITextField){
         textField.borderStyle = UITextBorderStyle.Line
-        textField.layer.borderColor = UIColor.redColor().CGColor
+        //textField.layer.masksToBounds = true
+        textField.layer.borderColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 150/255).CGColor
+        textField.layer.borderWidth = 1
+
     }
     
     /* Checks whether the passwords match. */
@@ -64,27 +66,35 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             setTextFieldBorderColor(nameField)
         }else{
             nameField.borderStyle = UITextBorderStyle.None
+            nameField.layer.borderWidth = 0
+
         }
         if validateTextField(surnameField.text!){
             setTextFieldBorderColor(surnameField)
         }else{
             surnameField.borderStyle = UITextBorderStyle.None
+            surnameField.layer.borderWidth = 0
         }
         if validateTextField(emailField.text!){
             setTextFieldBorderColor(emailField)
         }else{
             emailField.borderStyle = UITextBorderStyle.None
+            emailField.layer.borderWidth = 0
         }
         if validateTextField(password1Field.text!){
             setTextFieldBorderColor(password1Field)
         }else{
             password1Field.borderStyle = UITextBorderStyle.None
+            password1Field.layer.borderWidth = 0
         }
         if validateTextField(password2Field.text!){
             setTextFieldBorderColor(password2Field)
         }else{
             password2Field.borderStyle = UITextBorderStyle.None
+            password2Field.layer.borderWidth = 0
         }
+        
+        
     }
     
     
