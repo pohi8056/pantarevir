@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Forgot Password View Controller-->
@@ -196,38 +197,38 @@
                                     <constraint firstAttribute="height" constant="600" id="uWT-Ci-Ks9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du har pantat för:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFH-Us-Ri6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Du har pantat för:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFH-Us-Ri6">
                                 <rect key="frame" x="20" y="28" width="119" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="342 kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-7d-7Gh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="342 kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-7d-7Gh">
                                 <rect key="frame" x="20" y="51" width="54" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Välkommen tillbaka," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-7K-Dwe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Välkommen tillbaka," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeM-7K-Dwe">
                                 <rect key="frame" x="445" y="28" width="135" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Namn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-dZ-esk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Namn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-dZ-esk">
                                 <rect key="frame" x="530" y="51" width="50" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-Tr-uKP">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hs3-Tr-uKP">
                                 <rect key="frame" x="194" y="191" width="213" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="PANTA DITT REVIR">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onw-NE-fnt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onw-NE-fnt">
                                 <rect key="frame" x="228" y="265" width="145" height="45"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="REVIRKARTA">
@@ -350,13 +351,13 @@
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="trailing" secondItem="4Kd-O9-gx9" secondAttribute="trailing" id="E2H-Kb-QKt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cjt-lg-d5v" secondAttribute="trailing" constant="-3" id="GLw-hH-Qo3"/>
                             <constraint firstItem="G9T-Iw-afB" firstAttribute="trailing" secondItem="oZU-XK-DQB" secondAttribute="trailingMargin" id="IZB-Zu-Roh"/>
-                            <constraint firstItem="WqF-iC-kTh" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="Iov-GF-8IE"/>
+                            <constraint firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="Iov-GF-8IE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uCe-Je-Cgp" secondAttribute="trailing" constant="-20" id="JKy-MY-TBZ"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="leading" secondItem="pWj-NW-E6M" secondAttribute="leading" id="N1S-o8-aCu"/>
                             <constraint firstItem="pWj-NW-E6M" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="Qh1-Yw-hcK"/>
                             <constraint firstItem="JHD-k8-FNX" firstAttribute="centerY" secondItem="DCy-bG-vc6" secondAttribute="centerY" id="Qnb-Mq-p8r"/>
                             <constraint firstItem="4Kd-O9-gx9" firstAttribute="top" secondItem="G9T-Iw-afB" secondAttribute="top" id="TkD-11-cro"/>
-                            <constraint firstItem="WqF-iC-kTh" firstAttribute="top" secondItem="uCe-Je-Cgp" secondAttribute="bottom" constant="48" id="U3l-Fe-3zl"/>
+                            <constraint firstAttribute="top" secondItem="uCe-Je-Cgp" secondAttribute="bottom" constant="48" id="U3l-Fe-3zl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cMC-lG-CYM" secondAttribute="trailing" constant="1" id="Uao-pX-oxf"/>
                             <constraint firstItem="oHe-b7-bgi" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="cGz-iZ-zuv"/>
                             <constraint firstItem="pWj-NW-E6M" firstAttribute="top" secondItem="DCy-bG-vc6" secondAttribute="bottom" constant="8" symbolic="YES" id="eqD-Fo-WNY"/>
@@ -370,7 +371,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="pWj-NW-E6M" secondAttribute="trailing" constant="-20" id="rtq-RV-Lqo"/>
                             <constraint firstItem="JHD-k8-FNX" firstAttribute="trailing" secondItem="G9T-Iw-afB" secondAttribute="trailing" id="tmg-pL-G9j"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="top" secondItem="oZU-XK-DQB" secondAttribute="top" constant="198" id="urW-qm-6bd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WqF-iC-kTh" secondAttribute="trailing" constant="-20" id="y7Y-Yj-X46"/>
                             <constraint firstItem="oHe-b7-bgi" firstAttribute="top" secondItem="pWj-NW-E6M" secondAttribute="bottom" constant="8" id="yIH-Is-vve"/>
                         </constraints>
                     </view>
