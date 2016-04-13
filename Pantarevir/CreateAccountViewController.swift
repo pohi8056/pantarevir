@@ -52,15 +52,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     /* Checks whether the passwords match. */
-    func doPasswordsMatch(password1 : String, password2 : String) -> Bool{
-        if password1Field.text == password2Field.text{
-            return true
-        }else{
-            return false
-        }
-    }
+
     
-    func doIncorrectTextFieldsRed(name : UITextField, surname : UITextField, email : UITextField, password1 : UITextField, password2 : UITextField){
+    func doIncorrectTextFieldsRed(){
         
         if validateTextField(nameField.text!){
             setTextFieldBorderColor(nameField)
@@ -68,30 +62,38 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             nameField.borderStyle = UITextBorderStyle.None
             nameField.layer.borderWidth = 0
         }
+        
         if validateTextField(surnameField.text!){
             setTextFieldBorderColor(surnameField)
         }else{
             surnameField.borderStyle = UITextBorderStyle.None
             surnameField.layer.borderWidth = 0
         }
+        
         if validateTextField(emailField.text!){
             setTextFieldBorderColor(emailField)
         }else{
             emailField.borderStyle = UITextBorderStyle.None
             emailField.layer.borderWidth = 0
         }
-        if validateTextField(password1Field.text!){
+        
+        if validateTextField(password1Field.text!) || validateTextField(password2Field.text!) || password1Field.text! != password2Field.text!{
             setTextFieldBorderColor(password1Field)
+            setTextFieldBorderColor(password2Field)
         }else{
             password1Field.borderStyle = UITextBorderStyle.None
             password1Field.layer.borderWidth = 0
+            password2Field.borderStyle = UITextBorderStyle.None
+            password2Field.layer.borderWidth = 0
         }
+        /*
         if validateTextField(password2Field.text!){
             setTextFieldBorderColor(password2Field)
         }else{
             password2Field.borderStyle = UITextBorderStyle.None
             password2Field.layer.borderWidth = 0
         }
+         */
     }
     
     
@@ -106,7 +108,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         let password1 = password1Field.text
         let password2 = password1Field.text
         
-        doIncorrectTextFieldsRed(nameField, surname: surnameField, email: emailField, password1: password1Field, password2: password2Field)
+        doIncorrectTextFieldsRed()
         
         
     }
