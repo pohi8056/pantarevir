@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+let ROOT_URL = "https://pantarevir.firebaseio.com/"
