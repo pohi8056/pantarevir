@@ -47,7 +47,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         textField.borderStyle = UITextBorderStyle.Line
         //textField.layer.masksToBounds = true
         textField.layer.borderColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 150/255).CGColor
-        textField.layer.borderWidth = 1
+        textField.layer.borderWidth = 2
 
     }
     
