@@ -16,7 +16,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var password1Field: UITextField!
     @IBOutlet weak var password2Field: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
@@ -29,13 +29,17 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-  
-    
+
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.borderStyle = UITextBorderStyle.RoundedRect
+        textField.layer.borderWidth = 0
+    }
+
     /* Checks whether the textfield has any input */
     func validateTextField(textField : String) -> Bool{
         if textField == ""{
@@ -44,66 +48,68 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
-    
+
     /* Changes the border color of the textfield to red. */
     func setTextFieldBorderColor(textField: UITextField){
-        textField.borderStyle = UITextBorderStyle.Line
+        //textField.borderStyle = UITextBorderStyle.Line
+        textField.borderStyle = UITextBorderStyle.RoundedRect
         //textField.layer.masksToBounds = true
-        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 150/255).CGColor
-        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 200/255).CGColor
+        textField.layer.borderWidth = 1
     }
-    
+
     /* Makes a red border around incorrect textfields. Checks whether passwords matches and returns true if all is correct. */
     func doIncorrectTextFieldsRed() -> Bool{
         let numberOfTextFields = 4
         var correctNumberOfTextFields = 0
-        
+
         if validateTextField(nameField.text!){
             setTextFieldBorderColor(nameField)
         }else{
-            nameField.borderStyle = UITextBorderStyle.None
+            nameField.borderStyle = UITextBorderStyle.RoundedRect
             nameField.layer.borderWidth = 0
             correctNumberOfTextFields += 1
         }
-        
+
         if validateTextField(surnameField.text!){
             setTextFieldBorderColor(surnameField)
         }else{
-            surnameField.borderStyle = UITextBorderStyle.None
+            surnameField.borderStyle = UITextBorderStyle.RoundedRect
             surnameField.layer.borderWidth = 0
             correctNumberOfTextFields += 1
         }
-        
+
         if validateTextField(emailField.text!){
             setTextFieldBorderColor(emailField)
         }else{
-            emailField.borderStyle = UITextBorderStyle.None
+            emailField.borderStyle = UITextBorderStyle.RoundedRect
             emailField.layer.borderWidth = 0
             correctNumberOfTextFields += 1
         }
-        
+
         if validateTextField(password1Field.text!) || validateTextField(password2Field.text!) || password1Field.text! != password2Field.text!{
             setTextFieldBorderColor(password1Field)
             setTextFieldBorderColor(password2Field)
         }else{
-            password1Field.borderStyle = UITextBorderStyle.None
+            password1Field.borderStyle = UITextBorderStyle.RoundedRect
             password1Field.layer.borderWidth = 0
-            password2Field.borderStyle = UITextBorderStyle.None
+            password2Field.borderStyle = UITextBorderStyle.RoundedRect
             password2Field.layer.borderWidth = 0
             correctNumberOfTextFields += 1
         }
+
         if numberOfTextFields == correctNumberOfTextFields{
             return true
         }else{
             return false
         }
     }
-    
-    
+
+
     /*
      Create a new user from the textfields' information.
     */
-    
+
     @IBAction func createAccount(sender: UIButton) {
         let name = nameField.text
         let surname = surnameField.text
@@ -114,9 +120,5 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         if doIncorrectTextFieldsRed(){
             print("ALL CORRECT!")
         }
-        
-        
     }
-
-
 }
