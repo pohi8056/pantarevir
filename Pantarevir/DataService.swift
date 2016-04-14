@@ -32,5 +32,11 @@ var currentUserRef: Firebase {
     return currentUser!
 }
 
+    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+        
+        
+        userRef.childByAppendingPath(uid).setValue(user)
+    }
+    
 
 }
