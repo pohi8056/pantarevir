@@ -48,6 +48,14 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
+    
+    /* Validates if email is given in correct format*/
+    func validateEmail(testStr:String) -> Bool {
+        let validSymbols = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let testEmail = NSPredicate(format:"SELF MATCHES %@", validSymbols)
+        return testEmail.evaluateWithObject(testStr)
+    }
+    
 
     /* Changes the border color of the textfield to red. */
     func setTextFieldBorderColor(textField: UITextField){
@@ -79,7 +87,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             correctNumberOfTextFields += 1
         }
 
-        if validateTextField(emailField.text!){
+        if validateTextField(emailField.text!) || !validateEmail(emailField.text!){
             setTextFieldBorderColor(emailField)
         }else{
             emailField.borderStyle = UITextBorderStyle.RoundedRect
