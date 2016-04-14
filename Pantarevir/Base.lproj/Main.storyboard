@@ -66,7 +66,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Registrera dig"/>
                                 <connections>
-                                    <segue destination="t2r-lU-S5q" kind="presentation" id="leC-Tk-5qd"/>
+                                    <segue destination="t2r-lU-S5q" kind="presentation" identifier="fromLoginToRegistrationSegue" id="leC-Tk-5qd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fz3-vI-NXe">
@@ -369,6 +369,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="Pex-oC-tau">
                                 <rect key="frame" x="20" y="0.0" width="560" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bekräfta lösenord" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8j-46-agS">
+                                <rect key="frame" x="27" y="304" width="134" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lösenord" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9I-Wi-7Gp">
+                                <rect key="frame" x="27" y="241" width="71" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-postadress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luj-TX-9ay">
+                                <rect key="frame" x="27" y="178" width="98" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-Jp-qaQ">
                                 <rect key="frame" x="20" y="466" width="560" height="44"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.82745098039999998" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -389,7 +407,7 @@
                                     <constraint firstAttribute="height" constant="30" id="5fQ-Zh-2qT"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -397,7 +415,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bekräfta lösenord" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6O-Wv-epV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6O-Wv-epV">
                                 <rect key="frame" x="20" y="329" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -412,7 +430,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Efternamn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-qZ-Hyz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-qZ-Hyz">
                                 <rect key="frame" x="20" y="140" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -427,7 +445,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-postadress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-Si-8Pb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-Si-8Pb">
                                 <rect key="frame" x="20" y="203" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -442,7 +460,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lösenord" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gE2-G2-7d1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gE2-G2-7d1">
                                 <rect key="frame" x="20" y="266" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -457,7 +475,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Förnamn" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-9P-A28">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-9P-A28">
                                 <rect key="frame" x="20" y="77" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -483,31 +501,60 @@
                                 <state key="normal" title="Avbryt">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="fromRegistrationToLoginSegue" modalPresentationStyle="fullScreen" id="A6K-mf-QLG"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Förnamn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCZ-Ty-88U">
+                                <rect key="frame" x="27" y="52" width="68" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efternamn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9C0-wz-hps">
+                                <rect key="frame" x="27" y="115" width="79" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLp-bx-WeV">
+                                <rect key="frame" x="27" y="367" width="26" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SOl-Jp-qaQ" firstAttribute="trailing" secondItem="4yj-47-jfd" secondAttribute="trailing" id="0cF-jh-oWb"/>
                             <constraint firstItem="SOl-Jp-qaQ" firstAttribute="leading" secondItem="4yj-47-jfd" secondAttribute="leading" id="0xg-b8-52h"/>
                             <constraint firstItem="5f4-qZ-Hyz" firstAttribute="leading" secondItem="3Tj-Si-8Pb" secondAttribute="leading" id="3xs-a9-JNe"/>
+                            <constraint firstItem="gE2-G2-7d1" firstAttribute="top" secondItem="X9I-Wi-7Gp" secondAttribute="bottom" constant="1" id="8VE-zb-a3t"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="trailing" secondItem="gE2-G2-7d1" secondAttribute="trailing" id="8gp-pn-rgy"/>
                             <constraint firstItem="gE2-G2-7d1" firstAttribute="trailing" secondItem="F6O-Wv-epV" secondAttribute="trailing" id="AG6-3Y-9Ba"/>
+                            <constraint firstItem="XDf-9P-A28" firstAttribute="top" secondItem="zCZ-Ty-88U" secondAttribute="bottom" constant="1" id="AGL-CF-djw"/>
                             <constraint firstItem="5f4-qZ-Hyz" firstAttribute="trailing" secondItem="3Tj-Si-8Pb" secondAttribute="trailing" id="AKw-XE-Lhx"/>
                             <constraint firstItem="4yj-47-jfd" firstAttribute="leading" secondItem="y4K-kW-hwS" secondAttribute="leadingMargin" id="Bog-s7-qUv"/>
                             <constraint firstItem="4yj-47-jfd" firstAttribute="top" secondItem="Pex-oC-tau" secondAttribute="bottom" constant="-72" id="CpB-Rr-4P0"/>
                             <constraint firstItem="F6O-Wv-epV" firstAttribute="trailing" secondItem="k6O-xT-5gN" secondAttribute="trailing" id="Fdm-A5-wVH"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="leading" secondItem="y4K-kW-hwS" secondAttribute="leadingMargin" id="ImI-t4-tZc"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="leading" secondItem="XDf-9P-A28" secondAttribute="leading" id="J3Y-Mj-lKs"/>
+                            <constraint firstItem="Pex-oC-tau" firstAttribute="leading" secondItem="X9I-Wi-7Gp" secondAttribute="trailing" constant="-78" id="JP9-Lg-lYp"/>
                             <constraint firstItem="XDf-9P-A28" firstAttribute="top" secondItem="jz6-pn-8qd" secondAttribute="bottom" constant="57" id="MSm-Xv-V1C"/>
                             <constraint firstItem="3Tj-Si-8Pb" firstAttribute="leading" secondItem="gE2-G2-7d1" secondAttribute="leading" id="NPj-cq-PMW"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="bottom" secondItem="QMM-vj-9Sl" secondAttribute="top" id="Nby-HR-6hY"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="top" secondItem="y4K-kW-hwS" secondAttribute="top" id="Qwg-IL-PcE"/>
+                            <constraint firstItem="F6O-Wv-epV" firstAttribute="top" secondItem="Y8j-46-agS" secondAttribute="bottom" constant="1" id="XIE-hT-DLm"/>
                             <constraint firstItem="F6O-Wv-epV" firstAttribute="top" secondItem="gE2-G2-7d1" secondAttribute="bottom" constant="33" id="Yfb-8G-jx1"/>
                             <constraint firstItem="gE2-G2-7d1" firstAttribute="top" secondItem="3Tj-Si-8Pb" secondAttribute="bottom" constant="33" id="ZcA-G1-jXP"/>
                             <constraint firstItem="k6O-xT-5gN" firstAttribute="leading" secondItem="SOl-Jp-qaQ" secondAttribute="leading" id="cyr-2i-Kra"/>
+                            <constraint firstItem="9C0-wz-hps" firstAttribute="leading" secondItem="y4K-kW-hwS" secondAttribute="leadingMargin" constant="7" id="emy-mT-NH6"/>
+                            <constraint firstItem="Pex-oC-tau" firstAttribute="leading" secondItem="Y8j-46-agS" secondAttribute="trailing" constant="-141" id="g3d-be-wNB"/>
                             <constraint firstItem="5f4-qZ-Hyz" firstAttribute="top" secondItem="XDf-9P-A28" secondAttribute="bottom" constant="33" id="gj8-KN-yO0"/>
                             <constraint firstItem="k6O-xT-5gN" firstAttribute="trailing" secondItem="SOl-Jp-qaQ" secondAttribute="trailing" id="hmf-Du-OZO"/>
                             <constraint firstItem="XDf-9P-A28" firstAttribute="trailing" secondItem="5f4-qZ-Hyz" secondAttribute="trailing" id="jZN-cZ-myR"/>
+                            <constraint firstItem="3Tj-Si-8Pb" firstAttribute="top" secondItem="Luj-TX-9ay" secondAttribute="bottom" constant="1" id="kYQ-4b-MRK"/>
+                            <constraint firstItem="9C0-wz-hps" firstAttribute="top" secondItem="XDf-9P-A28" secondAttribute="bottom" constant="8" symbolic="YES" id="nN6-Vx-wah"/>
                             <constraint firstItem="4yj-47-jfd" firstAttribute="top" secondItem="SOl-Jp-qaQ" secondAttribute="bottom" constant="18" id="nhN-O0-cTS"/>
                             <constraint firstItem="Pex-oC-tau" firstAttribute="trailing" secondItem="y4K-kW-hwS" secondAttribute="trailingMargin" id="rtW-UW-Pny"/>
                             <constraint firstItem="3Tj-Si-8Pb" firstAttribute="top" secondItem="5f4-qZ-Hyz" secondAttribute="bottom" constant="33" id="sEP-hZ-vXR"/>
@@ -516,7 +563,9 @@
                             <constraint firstItem="gE2-G2-7d1" firstAttribute="leading" secondItem="F6O-Wv-epV" secondAttribute="leading" id="uJT-Tp-YdA"/>
                             <constraint firstItem="F6O-Wv-epV" firstAttribute="leading" secondItem="k6O-xT-5gN" secondAttribute="leading" id="uci-EM-xmq"/>
                             <constraint firstItem="k6O-xT-5gN" firstAttribute="top" secondItem="F6O-Wv-epV" secondAttribute="bottom" constant="33" id="uqx-HP-oEG"/>
+                            <constraint firstItem="9C0-wz-hps" firstAttribute="leading" secondItem="zCZ-Ty-88U" secondAttribute="leading" id="vVU-06-4oJ"/>
                             <constraint firstItem="3Tj-Si-8Pb" firstAttribute="trailing" secondItem="gE2-G2-7d1" secondAttribute="trailing" id="wh9-ZW-ohf"/>
+                            <constraint firstItem="9C0-wz-hps" firstAttribute="leading" secondItem="Luj-TX-9ay" secondAttribute="leading" id="yOo-XR-d1A"/>
                         </constraints>
                     </view>
                     <connections>
@@ -529,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXD-p7-cGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="-1010"/>
+            <point key="canvasLocation" x="623" y="-974"/>
         </scene>
     </scenes>
     <resources>
