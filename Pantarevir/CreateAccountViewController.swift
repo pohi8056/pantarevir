@@ -142,7 +142,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    /* Dismiss the view controller when cancel is pushed */
     @IBAction func cancelRegistration(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
