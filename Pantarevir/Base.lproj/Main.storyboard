@@ -173,6 +173,10 @@
                             <constraint firstItem="zZm-qX-chb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ztK-7L-OaS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="RiQ-sN-moI" id="QrA-DT-vYi"/>
+                        <outlet property="passwordTextField" destination="kpb-nD-LA9" id="e6y-Cb-Qex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
