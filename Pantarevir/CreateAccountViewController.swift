@@ -114,11 +114,31 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         let name = nameField.text
         let surname = surnameField.text
         let email = emailField.text
-        let password1 = password1Field.text
-        let password2 = password1Field.text
+        let password = password1Field.text
+        let city = "Uppsala"
+        //let password2 = password1Field.text
         
         if doIncorrectTextFieldsRed(){
             print("ALL CORRECT!")
+                
+            DataService.service.rootRef.createUser(email, password: password, withValueCompletionBlock: {error, result in
+                
+                if error != nil{
+                    print("Fel vid skapande av konto. Vänligen försök igen!")
+                }else{
+                        DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {
+                        err, authData in
+                        let newUser = ["provider": authData.provider!, "name": name!, "surname": surname!, "email": email!, "City": city]
+                        DataService.service.createNewAccount(authData.uid, user: newUser)
+                    })
+                    
+                    NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
+                    //self.performSegueWithIdentifier("fromRegistrationToLoginSegue", sender: nil)
+                    
+                }
+                
+            })
+            
         }
     }
 }
