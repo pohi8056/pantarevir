@@ -134,11 +134,19 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                     
                     NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
                     //self.performSegueWithIdentifier("fromRegistrationToLoginSegue", sender: nil)
-                    
+                    self.dismissViewControllerAnimated(true, completion: {})
                 }
                 
             })
             
         }
     }
+    
+    
+    @IBAction func cancelRegistration(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    
+    
 }
