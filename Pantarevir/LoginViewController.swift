@@ -26,8 +26,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        tmpAutoFillFields()
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.service.currentUserRef.authData != nil{
+            
+            //Avkommentera sen! xD
             //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
         }
         
@@ -56,6 +58,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func tmpAutoFillFields(){
+        emailTextField.text = "noreply@ponycorp.com"
+        passwordTextField.text = "Clark"
+    }
     
     @IBAction func loginUser(sender: UIButton) {
         let email = emailTextField.text
