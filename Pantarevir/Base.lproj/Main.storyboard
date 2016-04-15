@@ -18,31 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glömt ditt lösenord?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLp-M7-WHo">
-                                <rect key="frame" x="68" y="86" width="152" height="26"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="CJB-u0-c1S">
+                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="0As-N1-2iv"/>
-                                    <constraint firstAttribute="height" constant="26" id="lLY-BG-DsV"/>
+                                    <constraint firstAttribute="width" constant="560" id="aHe-0d-e1d"/>
+                                    <constraint firstAttribute="height" constant="600" id="aua-37-XM6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-postadress" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="alb-gB-65B">
-                                <rect key="frame" x="183" y="170" width="235" height="30"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-postadress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="scP-e2-0rB">
+                                <rect key="frame" x="20" y="177" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="235" id="FEg-RB-PTm"/>
+                                    <constraint firstAttribute="height" constant="30" id="Vrc-W8-Niv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="alb-gB-65B" firstAttribute="centerX" secondItem="qh1-b5-ub3" secondAttribute="centerX" id="6G9-53-9yA"/>
-                            <constraint firstItem="OxU-Gp-dZD" firstAttribute="top" secondItem="alb-gB-65B" secondAttribute="bottom" constant="400" id="6kb-HO-sWT"/>
-                            <constraint firstItem="BLp-M7-WHo" firstAttribute="leading" secondItem="qh1-b5-ub3" secondAttribute="leadingMargin" constant="48" id="GSm-nJ-Une"/>
-                            <constraint firstItem="alb-gB-65B" firstAttribute="top" secondItem="BLp-M7-WHo" secondAttribute="bottom" constant="58" id="e6U-2l-O9u"/>
+                            <constraint firstItem="scP-e2-0rB" firstAttribute="trailing" secondItem="qh1-b5-ub3" secondAttribute="trailingMargin" id="97R-0O-Pz8"/>
+                            <constraint firstItem="scP-e2-0rB" firstAttribute="leading" secondItem="qh1-b5-ub3" secondAttribute="leadingMargin" id="FpA-eb-EN5"/>
+                            <constraint firstItem="CJB-u0-c1S" firstAttribute="trailing" secondItem="qh1-b5-ub3" secondAttribute="trailingMargin" id="GbH-er-uWo"/>
+                            <constraint firstItem="CJB-u0-c1S" firstAttribute="top" secondItem="scP-e2-0rB" secondAttribute="bottom" constant="-207" id="H3v-8m-Hc8"/>
+                            <constraint firstItem="CJB-u0-c1S" firstAttribute="leading" secondItem="qh1-b5-ub3" secondAttribute="leadingMargin" id="KgQ-db-hiy"/>
+                            <constraint firstItem="CJB-u0-c1S" firstAttribute="top" secondItem="qh1-b5-ub3" secondAttribute="topMargin" id="n8M-Vw-fgt"/>
+                            <constraint firstItem="OxU-Gp-dZD" firstAttribute="top" secondItem="CJB-u0-c1S" secondAttribute="bottom" id="yOm-mq-TZ0"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -77,11 +84,11 @@
                                     <color key="titleColor" red="0.98988472491634183" green="1" blue="0.95934785417413482" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiQ-sN-moI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-postadress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiQ-sN-moI">
                                 <rect key="frame" x="20" y="256" width="560" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -114,8 +121,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zH9-Sv-UG7"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -413,7 +420,7 @@
                                     <constraint firstAttribute="height" constant="30" id="NRo-jk-lhz"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506410256414" green="0.77816506410256414" blue="0.77816506410256414" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -428,7 +435,7 @@
                                     <constraint firstAttribute="height" constant="30" id="iIM-CU-AjW"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -443,7 +450,7 @@
                                     <constraint firstAttribute="height" constant="30" id="PRg-tX-tqJ"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -458,7 +465,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Ndl-fA-TiR"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -473,7 +480,7 @@
                                     <constraint firstAttribute="height" constant="30" id="u2C-dF-Yi2"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
@@ -488,7 +495,7 @@
                                     <constraint firstAttribute="height" constant="30" id="ldM-EH-Ezv"/>
                                 </constraints>
                                 <color key="textColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
