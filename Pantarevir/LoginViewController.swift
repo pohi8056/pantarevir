@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
         
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.service.currentUserRef.authData != nil{
-            self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+            //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
         }
         
     }
