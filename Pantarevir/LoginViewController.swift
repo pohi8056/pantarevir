@@ -39,6 +39,50 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    func alertUserOfError(title: String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+
+    }
+    
+    func validateFields(field1 : String, field2 : String) -> Bool{
+        if field1 != "" && field2 != ""{
+            return true
+        }else{
+            return false
+        }
+        
+    }
+    
+    
+    @IBAction func loginUser(sender: UIButton) {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        
+        if validateFields(email!, field2: password!){
+            
+            DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {error, authData in
+                
+                if error != nil{
+                    self.alertUserOfError("Kunde inte verifiera användare", msg: "Kontrollera dina uppgifter igen.")
+                    self.passwordTextField.text = ""
+                    print("Gick inte logga invettu")
+                }else{
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+                }
+                
+            })
+            
+            
+        }
+    }
+    
+    
+    
+    
     
 }
 
