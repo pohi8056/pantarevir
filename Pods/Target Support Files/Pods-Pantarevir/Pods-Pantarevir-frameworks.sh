@@ -84,8 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Pantarevir/Bolts.framework"
+  install_framework "Pods-Pantarevir/FBSDKCoreKit.framework"
+  install_framework "Pods-Pantarevir/FBSDKLoginKit.framework"
+  install_framework "Pods-Pantarevir/FBSDKShareKit.framework"
   install_framework "Pods-Pantarevir/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Pantarevir/Bolts.framework"
+  install_framework "Pods-Pantarevir/FBSDKCoreKit.framework"
+  install_framework "Pods-Pantarevir/FBSDKLoginKit.framework"
+  install_framework "Pods-Pantarevir/FBSDKShareKit.framework"
   install_framework "Pods-Pantarevir/Firebase.framework"
 fi
