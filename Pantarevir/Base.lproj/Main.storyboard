@@ -225,6 +225,13 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTl-EQ-k0e">
+                                        <rect key="frame" x="8" y="27" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="XYD-4R-eaf"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_settings"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -232,6 +239,9 @@
                                     <constraint firstAttribute="bottom" secondItem="ehq-7j-WyS" secondAttribute="bottom" constant="2" id="5lA-1c-IGL"/>
                                     <constraint firstAttribute="trailing" secondItem="ehq-7j-WyS" secondAttribute="trailing" constant="8" id="Lib-ip-Ek6"/>
                                     <constraint firstItem="npp-Yn-z6d" firstAttribute="top" secondItem="4Kd-O9-gx9" secondAttribute="top" constant="24" id="MKF-4K-4f1"/>
+                                    <constraint firstItem="mTl-EQ-k0e" firstAttribute="leading" secondItem="4Kd-O9-gx9" secondAttribute="leadingMargin" id="XbO-Ir-I5F"/>
+                                    <constraint firstItem="mTl-EQ-k0e" firstAttribute="top" secondItem="4Kd-O9-gx9" secondAttribute="top" constant="27" id="Yug-GB-jDF"/>
+                                    <constraint firstItem="mTl-EQ-k0e" firstAttribute="centerY" secondItem="ehq-7j-WyS" secondAttribute="centerY" id="bpT-w0-zXT"/>
                                     <constraint firstAttribute="height" constant="75" id="oTj-dZ-3bT"/>
                                     <constraint firstItem="ehq-7j-WyS" firstAttribute="leading" secondItem="5Zk-JU-0kh" secondAttribute="trailing" constant="8" id="sow-gm-ZDq"/>
                                     <constraint firstItem="ehq-7j-WyS" firstAttribute="top" secondItem="4Kd-O9-gx9" secondAttribute="top" constant="17" id="uO7-7V-TBg"/>
@@ -350,24 +360,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eG-TK-ILQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1436" y="-1735"/>
-        </scene>
-        <!--Reveal View Controller-->
-        <scene sceneID="Jpr-9b-0dK">
-            <objects>
-                <viewController id="Cc7-N0-NWP" customClass="SWRevealViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1EU-6I-Tq8"/>
-                        <viewControllerLayoutGuide type="bottom" id="prD-mD-XnD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EEh-GV-K3P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="akk-6v-Zlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2102" y="-1735"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
@@ -626,6 +618,7 @@
         <image name="icon_din_statistik" width="792" height="792"/>
         <image name="icon_karta" width="792" height="792"/>
         <image name="icon_panta_ditt_revir" width="792" height="792"/>
+        <image name="icon_settings" width="792" height="792"/>
         <image name="icon_topplista" width="792" height="792"/>
         <image name="logotext" width="792" height="792"/>
         <image name="poppe" width="77" height="77"/>
