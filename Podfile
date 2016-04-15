@@ -3,7 +3,9 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 pod 'Firebase'
-
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 
 target 'Pantarevir' do
 
