@@ -22,6 +22,7 @@
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA191CC06BB600AA6503 /* SWRevealViewController.m */; };
+		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
 		635DDA181CC06BB600AA6503 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		635DDA191CC06BB600AA6503 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		635DDA1B1CC06D8C00AA6503 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				635DDA1B1CC06D8C00AA6503 /* MenuController.swift */,
 				3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */,
 				3A90A8BC1CBD2D4600D32D65 /* DataService.swift */,
 				3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */,
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */,
 				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
 				3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */,
 				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
