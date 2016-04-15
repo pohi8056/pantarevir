@@ -351,6 +351,24 @@
             </objects>
             <point key="canvasLocation" x="1436" y="-1735"/>
         </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="Jpr-9b-0dK">
+            <objects>
+                <viewController id="Cc7-N0-NWP" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1EU-6I-Tq8"/>
+                        <viewControllerLayoutGuide type="bottom" id="prD-mD-XnD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EEh-GV-K3P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akk-6v-Zlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="-1735"/>
+        </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
             <objects>

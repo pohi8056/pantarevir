@@ -21,6 +21,7 @@
 		3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BC1CBD2D4600D32D65 /* DataService.swift */; };
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
+		635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA191CC06BB600AA6503 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,9 @@
 		3A90A8BC1CBD2D4600D32D65 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
+		635DDA181CC06BB600AA6503 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		635DDA191CC06BB600AA6503 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 		3A50AB211CBD1C5000BD7B1B /* Pantarevir */ = {
 			isa = PBXGroup;
 			children = (
+				635DDA161CC06BA400AA6503 /* SWRevealViewController */,
 				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
@@ -148,6 +153,16 @@
 				3A50AB441CBD1C5100BD7B1B /* Info.plist */,
 			);
 			path = PantarevirUITests;
+			sourceTree = "<group>";
+		};
+		635DDA161CC06BA400AA6503 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				635DDA181CC06BB600AA6503 /* SWRevealViewController.h */,
+				635DDA191CC06BB600AA6503 /* SWRevealViewController.m */,
+				635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		D9FFC7A48B8AA5DD85261D71 /* Pods */ = {
@@ -355,6 +370,7 @@
 				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
 				3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */,
+				635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
@@ -500,6 +516,7 @@
 			baseConfigurationReference = E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pantarevir/Info.plist;
@@ -507,6 +524,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -515,6 +534,7 @@
 			baseConfigurationReference = 500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pantarevir/Info.plist;
@@ -522,6 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
 			};
 			name = Release;
 		};
