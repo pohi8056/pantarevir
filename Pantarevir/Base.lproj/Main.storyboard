@@ -119,7 +119,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Logga in"/>
                                 <connections>
-                                    <segue destination="mFN-gL-Uup" kind="presentation" identifier="fromLoginToMainMenuSegue" modalTransitionStyle="crossDissolve" id="mjZ-rM-wrj"/>
+                                    <action selector="loginUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eaD-Ox-Nep"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotext" translatesAutoresizingMaskIntoConstraints="NO" id="h6Q-46-2ni">
@@ -176,6 +176,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="RiQ-sN-moI" id="QrA-DT-vYi"/>
                         <outlet property="passwordTextField" destination="kpb-nD-LA9" id="e6y-Cb-Qex"/>
+                        <segue destination="mFN-gL-Uup" kind="show" identifier="fromLoginToMainMenuSegue" id="Yi9-HR-xPv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
