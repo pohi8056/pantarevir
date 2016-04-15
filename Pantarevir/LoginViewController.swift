@@ -28,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidAppear(animated)
         
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.service.currentUserRef.authData != nil{
-            //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+            self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
         }
         
     }
@@ -67,7 +67,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 if error != nil{
                     self.alertUserOfError("Kunde inte verifiera användare", msg: "Kontrollera dina uppgifter igen.")
-                    print(error)
+                    self.passwordTextField.text = ""
+                    print("Gick inte logga invettu")
                 }else{
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
