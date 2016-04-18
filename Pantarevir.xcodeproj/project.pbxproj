@@ -21,6 +21,8 @@
 		3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BC1CBD2D4600D32D65 /* DataService.swift */; };
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
+		630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630178A81CC4FAD200769027 /* ToplistViewController.swift */; };
+		632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */; };
 		635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA191CC06BB600AA6503 /* SWRevealViewController.m */; };
 		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		3A90A8BC1CBD2D4600D32D65 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		630178A81CC4FAD200769027 /* ToplistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistViewController.swift; sourceTree = "<group>"; };
+		632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewCell.swift; sourceTree = "<group>"; };
 		635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
 		635DDA181CC06BB600AA6503 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		635DDA191CC06BB600AA6503 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */,
+				630178A81CC4FAD200769027 /* ToplistViewController.swift */,
 				635DDA1B1CC06D8C00AA6503 /* MenuController.swift */,
 				3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */,
 				3A90A8BC1CBD2D4600D32D65 /* DataService.swift */,
@@ -376,8 +382,10 @@
 				3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */,
 				635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
+				630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
+				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
