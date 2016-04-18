@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -85,6 +87,61 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
+/*
+    func getAndStoreUserDataFromFacebookInFirebase(loginResults : FBSDKLoginManagerLoginResult){
+
+        
+
+    }
+  */
+    //Login via facebook. MEGA FUNCTION
+    @IBAction func loginUserFacebook(sender: UIButton) {
+        let loginViaFacebook = FBSDKLoginManager()
+        
+        loginViaFacebook.logInWithReadPermissions(["email"], fromViewController: self ,handler: {
+            (facebookResult, facebookError) -> Void in
+            
+            if facebookError != nil{
+                print("Failed to perform facebook login. Error: \(facebookError)")
+            } else if facebookResult.isCancelled{
+                print("Facebook login cancelled by the user.")
+            } else{
+                let facebookAccessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                
+                DataService.service.rootRef.authWithOAuthProvider("facebook", token: facebookAccessToken, withCompletionBlock: {error, authData in
+                    
+                    if error != nil{
+                        print("Failed to login.")
+                    }else{
+                        print("Logged in successfully via Facebook.")
+                        let loginResults : FBSDKLoginManagerLoginResult = facebookResult
+                        if loginResults.grantedPermissions.contains("email"){
+                            //self.getAndStoreUserDataFromFacebookInFirebase(loginResults)
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, first_name, last_name, picture.type(large)"]).startWithCompletionHandler({(connection, result, error) -> Void in
+                                
+                                print(result["name"])
+                                print(result["first_name"])
+                                print(result["last_name"])
+                                print(result["id"])
+                                
+                                let firstName = result["name"] as! String
+                                let surName = result["last_name"] as! String
+                                let email = result["email"] as! String
+                             
+                                //For later:
+                                //let profilepic = result["picture.type(large)"]
+                                
+                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "belopptotal" : "0", "beloppvecka" : "0"]
+                                DataService.service.createNewAccount(authData.uid, user: newUser)
+                            })
+                        }
+                        self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+                    }
+                })
+            }
+        })
+    }
+    
     
     
     
