@@ -94,7 +94,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
   */
-    //Login via facebook. MEGA FUNCTION
+    //Login via facebook.
     @IBAction func loginUserFacebook(sender: UIButton) {
         let loginViaFacebook = FBSDKLoginManager()
         
