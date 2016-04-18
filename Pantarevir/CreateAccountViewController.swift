@@ -136,7 +136,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                 }else{
                         DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {
                         err, authData in
-                        let newUser = ["provider": authData.provider!, "name": name!, "surname": surname!, "email": email!, "City": city]
+                        let newUser = ["provider": authData.provider!, "name": name!, "surname": surname!, "email": email!, "city": city, "belopptotal": "0", "beloppvecka": "0"]
                         DataService.service.createNewAccount(authData.uid, user: newUser)
                     })
                     
@@ -154,6 +154,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cancelRegistration(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
+    
+    
+    
     
     
     
