@@ -312,7 +312,7 @@
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="TOPPLISTA"/>
                                 <connections>
-                                    <action selector="TopplistaButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="7UR-NA-r9Z"/>
+                                    <segue destination="N1K-pk-cBC" kind="show" id="eXz-aD-YKv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-b7-bgi">
@@ -322,9 +322,6 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="DIN STATISTIK"/>
-                                <connections>
-                                    <action selector="DinStatistikButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="4mQ-tP-uO8"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_din_statistik" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-lG-CYM">
                                 <rect key="frame" x="532" y="340" width="47" height="48"/>
@@ -346,9 +343,6 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="PANTA DITT REVIR"/>
-                                <connections>
-                                    <action selector="PantaDittRevirButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="IOs-6a-7qX"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_panta_ditt_revir" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-k8-FNX">
                                 <rect key="frame" x="533" y="204" width="47" height="47"/>
@@ -364,9 +358,6 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="REVIRKARTA"/>
-                                <connections>
-                                    <action selector="RevirkartaButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="H6Y-7w-gQf"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_karta" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-lg-d5v">
                                 <rect key="frame" x="530" y="273" width="53" height="50"/>
@@ -417,10 +408,10 @@
             </objects>
             <point key="canvasLocation" x="1436" y="-1735"/>
         </scene>
-        <!--View Controller-->
+        <!--Toplist View Controller-->
         <scene sceneID="sZV-Aj-w3p">
             <objects>
-                <viewController id="N1K-pk-cBC" sceneMemberID="viewController">
+                <viewController id="N1K-pk-cBC" customClass="ToplistViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JNY-9h-vW2"/>
                         <viewControllerLayoutGuide type="bottom" id="qD4-r9-n90"/>
@@ -436,19 +427,77 @@
                                     <constraint firstAttribute="width" constant="560" id="j75-s6-FFs"/>
                                 </constraints>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-gL-V6b">
+                                <rect key="frame" x="0.0" y="117" width="600" height="483"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CgT-iD-wZj" firstAttribute="top" secondItem="xeq-8S-b6r" secondAttribute="topMargin" id="J7D-SH-vDz"/>
-                            <constraint firstItem="qD4-r9-n90" firstAttribute="top" secondItem="CgT-iD-wZj" secondAttribute="bottom" id="Qvu-kD-0H7"/>
-                            <constraint firstItem="CgT-iD-wZj" firstAttribute="leading" secondItem="xeq-8S-b6r" secondAttribute="leadingMargin" id="usV-br-20S"/>
-                            <constraint firstItem="CgT-iD-wZj" firstAttribute="trailing" secondItem="xeq-8S-b6r" secondAttribute="trailingMargin" id="wNu-nn-HAZ"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="leading" secondItem="xeq-8S-b6r" secondAttribute="leadingMargin" id="48H-ui-gXI"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="leading" secondItem="xeq-8S-b6r" secondAttribute="leadingMargin" id="4u7-y8-BZ6"/>
+                            <constraint firstItem="qD4-r9-n90" firstAttribute="top" secondItem="CgT-iD-wZj" secondAttribute="bottom" id="5c7-5i-mXo"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="trailing" secondItem="xeq-8S-b6r" secondAttribute="trailingMargin" id="Mqd-Zw-QIf"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="trailing" secondItem="xeq-8S-b6r" secondAttribute="trailingMargin" id="Qk9-cN-dAS"/>
+                            <constraint firstItem="MZY-gL-V6b" firstAttribute="leading" secondItem="xeq-8S-b6r" secondAttribute="leading" id="Tw3-DC-nNR"/>
+                            <constraint firstItem="qD4-r9-n90" firstAttribute="top" secondItem="CgT-iD-wZj" secondAttribute="bottom" id="WAZ-Dc-2L1"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="top" secondItem="xeq-8S-b6r" secondAttribute="topMargin" id="aS1-Yo-b9j"/>
+                            <constraint firstItem="CgT-iD-wZj" firstAttribute="top" secondItem="xeq-8S-b6r" secondAttribute="topMargin" id="bZL-gm-eKM"/>
+                            <constraint firstItem="MZY-gL-V6b" firstAttribute="top" secondItem="JNY-9h-vW2" secondAttribute="bottom" constant="97" id="d1K-tQ-RlZ"/>
+                            <constraint firstItem="MZY-gL-V6b" firstAttribute="centerX" secondItem="CgT-iD-wZj" secondAttribute="centerX" id="iZn-bl-8kP"/>
+                            <constraint firstItem="MZY-gL-V6b" firstAttribute="bottom" secondItem="qD4-r9-n90" secondAttribute="top" id="oHe-bP-bdW"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAF-Qx-2eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2280" y="-1224"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="q8G-X9-ris">
+            <objects>
+                <tableViewController id="mjs-kq-pvB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="qjs-dB-1hg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToplistTableViewCell" rowHeight="60" id="Lzy-h3-bgV" customClass="ToplistTableViewCell" customModule="Pantarevir" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzy-h3-bgV" id="beo-Qy-AkV">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="poppe" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-zy-PuU">
+                                            <rect key="frame" x="8" y="2" width="43" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="tDg-hZ-YmB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pontus H" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Q-zg-dc2">
+                                            <rect key="frame" x="63" y="19" width="73" height="24"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="P6d-zy-PuU" firstAttribute="top" secondItem="beo-Qy-AkV" secondAttribute="topMargin" constant="-6" id="FUp-Em-A2L"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="P6d-zy-PuU" secondAttribute="leading" id="M2a-dj-SNX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49539331896551725" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mjs-kq-pvB" id="zG4-qY-OMM"/>
+                            <outlet property="delegate" destination="mjs-kq-pvB" id="0Wc-Y7-9w1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfb-Vj-eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2940" y="-1224"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gv6-OH-OpG">
