@@ -131,6 +131,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 //For later:
                                 //let profilepic = result["picture.type(large)"]
                                 
+                                //----------IMPORTANT: CHECK IF VALUES ARE BEING OVERWRITTEN FOR A USER THAT LOGS OUT--------------------
+                                
                                 let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "belopptotal" : "0", "beloppvecka" : "0"]
                                 DataService.service.createNewAccount(authData.uid, user: newUser)
                             })
