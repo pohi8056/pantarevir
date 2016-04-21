@@ -407,6 +407,11 @@
                             <constraint firstItem="G9T-Iw-afB" firstAttribute="top" secondItem="DCy-bG-vc6" secondAttribute="bottom" constant="-258" id="yoS-OM-sKj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="5Zk-JU-0kh" id="16B-qd-uR0"/>
+                        <outlet property="nameLabel" destination="npp-Yn-z6d" id="oEt-X7-XUq"/>
+                        <outlet property="profilePicture" destination="ehq-7j-WyS" id="iNF-43-qDo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2eG-TK-ILQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -472,7 +477,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzy-h3-bgV" id="beo-Qy-AkV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppe" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-zy-PuU">
@@ -587,7 +592,6 @@
                                 <state key="normal" title="LOGGA UT"/>
                                 <connections>
                                     <action selector="PantaDittRevirButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="5uX-CR-tDP"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="fromSettingsToLoginSegue" id="x1B-6J-0JR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -878,7 +882,6 @@
         <image name="poppe" width="77" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x1B-6J-0JR"/>
-        <segue reference="ptE-MY-Wu4"/>
+        <segue reference="Yi9-HR-xPv"/>
     </inferredMetricsTieBreakers>
 </document>

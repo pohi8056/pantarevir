@@ -65,6 +65,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.text = "Clark"
     }
     
+    //FIX VALIDATION OF DB ENTRIES, not just auth validatation!!!!!!
     @IBAction func loginUser(sender: UIButton) {
         let email = emailTextField.text
         let password = passwordTextField.text
@@ -94,7 +95,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     }
   */
-    //Login via facebook. MEGA FUNCTION
+    //Login via facebook.
     @IBAction func loginUserFacebook(sender: UIButton) {
         let loginViaFacebook = FBSDKLoginManager()
         
@@ -124,16 +125,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 print(result["last_name"])
                                 print(result["id"])
                                 
-                                let firstName = result["name"] as! String
+                                let firstName = result["first_name"] as! String
                                 let surName = result["last_name"] as! String
                                 let email = result["email"] as! String
-                             
+                                let fbID = result["id"] as! String //Used for retrieving profilepic
+                                
                                 //For later:
                                 //let profilepic = result["picture.type(large)"]
                                 
-                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "belopptotal" : "0", "beloppvecka" : "0"]
+                                //----------IMPORTANT: CHECK IF VALUES ARE BEING OVERWRITTEN FOR A USER THAT LOGS OUT--------------------
+                                
+                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : "0", "weekly" : "0", "fbID" : fbID]
                                 DataService.service.createNewAccount(authData.uid, user: newUser)
                             })
+                                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                         }
                         self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
                     }
