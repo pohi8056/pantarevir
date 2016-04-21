@@ -39,8 +39,9 @@ class MainMenuViewController: UIViewController {
             let surnameOfCurrentUser = snapshot.value.objectForKey("surname") as! String
             let totalOfCurrentUser = snapshot.value.objectForKey("total") as! String
             let facebookID = snapshot.value.objectForKey("fbID") as! String
+            let loginService = snapshot.value.objectForKey("provider") as! String
             
-            if facebookID != "0"{
+            if loginService == "facebook"{
                 let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=large")
                 self.setProfileImage(facebookProfilePictureURL!)
             }
@@ -64,7 +65,7 @@ class MainMenuViewController: UIViewController {
             self.profilePicture.layer.borderWidth = 1
             self.profilePicture.layer.masksToBounds = false
             self.profilePicture.layer.borderColor = UIColor.whiteColor().CGColor
-            self.profilePicture.layer.cornerRadius = profilePicture.frame.size.width/1.5
+            self.profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
             self.profilePicture.clipsToBounds = true
             
             //--------------------------------------------------------------------------------------//
