@@ -60,18 +60,18 @@ class MainMenuViewController: UIViewController {
         if obtainedImage != nil{
             self.profilePicture.image = UIImage(data: obtainedImage!)
             
-            //----------------------------FIX PLS UX DEPARTMENT.------------------------------------//
-            
-            self.profilePicture.layer.borderWidth = 1
-            self.profilePicture.layer.masksToBounds = false
-            self.profilePicture.layer.borderColor = UIColor.whiteColor().CGColor
-            self.profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
-            self.profilePicture.clipsToBounds = true
-            
-            //--------------------------------------------------------------------------------------//
+            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+            imageView.contentMode = .ScaleAspectFill
+            imageView.image = self.profilePicture.image
+            imageView.layer.cornerRadius = square.width/2
+            imageView.layer.masksToBounds = true
+            UIGraphicsBeginImageContext(imageView.bounds.size)
+            let context = UIGraphicsGetCurrentContext()
+            imageView.layer.renderInContext(context!)
+            self.profilePicture.image = UIGraphicsGetImageFromCurrentImageContext()
         }
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
