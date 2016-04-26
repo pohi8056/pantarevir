@@ -256,7 +256,7 @@
 				TargetAttributes = {
 					3A50AB1E1CBD1C5000BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6X7A5PH8N2;
+						DevelopmentTeam = L5HGLF5QBY;
 					};
 					3A50AB321CBD1C5100BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
@@ -525,7 +525,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
@@ -543,7 +543,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
