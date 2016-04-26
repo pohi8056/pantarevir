@@ -11,6 +11,7 @@ import UIKit
 class ToplistTableViewController: UITableViewController {
 
     var users = [String]()
+    var amounts = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,12 @@ class ToplistTableViewController: UITableViewController {
         let user2 = "Anton"
         let user3 = "Lukas"
         
-        users += [user1, user2, user3]
+        let amount1 = "332"
+        let amount2 = "237"
+        let amount3 = "97"
         
+        users += [user1, user2, user3]
+        amounts += [amount1, amount2, amount3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +54,14 @@ class ToplistTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ToplistTableViewCell
         
         let user = users[indexPath.row]
+        let amount = amounts[indexPath.row]
 
+        cell.positionLabel.text = "\(indexPath.row + 1)."
         cell.nameLabel.text = user
+        cell.amountLabel.text = "\(amount) kr"
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
@@ -63,14 +74,14 @@ class ToplistTableViewController: UITableViewController {
         
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, 120))
+        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, 120))
         
-        whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
-        whiteRoundedView.layer.opacity = 50
-        whiteRoundedView.layer.masksToBounds = false
+        view.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
+        view.layer.opacity = 50
+        view.layer.masksToBounds = false
         
-        cell.contentView.addSubview(whiteRoundedView)
-        cell.contentView.sendSubviewToBack(whiteRoundedView)
+        cell.contentView.addSubview(view)
+        cell.contentView.sendSubviewToBack(view)
     }
 
     /*

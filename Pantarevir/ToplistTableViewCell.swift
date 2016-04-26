@@ -12,7 +12,9 @@ class ToplistTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     
+    @IBOutlet weak var amountLabel: UILabel!
     
+    @IBOutlet weak var positionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
