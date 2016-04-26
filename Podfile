@@ -6,6 +6,7 @@ pod 'Firebase'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'TesseractOCRiOS'
 
 target 'Pantarevir' do
 

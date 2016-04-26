@@ -20,6 +20,7 @@
 		3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */; };
 		3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BC1CBD2D4600D32D65 /* DataService.swift */; };
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
+		3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630178A81CC4FAD200769027 /* ToplistViewController.swift */; };
 		632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */; };
@@ -66,6 +67,7 @@
 		3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A90A8BC1CBD2D4600D32D65 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanReceiptViewController.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		630178A81CC4FAD200769027 /* ToplistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistViewController.swift; sourceTree = "<group>"; };
 		632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
 				636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */,
 				636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */,
 				632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */,
@@ -393,6 +396,7 @@
 				630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
+				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

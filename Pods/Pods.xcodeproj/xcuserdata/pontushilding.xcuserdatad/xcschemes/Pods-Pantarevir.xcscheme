@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6FC9F53F42654B77E89AE531'
+               BlueprintIdentifier = 'A55C224814A914BE81A8ECF4'
                BlueprintName = 'Pods-Pantarevir'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Pantarevir.framework'>
