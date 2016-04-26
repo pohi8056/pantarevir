@@ -10,6 +10,11 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var profilePicture: UIImageView!
+    
+    
     @IBAction func PantaDittRevirButton(sender: UIButton) {
     }
     
@@ -29,7 +34,43 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
+            let nameOfCurrentUser = snapshot.value.objectForKey("name") as! String
+            let surnameOfCurrentUser = snapshot.value.objectForKey("surname") as! String
+            let totalOfCurrentUser = snapshot.value.objectForKey("total") as! String
+            let facebookID = snapshot.value.objectForKey("fbID") as! String
+            let loginService = snapshot.value.objectForKey("provider") as! String
+            
+            if loginService == "facebook"{
+                let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=large")
+                self.setProfileImage(facebookProfilePictureURL!)
+            }
+            self.nameLabel.text = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
+            self.amountLabel.text = "\(totalOfCurrentUser) kr"
+            }, withCancelBlock: { error in
+                print("Error retrieving or displaying the user's name.")
+        })
+ 
+ 
+    }
+    
+    
+    func setProfileImage(imageURL : NSURL){
+        let obtainedImage = NSData(contentsOfURL: imageURL)
+        if obtainedImage != nil{
+            self.profilePicture.image = UIImage(data: obtainedImage!)
+            
+            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+            imageView.contentMode = .ScaleAspectFill
+            imageView.image = self.profilePicture.image
+            imageView.layer.cornerRadius = square.width/2
+            imageView.layer.masksToBounds = true
+            UIGraphicsBeginImageContext(imageView.bounds.size)
+            let context = UIGraphicsGetCurrentContext()
+            imageView.layer.renderInContext(context!)
+            self.profilePicture.image = UIGraphicsGetImageFromCurrentImageContext()
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -63,6 +65,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.text = "Clark"
     }
     
+    //FIX VALIDATION OF DB ENTRIES, not just auth validatation!!!!!!
     @IBAction func loginUser(sender: UIButton) {
         let email = emailTextField.text
         let password = passwordTextField.text
@@ -85,6 +88,65 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
+/*
+    func getAndStoreUserDataFromFacebookInFirebase(loginResults : FBSDKLoginManagerLoginResult){
+
+        
+
+    }
+  */
+    //Login via facebook.
+    @IBAction func loginUserFacebook(sender: UIButton) {
+        let loginViaFacebook = FBSDKLoginManager()
+        
+        loginViaFacebook.logInWithReadPermissions(["email"], fromViewController: self ,handler: {
+            (facebookResult, facebookError) -> Void in
+            
+            if facebookError != nil{
+                print("Failed to perform facebook login. Error: \(facebookError)")
+            } else if facebookResult.isCancelled{
+                print("Facebook login cancelled by the user.")
+            } else{
+                let facebookAccessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                
+                DataService.service.rootRef.authWithOAuthProvider("facebook", token: facebookAccessToken, withCompletionBlock: {error, authData in
+                    
+                    if error != nil{
+                        print("Failed to login.")
+                    }else{
+                        print("Logged in successfully via Facebook.")
+                        let loginResults : FBSDKLoginManagerLoginResult = facebookResult
+                        if loginResults.grantedPermissions.contains("email"){
+                            //self.getAndStoreUserDataFromFacebookInFirebase(loginResults)
+                            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, email, name, first_name, last_name, picture.type(large)"]).startWithCompletionHandler({(connection, result, error) -> Void in
+                                
+                                print(result["name"])
+                                print(result["first_name"])
+                                print(result["last_name"])
+                                print(result["id"])
+                                
+                                let firstName = result["first_name"] as! String
+                                let surName = result["last_name"] as! String
+                                let email = result["email"] as! String
+                                let fbID = result["id"] as! String //Used for retrieving profilepic
+                                
+                                //For later:
+                                //let profilepic = result["picture.type(large)"]
+                                
+                                //----------IMPORTANT: CHECK IF VALUES ARE BEING OVERWRITTEN FOR A USER THAT LOGS OUT--------------------
+                                
+                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : "0", "weekly" : "0", "fbID" : fbID]
+                                DataService.service.createNewAccount(authData.uid, user: newUser)
+                            })
+                                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                        }
+                        self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+                    }
+                })
+            }
+        })
+    }
+    
     
     
     

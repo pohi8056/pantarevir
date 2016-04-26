@@ -136,12 +136,11 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
                 }else{
                         DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {
                         err, authData in
-                        let newUser = ["provider": authData.provider!, "name": name!, "surname": surname!, "email": email!, "City": city]
+                            let newUser = ["provider": authData.provider!, "name": name!, "surname": surname!, "email": email!, "city": city, "total": "0", "weekly": "0", "fbID" : "0"]
                         DataService.service.createNewAccount(authData.uid, user: newUser)
                     })
                     
                     NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
-                    //self.performSegueWithIdentifier("fromRegistrationToLoginSegue", sender: nil)
                     self.dismissViewControllerAnimated(true, completion: {})
                 }
                 
@@ -154,6 +153,9 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cancelRegistration(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
+    
+    
+    
     
     
     
