@@ -51,7 +51,13 @@ class ToplistTableViewController: UITableViewController {
                     
                     
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
-                    let amount = "\(snap.value.objectForKey("total") as! String)"
+                    let amount = snap.value.objectForKey("total") as! String
+                    let facebookID = snap.value.objectForKey("fbID") as! String
+                    let loginService = snapshot.value.objectForKey("provider") as! String
+                    
+                    if loginService == "facebook" {
+                    
+                    }
                         
                     self.users.insert(name, atIndex: 0)
                     self.amounts.insert(amount, atIndex: 0)
@@ -66,7 +72,7 @@ class ToplistTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,10 +96,12 @@ class ToplistTableViewController: UITableViewController {
         
         let user = users[indexPath.row]
         let amount = amounts[indexPath.row]
+        let profilePicture = profilePictures[indexPath.row]
 
         cell.positionLabel.text = "\(indexPath.row + 1)."
         cell.nameLabel.text = user
         cell.amountLabel.text = "\(amount) kr"
+        cell.profilePicture.image = profilePicture.image
         
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
