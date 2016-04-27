@@ -16,6 +16,9 @@ class ToplistTableViewCell: UITableViewCell {
     
     @IBOutlet weak var positionLabel: UILabel!
     
+    @IBOutlet weak var profilePicture: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

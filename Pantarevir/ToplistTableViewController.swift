@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ToplistTableViewController: UITableViewController {
 
     var users = [String]()
     var amounts = [String]()
+    var profilePictures = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,7 @@ class ToplistTableViewController: UITableViewController {
         loadUsers()
     }
     
-    func loadUsers() {
+    /*func loadUsers() {
         let user1 = "Pontus"
         let user2 = "Anton"
         let user3 = "Lukas"
@@ -30,6 +32,39 @@ class ToplistTableViewController: UITableViewController {
         
         users += [user1, user2, user3]
         amounts += [amount1, amount2, amount3]
+    }*/
+    
+    func loadUsers() {
+        //let ref = DataService.service.userRef
+        
+        DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
+            
+            // The snapshot is a current look at our jokes data.
+            
+            //print("KOLLA: \(snapshot.value)")
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                for snap in snapshots {
+                    
+                    // Make our jokes array for the tableView.
+                    
+                    
+                    let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
+                    let amount = "\(snap.value.objectForKey("total") as! String)"
+                        
+                    self.users.insert(name, atIndex: 0)
+                    self.amounts.insert(amount, atIndex: 0)
+                    //print("USERS: \(self.users)")
+                    
+                }
+                
+            }
+            
+            // Be sure that the tableView updates when there is new data.
+            
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,7 +118,7 @@ class ToplistTableViewController: UITableViewController {
         cell.contentView.addSubview(view)
         cell.contentView.sendSubviewToBack(view)
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
