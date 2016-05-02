@@ -4,11 +4,212 @@
 //
 //  Created by Pontus Hilding on 26/04/16.
 //  Copyright © 2016 PonyCorp Inc. All rights reserved.
+//  The majority of the capturing code is taken from Jordan Morgan.
+//  sitepoint.com/creating-barcode-metadata-reader-ios/
 //
 
 import Foundation
+import AVFoundation
 
-class ScanReceiptViewController: UIViewController{
+class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
     
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
+    let captureSession = AVCaptureSession()
+    var captureDevice:AVCaptureDevice?
+    var captureLayer:AVCaptureVideoPreviewLayer?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setupCaptureSession()
+    }
+    
+    //Calculates and validates the barcode checksum https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
+    private func calculateBarcodeChecksum(barcode : String) -> Bool{
+        print("Validating barcode checksum...")
+        
+        var barcodeInts = [Int]()
+        for index in barcode.characters {
+            let character = String(index)
+            if let convertedInteger = Int(character){
+                barcodeInts = barcodeInts + [convertedInteger]
+            }
+        }
+        //The checksum shown on the receipt
+        let barcodeChecksum = barcodeInts[barcodeInts.startIndex.advancedBy(barcodeInts.count-1)]
+        var actualChecksum = 0
+        print("Barcodeints: ")
+        print(barcodeInts)
+        
+        //Multiplies all even indicies by 1 and all odd by 3, then sums them.
+        for index in 0...barcodeInts.count-2{
+            if index%2 == 0{
+                barcodeInts[index] = barcodeInts[index]*1
+            }else if index%2 == 1{
+                barcodeInts[index] = barcodeInts[index]*3
+            }else{
+                print("dafuq, not possible...?")
+            }
+            actualChecksum = actualChecksum + barcodeInts[index]
+        }
+        
+        var closestNumberToActualChecksum = 0
+       
+        //Checks for the greatest closest %10 number.
+        for i in 1...10{
+            if ((actualChecksum+i) % 10) == 0{
+                closestNumberToActualChecksum = actualChecksum+i
+            }
+        }
+        actualChecksum = closestNumberToActualChecksum - actualChecksum
+        
+        print("Actual checksum: \(actualChecksum)")
+        print("Barcode checksum: \(barcodeChecksum)")
+
+        
+        if actualChecksum == barcodeChecksum{
+            print("OK. Checksums matches.")
+            return true
+        }else{
+            print("Photoshopped receipt.")
+            return false
+        }
+    }
+    
+    //Add the recycled amount to Firebase
+    private func addAmountToFirebase(amount : String){
+        
+    }
+    
+    //Validate the amount and key numbers in the EAN.
+    private func validateReceiptBarcode(barcode : String){
+        let barcodePrefix = barcode.substringToIndex(barcode.startIndex.advancedBy(1))
+        let barcodeAmount = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(8)..<barcode.endIndex.advancedBy(-1)))
+        
+        
+        //TODO IMORGON: AMOUNT, OCH KIKA SIFFRA 3 OCH 4 FÖR ATT VALIDERA OM GILTILG BUTIK.
+        
+        /* ------------Endast en tes om att det är så att om 9 så går det läsa kvitto, needs to be confirmed------------------*/
+        print("Checking if store uses reference system...")
+        let barcodeReferenceSystem = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(1)..<barcode.startIndex.advancedBy(2)))
+        
+        if barcodeReferenceSystem != "9" || barcodeReferenceSystem != "8"{
+            errorLabel.text = "Tjänst ej tillgänglig i denna butik."
+            errorLabel.textColor = UIColor.orangeColor()
+            print("Not a valid store - Store uses a reference system.")
+        }else{
+        /*------------------------------------------------------------------------------------------------------*/
+            print("Store OK - Does not use reference system.")
+            
+            print("Checking initial value...")
+            
+            if barcodePrefix != "9" || calculateBarcodeChecksum(barcode) != true{
+                errorLabel.text = "Ej giltligt kvitto scannat."
+                errorLabel.textColor = UIColor.redColor()
+            }else{
+                errorLabel.textColor = UIColor.greenColor()
+                errorLabel.text = "OK."
+            }
+            
+        
+        }
+    }
+    
+    
+    //Validate the receipt type. Only the type org.gs1.EAN-13 is used for receipts in Sweden.
+    private func validateReceiptType(barcode : String, barcodeType : String){
+        print("Validating if barcode is of type EAN-13...")
+        if barcodeType == validReceiptType{
+            print("Barcode type OK.")
+            validateReceiptBarcode(barcode)
+        }else{
+            errorLabel.text = "Inte ett giltligt pantkvitto"
+            errorLabel.textColor = UIColor.redColor()
+            print("Not a valid barcode type.")
+        }
+    }
+    
+    
+    
+    private func setupCaptureSession(){
+        self.captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let deviceInput:AVCaptureDeviceInput
+        do {
+            deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+        } catch {
+            return
+        }
+        
+        if (captureSession.canAddInput(deviceInput)){
+            // Show live feed
+            captureSession.addInput(deviceInput)
+            self.setupPreviewLayer({
+                self.captureSession.startRunning()
+                self.addMetaDataCaptureOutToSession()
+            })
+        } else {
+            self.showError("Error while setting up input captureSession.")
+        }
+    }
+    
+
+    private func setupPreviewLayer(completion:() -> ())
+    {
+        self.captureLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        
+        if let capLayer = self.captureLayer {
+            capLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            capLayer.frame = self.cameraView.frame
+            self.view.layer.addSublayer(capLayer)
+            completion()
+        } else {
+            self.showError("An error occured beginning video capture")
+        }
+    }
+    
+
+    private func addMetaDataCaptureOutToSession()
+    {
+        let metadata = AVCaptureMetadataOutput()
+        self.captureSession.addOutput(metadata)
+        metadata.metadataObjectTypes = metadata.availableMetadataObjectTypes
+        metadata.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
+    }
+    
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    {
+        for metadata in metadataObjects{
+            let decodedData:AVMetadataMachineReadableCodeObject = metadata as! AVMetadataMachineReadableCodeObject
+            //self.errorLabel.text = decodedData.stringValue
+            //self.lblDataType.text = decodedData.type
+            
+            validateReceiptType(decodedData.stringValue, barcodeType: decodedData.type)
+        }
+    }
+    
+
+
+    private func showError(error:String)
+    {
+        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .Alert)
+        let dismiss:UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Destructive, handler:{(alert:UIAlertAction) in
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        })
+        alertController.addAction(dismiss)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func backButton(sender: UIButton) {
+        let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
+    
+    }
     
 }

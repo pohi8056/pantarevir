@@ -249,7 +249,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="3O5-CG-oOq">
             <objects>
-                <viewController id="mFN-gL-Uup" customClass="MainMenuViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" id="mFN-gL-Uup" customClass="MainMenuViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NF3-yN-7Rz"/>
                         <viewControllerLayoutGuide type="bottom" id="lDV-CE-j1R"/>
@@ -439,15 +439,53 @@
                                     <constraint firstAttribute="width" constant="560" id="uij-ff-PpZ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZk-WU-IDT">
+                                <rect key="frame" x="20" y="536" width="560" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ktq-EH-8i3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Tillbaka"/>
+                                <connections>
+                                    <action selector="backButton:" destination="4C0-Kg-mte" eventType="touchUpInside" id="Yzu-Ew-xz9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw">
+                                <rect key="frame" x="20" y="28" width="560" height="410"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info om scanningen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHr-Qh-ha3">
+                                <rect key="frame" x="20" y="446" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="3t9-1J-M0a"/>
+                            <constraint firstItem="IZk-WU-IDT" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="91W-RF-dWp"/>
+                            <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="IZk-WU-IDT" secondAttribute="bottom" constant="20" id="Ohh-3H-k2O"/>
+                            <constraint firstItem="IZk-WU-IDT" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="QSw-BP-Qba"/>
+                            <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="162" id="SHa-cO-wvN"/>
+                            <constraint firstItem="IZk-WU-IDT" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="98" id="Y1H-SS-Bbw"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="top" secondItem="GPT-I3-8VL" secondAttribute="topMargin" id="Y8T-8o-oMU"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="ZRa-En-Ojq"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="8" id="e68-wa-Aa5"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="gHf-hh-pyZ" secondAttribute="bottom" id="eZo-Dz-1kW"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="ene-ea-boU"/>
+                            <constraint firstItem="eHr-Qh-ha3" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="euQ-7O-It2"/>
+                            <constraint firstItem="eHr-Qh-ha3" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="8" id="gGW-qn-2iq"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="iQK-yM-ibf"/>
+                            <constraint firstItem="eHr-Qh-ha3" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="tEr-Sn-LXl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="VGj-Wv-miw" id="uQy-cM-JGN"/>
+                        <outlet property="errorLabel" destination="eHr-Qh-ha3" id="qRS-QK-SNS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KW-iG-cQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" id="UKo-aD-lcQ">
@@ -936,6 +974,6 @@
         <image name="poppe" width="77" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yi9-HR-xPv"/>
+        <segue reference="3UG-f1-VLG"/>
     </inferredMetricsTieBreakers>
 </document>
