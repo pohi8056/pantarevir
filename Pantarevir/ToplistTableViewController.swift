@@ -39,10 +39,7 @@ class ToplistTableViewController: UITableViewController {
         //let ref = DataService.service.userRef
         
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
-            
-            
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                
                 for snap in snapshots {
                     
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
@@ -58,13 +55,9 @@ class ToplistTableViewController: UITableViewController {
                     
                     self.users.insert(UserInfo(name: name, amount: amount), atIndex: 0)
                 }
-                
             }
             
-            // Be sure that the tableView updates when there is new data.
-            
             self.users.sortInPlace({ $0.amount > $1.amount })
-            
             self.tableView.reloadData()
         })
     }

@@ -435,6 +435,24 @@
             </objects>
             <point key="canvasLocation" x="2280" y="-2408"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="h6J-i4-cIo">
+            <objects>
+                <viewController id="dct-Hk-P9l" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XvS-Hu-JjI"/>
+                        <viewControllerLayoutGuide type="bottom" id="I1h-VO-hFM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FUd-mV-fh2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfF-aI-c0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="-1735"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="0rf-0n-RqM">
             <objects>
@@ -570,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAF-Qx-2eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="-1224"/>
+            <point key="canvasLocation" x="2280" y="-1040"/>
         </scene>
         <!--Toplist Table View Controller-->
         <scene sceneID="q8G-X9-ris">
@@ -648,7 +666,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfb-Vj-eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="-1224.5"/>
+            <point key="canvasLocation" x="3008" y="-1040.5"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
