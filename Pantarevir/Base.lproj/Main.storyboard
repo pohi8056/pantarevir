@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -365,6 +365,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="REVIRKARTA"/>
+                                <connections>
+                                    <segue destination="dct-Hk-P9l" kind="show" identifier="fromMainMenuToMapSegue" id="Fqg-wP-Jis"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_karta" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-lg-d5v">
                                 <rect key="frame" x="530" y="273" width="53" height="50"/>
@@ -494,6 +497,65 @@
                 </imageView>
             </objects>
             <point key="canvasLocation" x="2280" y="-2408"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="h6J-i4-cIo">
+            <objects>
+                <viewController id="dct-Hk-P9l" customClass="MapViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XvS-Hu-JjI"/>
+                        <viewControllerLayoutGuide type="bottom" id="I1h-VO-hFM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FUd-mV-fh2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6B9-FN-7F4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knS-Ch-Q8P">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="58"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq5-XF-9gW">
+                                        <rect key="frame" x="8" y="24" width="26" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="ET6-l2-Y5y"/>
+                                            <constraint firstAttribute="width" constant="26" id="ukO-dq-Mqu"/>
+                                        </constraints>
+                                        <state key="normal" image="back_arrow copy">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="mFN-gL-Uup" kind="show" identifier="fromMapToMainMenuSegue" id="XSG-aJ-MqI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cq5-XF-9gW" firstAttribute="top" secondItem="knS-Ch-Q8P" secondAttribute="top" constant="24" id="16p-pT-z1l"/>
+                                    <constraint firstAttribute="height" constant="58" id="FQk-V9-daz"/>
+                                    <constraint firstItem="cq5-XF-9gW" firstAttribute="leading" secondItem="knS-Ch-Q8P" secondAttribute="leading" constant="8" id="Fmn-Ml-yTa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="knS-Ch-Q8P" firstAttribute="trailing" secondItem="6B9-FN-7F4" secondAttribute="trailing" id="4TI-zS-l1Y"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="top" secondItem="FUd-mV-fh2" secondAttribute="top" id="4x6-q2-Ya4"/>
+                            <constraint firstItem="knS-Ch-Q8P" firstAttribute="top" secondItem="6B9-FN-7F4" secondAttribute="top" id="6hH-zx-LXJ"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="leading" secondItem="FUd-mV-fh2" secondAttribute="leading" id="NiN-x6-7TO"/>
+                            <constraint firstAttribute="trailing" secondItem="6B9-FN-7F4" secondAttribute="trailing" id="WFU-G8-Tdw"/>
+                            <constraint firstItem="knS-Ch-Q8P" firstAttribute="leading" secondItem="6B9-FN-7F4" secondAttribute="leading" id="e5w-7Y-UPn"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="bottom" secondItem="I1h-VO-hFM" secondAttribute="top" id="nQq-gR-gsb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="6B9-FN-7F4" id="cJZ-cd-2Cq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfF-aI-c0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="-1735"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="0rf-0n-RqM">
@@ -630,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAF-Qx-2eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="-1224"/>
+            <point key="canvasLocation" x="2280" y="-1040"/>
         </scene>
         <!--Toplist Table View Controller-->
         <scene sceneID="q8G-X9-ris">
@@ -649,7 +711,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzy-h3-bgV" id="beo-Qy-AkV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppe" translatesAutoresizingMaskIntoConstraints="NO" id="P6d-zy-PuU">
@@ -708,7 +770,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfb-Vj-eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="-1224.5"/>
+            <point key="canvasLocation" x="3008" y="-1040.5"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
@@ -963,6 +1025,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back_arrow copy" width="82" height="82"/>
         <image name="bg_gray" width="2362" height="1581"/>
         <image name="bg_moreblur" width="2362" height="1581"/>
         <image name="icon_din_statistik" width="792" height="792"/>

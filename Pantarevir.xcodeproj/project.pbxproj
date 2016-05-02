@@ -28,6 +28,7 @@
 		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
+		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		635DDA1B1CC06D8C00AA6503 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				636E4C901CD79BDD00904A43 /* MapViewController.swift */,
 				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
 				636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */,
 				636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */,
@@ -398,6 +401,7 @@
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
+				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
