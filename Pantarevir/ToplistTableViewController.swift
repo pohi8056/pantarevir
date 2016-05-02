@@ -11,7 +11,8 @@ import Firebase
 
 class ToplistTableViewController: UITableViewController {
 
-    var users = [String]()
+    var users = [UserInfo]()
+    var names = [String]()
     var amounts = [String]()
     var profilePictures = [UIImageView]()
     
@@ -39,35 +40,30 @@ class ToplistTableViewController: UITableViewController {
         
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             
-            // The snapshot is a current look at our jokes data.
-            
-            //print("KOLLA: \(snapshot.value)")
             
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
                 for snap in snapshots {
                     
-                    // Make our jokes array for the tableView.
-                    
-                    
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
                     let amount = snap.value.objectForKey("total") as! String
-                    let facebookID = snap.value.objectForKey("fbID") as! String
+                    
+                    //För att fixa FB-profilbilderna
+                    /*let facebookID = snap.value.objectForKey("fbID") as! String
                     let loginService = snapshot.value.objectForKey("provider") as! String
                     
                     if loginService == "facebook" {
                     
-                    }
-                        
-                    self.users.insert(name, atIndex: 0)
-                    self.amounts.insert(amount, atIndex: 0)
-                    //print("USERS: \(self.users)")
+                    }*/
                     
+                    self.users.insert(UserInfo(name: name, amount: amount), atIndex: 0)
                 }
                 
             }
             
             // Be sure that the tableView updates when there is new data.
+            
+            self.users.sortInPlace({ $0.amount > $1.amount })
             
             self.tableView.reloadData()
         })
@@ -95,13 +91,12 @@ class ToplistTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ToplistTableViewCell
         
         let user = users[indexPath.row]
-        let amount = amounts[indexPath.row]
-        let profilePicture = profilePictures[indexPath.row]
+        //let profilePicture = profilePictures[indexPath.row]
 
         cell.positionLabel.text = "\(indexPath.row + 1)."
-        cell.nameLabel.text = user
-        cell.amountLabel.text = "\(amount) kr"
-        cell.profilePicture.image = profilePicture.image
+        cell.nameLabel.text = user.name
+        cell.amountLabel.text = "\(user.amount) kr"
+        //cell.profilePicture.image = profilePicture.image
         
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
