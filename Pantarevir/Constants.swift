@@ -9,3 +9,4 @@
 import Foundation
 
 let ROOT_URL = "https://pantarevir.firebaseio.com/"
+let validReceiptType = "org.gs1.EAN-13"
