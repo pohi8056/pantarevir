@@ -51,7 +51,6 @@ class MainMenuViewController: UIViewController {
                 print("Error retrieving or displaying the user's name.")
         })
  
- 
     }
     
     

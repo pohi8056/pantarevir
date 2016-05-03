@@ -44,7 +44,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         //The checksum shown on the receipt
         let barcodeChecksum = barcodeInts[barcodeInts.startIndex.advancedBy(barcodeInts.count-1)]
         var actualChecksum = 0
-        print("Barcodeints: ")
+        print("Barcode in integers: ")
         print(barcodeInts)
         
         //Multiplies all even indicies by 1 and all odd by 3, then sums them.
@@ -54,14 +54,14 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             }else if index%2 == 1{
                 barcodeInts[index] = barcodeInts[index]*3
             }else{
-                print("dafuq, not possible...?")
+                print("MAJOR ERROR, not possible...?")
             }
             actualChecksum = actualChecksum + barcodeInts[index]
         }
         
         var closestNumberToActualChecksum = 0
        
-        //Checks for the greatest closest %10 number.
+        //Checks for the greatest closest modulus 10 number.
         for i in 1...10{
             if ((actualChecksum+i) % 10) == 0{
                 closestNumberToActualChecksum = actualChecksum+i
@@ -82,57 +82,76 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         }
     }
     
+    
+    //Convert the string amount to Double and check if reasonable.
+     private func validateAmountOfReceipt(receiptAmount : String) -> Bool{
+        print("Validating amount of receipt...")
+        let amountDouble = Double(receiptAmount)!/10.0
+        
+        if amountDouble < 0.0 || amountDouble > 1000.0{
+            print("The amount \(amountDouble) is unreasonable")
+            return false
+        }else{
+            print("Amount OK.")
+            return true
+        }
+    }
+ 
+ 
     //Add the recycled amount to Firebase
     private func addAmountToFirebase(amount : String){
         
     }
     
-    //Validate the amount and key numbers in the EAN.
-    private func validateReceiptBarcode(barcode : String){
+    //Validate the amount and key numbers in the EAN. True if all is ok.
+    private func validateReceiptBarcode(barcode : String) -> Bool{
         let barcodePrefix = barcode.substringToIndex(barcode.startIndex.advancedBy(1))
         let barcodeAmount = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(8)..<barcode.endIndex.advancedBy(-1)))
-        
+        let barcode23 = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(2)..<barcode.startIndex.advancedBy(4))) //inte testat
+
         
         //TODO IMORGON: AMOUNT, OCH KIKA SIFFRA 3 OCH 4 FÖR ATT VALIDERA OM GILTILG BUTIK.
-        
+        //print("23!!! \(barcode23)")
         /* ------------Endast en tes om att det är så att om 9 så går det läsa kvitto, needs to be confirmed------------------*/
         print("Checking if store uses reference system...")
         let barcodeReferenceSystem = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(1)..<barcode.startIndex.advancedBy(2)))
         
-        if barcodeReferenceSystem != "9" || barcodeReferenceSystem != "8"{
+        if (barcodeReferenceSystem != "9" || barcodeReferenceSystem != "8") && barcode23 != "99"{
             errorLabel.text = "Tjänst ej tillgänglig i denna butik."
             errorLabel.textColor = UIColor.orangeColor()
             print("Not a valid store - Store uses a reference system.")
         }else{
         /*------------------------------------------------------------------------------------------------------*/
             print("Store OK - Does not use reference system.")
-            
             print("Checking initial value...")
             
-            if barcodePrefix != "9" || calculateBarcodeChecksum(barcode) != true{
+            if barcodePrefix != "9" || calculateBarcodeChecksum(barcode) != true || validateAmountOfReceipt(barcodeAmount) != true{
                 errorLabel.text = "Ej giltligt kvitto scannat."
                 errorLabel.textColor = UIColor.redColor()
             }else{
                 errorLabel.textColor = UIColor.greenColor()
-                errorLabel.text = "OK."
+                errorLabel.text = "Everything OK."
+                return true
             }
-            
-        
         }
+        return false
     }
     
     
     //Validate the receipt type. Only the type org.gs1.EAN-13 is used for receipts in Sweden.
-    private func validateReceiptType(barcode : String, barcodeType : String){
+    private func validateReceiptType(barcode : String, barcodeType : String) -> Bool{
         print("Validating if barcode is of type EAN-13...")
         if barcodeType == validReceiptType{
             print("Barcode type OK.")
-            validateReceiptBarcode(barcode)
+            if validateReceiptBarcode(barcode) == true{
+                return true
+            }
         }else{
             errorLabel.text = "Inte ett giltligt pantkvitto"
             errorLabel.textColor = UIColor.redColor()
             print("Not a valid barcode type.")
         }
+        return false
     }
     
     
@@ -189,7 +208,9 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             //self.errorLabel.text = decodedData.stringValue
             //self.lblDataType.text = decodedData.type
             
-            validateReceiptType(decodedData.stringValue, barcodeType: decodedData.type)
+            if validateReceiptType(decodedData.stringValue, barcodeType: decodedData.type) == true{
+                //koden om bra kvitto
+            }
         }
     }
     
