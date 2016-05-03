@@ -23,8 +23,6 @@ class ToplistTableViewController: UITableViewController {
     }
     
     func loadUsers() {
-        //let ref = DataService.service.userRef
-        
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
@@ -32,21 +30,48 @@ class ToplistTableViewController: UITableViewController {
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
                     let amount = snap.value.objectForKey("total") as! String
                     
+                    
                     //För att fixa FB-profilbilderna
-                    /*let facebookID = snap.value.objectForKey("fbID") as! String
-                    let loginService = snapshot.value.objectForKey("provider") as! String
+                    let facebookID = snap.value.objectForKey("fbID") as! String
+                    let loginService = snap.value.objectForKey("provider") as! String
                     
                     if loginService == "facebook" {
-                    
-                    }*/
-                    
-                    self.users.insert(UserInfo(name: name, amount: amount), atIndex: 0)
+                        
+                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
+                        let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
+                        
+                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture!), atIndex: 0)
+                    }
+                    else {
+                        let pic : UIImage = UIImage(named: "empty.png")!
+                        let profilePicture = UIImageView(image: pic)
+                        
+                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture), atIndex: 0)
+                    }
                 }
             }
-            
             self.users.sortInPlace({ $0.amount > $1.amount })
             self.tableView.reloadData()
         })
+    }
+    
+    func setProfileImage(imageURL : NSURL) -> UIImageView {
+        let obtainedImage = NSData(contentsOfURL: imageURL)
+        let profilePicture : UIImageView = UIImageView(image: UIImage(data: obtainedImage!))
+        if obtainedImage != nil{
+            profilePicture.image = UIImage(data: obtainedImage!)!
+            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+            imageView.contentMode = .ScaleAspectFill
+            imageView.image = profilePicture.image
+            imageView.layer.cornerRadius = square.width/2
+            imageView.layer.masksToBounds = true
+            UIGraphicsBeginImageContext(imageView.bounds.size)
+            let context = UIGraphicsGetCurrentContext()
+            imageView.layer.renderInContext(context!)
+            profilePicture.image = UIGraphicsGetImageFromCurrentImageContext()
+        }
+        return profilePicture
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,7 +101,7 @@ class ToplistTableViewController: UITableViewController {
         cell.positionLabel.text = "\(indexPath.row + 1)."
         cell.nameLabel.text = user.name
         cell.amountLabel.text = "\(user.amount) kr"
-        //cell.profilePicture.image = profilePicture.image
+        cell.profilePicture.image = user.profilePicture.image
         
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero

@@ -13,12 +13,12 @@ class UserInfo{
     
     var name: String
     var amount: String
-    //var profilePicture: UIImageView
+    var profilePicture: UIImageView
     
-    //TODO: Insert profilePicture in init()!
-    init(name: String, amount: String){
+    init(name: String, amount: String, profilePicture: UIImageView){
         self.name = name
         self.amount = amount
+        self.profilePicture = profilePicture
     }
     
     func returnName() -> String{
