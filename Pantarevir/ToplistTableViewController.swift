@@ -22,19 +22,6 @@ class ToplistTableViewController: UITableViewController {
         loadUsers()
     }
     
-    /*func loadUsers() {
-        let user1 = "Pontus"
-        let user2 = "Anton"
-        let user3 = "Lukas"
-        
-        let amount1 = "332"
-        let amount2 = "237"
-        let amount3 = "97"
-        
-        users += [user1, user2, user3]
-        amounts += [amount1, amount2, amount3]
-    }*/
-    
     func loadUsers() {
         //let ref = DataService.service.userRef
         
@@ -98,14 +85,14 @@ class ToplistTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+        return 48.0
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, 120))
+        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height))
         
         view.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
         view.layer.opacity = 50
@@ -113,6 +100,8 @@ class ToplistTableViewController: UITableViewController {
         
         cell.contentView.addSubview(view)
         cell.contentView.sendSubviewToBack(view)
+        
+        //tableView.tableFooterView = UIView(frame: .zero)
     }
     
     /*
