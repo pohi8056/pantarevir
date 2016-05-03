@@ -785,6 +785,10 @@
                             <constraint firstItem="MZY-gL-V6b" firstAttribute="centerX" secondItem="CgT-iD-wZj" secondAttribute="centerX" id="uTS-iG-KNj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="totaltOutlet" destination="15w-ne-3v5" id="otM-Vv-zBg"/>
+                        <outlet property="veckaOutlet" destination="j8X-kq-38u" id="AGW-xI-nVN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAF-Qx-2eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
