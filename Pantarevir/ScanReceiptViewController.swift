@@ -7,7 +7,7 @@
 //  sitepoint.com/creating-barcode-metadata-reader-ios/
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{

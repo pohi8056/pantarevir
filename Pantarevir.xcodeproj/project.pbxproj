@@ -24,11 +24,16 @@
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630178A81CC4FAD200769027 /* ToplistViewController.swift */; };
 		632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */; };
-		635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA191CC06BB600AA6503 /* SWRevealViewController.m */; };
 		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
 		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
+		B0F363B11CD9148E000D6D30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F363B01CD9148E000D6D30 /* MapKit.framework */; };
+		B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */; };
+		B0F363BC1CD91746000D6D30 /* MKRevirCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */; };
+		B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */; };
+		B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */; };
+		B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363C11CD918A5000D6D30 /* Revir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +77,17 @@
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		630178A81CC4FAD200769027 /* ToplistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistViewController.swift; sourceTree = "<group>"; };
 		632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewCell.swift; sourceTree = "<group>"; };
-		635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
-		635DDA181CC06BB600AA6503 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		635DDA191CC06BB600AA6503 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		635DDA1B1CC06D8C00AA6503 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B0F363AC1CD913C4000D6D30 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0F363B01CD9148E000D6D30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirAnnotation.swift; sourceTree = "<group>"; };
+		B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirCircle.swift; sourceTree = "<group>"; };
+		B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevirAnnotationView.swift; sourceTree = "<group>"; };
+		B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirCircleRenderer.swift; sourceTree = "<group>"; };
+		B0F363C11CD918A5000D6D30 /* Revir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Revir.swift; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F363B11CD9148E000D6D30 /* MapKit.framework in Frameworks */,
 				52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,26 +144,24 @@
 		3A50AB211CBD1C5000BD7B1B /* Pantarevir */ = {
 			isa = PBXGroup;
 			children = (
-				635DDA161CC06BA400AA6503 /* SWRevealViewController */,
+				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
 				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
-				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
 				636E4C901CD79BDD00904A43 /* MapViewController.swift */,
-				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
-				636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */,
-				636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */,
-				632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */,
-				630178A81CC4FAD200769027 /* ToplistViewController.swift */,
-				635DDA1B1CC06D8C00AA6503 /* MenuController.swift */,
+				B0F363AB1CD91133000D6D30 /* Scan */,
+				B0F363A91CD9109A000D6D30 /* Settings */,
+				B0F363AA1CD9111C000D6D30 /* Menu */,
+				B0F363A81CD9103D000D6D30 /* Toplist */,
 				3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */,
 				3A90A8BC1CBD2D4600D32D65 /* DataService.swift */,
+				B0F363B21CD91531000D6D30 /* RevirMaps */,
 				3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */,
-				3A90A8B41CBD2A2D00D32D65 /* MainMenuViewController.swift */,
 				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
 				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
 				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
 				3A50AB2E1CBD1C5100BD7B1B /* Info.plist */,
+				B0F363AC1CD913C4000D6D30 /* Pantarevir-Bridging-Header.h */,
 			);
 			path = Pantarevir;
 			sourceTree = "<group>";
@@ -176,14 +184,51 @@
 			path = PantarevirUITests;
 			sourceTree = "<group>";
 		};
-		635DDA161CC06BA400AA6503 /* SWRevealViewController */ = {
+		B0F363A81CD9103D000D6D30 /* Toplist */ = {
 			isa = PBXGroup;
 			children = (
-				635DDA181CC06BB600AA6503 /* SWRevealViewController.h */,
-				635DDA191CC06BB600AA6503 /* SWRevealViewController.m */,
-				635DDA171CC06BB500AA6503 /* Pantarevir-Bridging-Header.h */,
+				636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */,
+				630178A81CC4FAD200769027 /* ToplistViewController.swift */,
+				632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */,
 			);
-			name = SWRevealViewController;
+			name = Toplist;
+			sourceTree = "<group>";
+		};
+		B0F363A91CD9109A000D6D30 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B0F363AA1CD9111C000D6D30 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				635DDA1B1CC06D8C00AA6503 /* MenuController.swift */,
+				3A90A8B41CBD2A2D00D32D65 /* MainMenuViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		B0F363AB1CD91133000D6D30 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
+			);
+			name = Scan;
+			sourceTree = "<group>";
+		};
+		B0F363B21CD91531000D6D30 /* RevirMaps */ = {
+			isa = PBXGroup;
+			children = (
+				B0F363C11CD918A5000D6D30 /* Revir.swift */,
+				B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */,
+				B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */,
+				B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */,
+				B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */,
+			);
+			name = RevirMaps;
 			sourceTree = "<group>";
 		};
 		D9FFC7A48B8AA5DD85261D71 /* Pods */ = {
@@ -198,6 +243,7 @@
 		DC981F1BF50E04D75D67B869 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0F363B01CD9148E000D6D30 /* MapKit.framework */,
 				CFC13975D2AA81C9331ADD0B /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -274,7 +320,12 @@
 				TargetAttributes = {
 					3A50AB1E1CBD1C5000BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 6X7A5PH8N2;
+						DevelopmentTeam = L5HGLF5QBY;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3A50AB321CBD1C5100BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
@@ -386,22 +437,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */,
 				635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */,
 				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
 				3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */,
 				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
+				B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */,
 				3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */,
-				635DDA1A1CC06BB600AA6503 /* SWRevealViewController.m in Sources */,
 				636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
 				636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */,
 				630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
+				B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */,
+				B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */,
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
 				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
+				B0F363BC1CD91746000D6D30 /* MKRevirCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +607,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
@@ -571,7 +626,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
