@@ -30,7 +30,6 @@
 		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
 		B0F363B11CD9148E000D6D30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F363B01CD9148E000D6D30 /* MapKit.framework */; };
 		B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */; };
-		B0F363BC1CD91746000D6D30 /* MKRevirCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */; };
 		B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */; };
 		B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */; };
 		B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363C11CD918A5000D6D30 /* Revir.swift */; };
@@ -84,7 +83,6 @@
 		B0F363AC1CD913C4000D6D30 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0F363B01CD9148E000D6D30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirAnnotation.swift; sourceTree = "<group>"; };
-		B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirCircle.swift; sourceTree = "<group>"; };
 		B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevirAnnotationView.swift; sourceTree = "<group>"; };
 		B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirCircleRenderer.swift; sourceTree = "<group>"; };
 		B0F363C11CD918A5000D6D30 /* Revir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Revir.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			children = (
 				B0F363C11CD918A5000D6D30 /* Revir.swift */,
 				B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */,
-				B0F363B71CD91746000D6D30 /* MKRevirCircle.swift */,
 				B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */,
 				B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */,
 			);
@@ -456,7 +453,6 @@
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
 				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
-				B0F363BC1CD91746000D6D30 /* MKRevirCircle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
