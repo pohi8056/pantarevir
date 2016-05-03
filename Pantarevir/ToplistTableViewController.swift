@@ -11,6 +11,7 @@ import Firebase
 
 class ToplistTableViewController: UITableViewController {
 
+    var veckaState: Bool?
     var users = [UserInfo]()
     var names = [String]()
     var amounts = [String]()

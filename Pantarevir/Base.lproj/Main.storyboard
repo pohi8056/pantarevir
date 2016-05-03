@@ -670,7 +670,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-gL-V6b">
                                 <rect key="frame" x="0.0" y="168" width="600" height="432"/>
                                 <connections>
-                                    <segue destination="mjs-kq-pvB" kind="embed" id="KdM-YV-AP7"/>
+                                    <segue destination="mjs-kq-pvB" kind="embed" identifier="fromToplistToToplistTable" id="KdM-YV-AP7"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXb-2W-zRy">
@@ -726,6 +726,9 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="totaltButton:" destination="N1K-pk-cBC" eventType="touchUpInside" id="YTG-OO-uC0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-kq-38u">
                                         <rect key="frame" x="480" y="17" width="47" height="36"/>
@@ -734,6 +737,9 @@
                                             <color key="titleColor" red="0.54160657050000005" green="0.54160657050000005" blue="0.54160657050000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" red="0.77816506409999997" green="0.77816506409999997" blue="0.77816506409999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="veckaButton:" destination="N1K-pk-cBC" eventType="touchUpInside" id="18z-Rh-Pl5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -789,7 +795,7 @@
             <objects>
                 <tableViewController id="mjs-kq-pvB" customClass="ToplistTableViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="qjs-dB-1hg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="0.40250538793103446" colorSpace="calibratedWhite"/>
@@ -1129,6 +1135,6 @@
         <image name="poppe" width="77" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3UG-f1-VLG"/>
+        <segue reference="Yi9-HR-xPv"/>
     </inferredMetricsTieBreakers>
 </document>

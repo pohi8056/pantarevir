@@ -9,7 +9,17 @@
 import UIKit
 
 class ToplistViewController: UIViewController {
-
+    
+    /*@IBAction func veckaButton(sender: UIButton) {
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("ToplistTableViewController") as! ToplistTableViewController
+        controller.veckaState = true
+    }
+    
+    @IBAction func totaltButton(sender: UIButton) {
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("ToplistTableViewController") as! ToplistTableViewController
+        controller.veckaState = false
+    }*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +31,6 @@ class ToplistViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
