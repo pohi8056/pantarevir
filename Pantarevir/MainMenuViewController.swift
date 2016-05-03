@@ -42,7 +42,7 @@ class MainMenuViewController: UIViewController {
             let loginService = snapshot.value.objectForKey("provider") as! String
             
             if loginService == "facebook"{
-                let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=large")
+                let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                 self.setProfileImage(facebookProfilePictureURL!)
             }
             self.nameLabel.text = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
@@ -50,7 +50,6 @@ class MainMenuViewController: UIViewController {
             }, withCancelBlock: { error in
                 print("Error retrieving or displaying the user's name.")
         })
- 
  
     }
     

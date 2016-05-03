@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class ToplistTableViewController: UITableViewController {
 
-    var users = [String]()
+    var users = [UserInfo]()
+    var names = [String]()
+    var amounts = [String]()
+    var profilePictures = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +23,57 @@ class ToplistTableViewController: UITableViewController {
     }
     
     func loadUsers() {
-        let user1 = "Pontus"
-        let user2 = "Anton"
-        let user3 = "Lukas"
-        
-        users += [user1, user2, user3]
-        
+        DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    
+                    let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
+                    let amount = snap.value.objectForKey("total") as! String
+                    
+                    
+                    //För att fixa FB-profilbilderna
+                    let facebookID = snap.value.objectForKey("fbID") as! String
+                    let loginService = snap.value.objectForKey("provider") as! String
+                    
+                    if loginService == "facebook" {
+                        
+                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
+                        let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
+                        
+                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture!), atIndex: 0)
+                    }
+                    else {
+                        let pic : UIImage = UIImage(named: "empty.png")!
+                        let profilePicture = UIImageView(image: pic)
+                        
+                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture), atIndex: 0)
+                    }
+                }
+            }
+            self.users.sortInPlace({ $0.amount > $1.amount })
+            self.tableView.reloadData()
+        })
     }
-
+    
+    func setProfileImage(imageURL : NSURL) -> UIImageView {
+        let obtainedImage = NSData(contentsOfURL: imageURL)
+        let profilePicture : UIImageView = UIImageView(image: UIImage(data: obtainedImage!))
+        if obtainedImage != nil{
+            profilePicture.image = UIImage(data: obtainedImage!)!
+            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
+            imageView.contentMode = .ScaleAspectFill
+            imageView.image = profilePicture.image
+            imageView.layer.cornerRadius = square.width/2
+            imageView.layer.masksToBounds = true
+            UIGraphicsBeginImageContext(imageView.bounds.size)
+            let context = UIGraphicsGetCurrentContext()
+            imageView.layer.renderInContext(context!)
+            profilePicture.image = UIGraphicsGetImageFromCurrentImageContext()
+        }
+        return profilePicture
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,30 +96,39 @@ class ToplistTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ToplistTableViewCell
         
         let user = users[indexPath.row]
+        //let profilePicture = profilePictures[indexPath.row]
 
-        cell.nameLabel.text = user
+        cell.positionLabel.text = "\(indexPath.row + 1)."
+        cell.nameLabel.text = user.name
+        cell.amountLabel.text = "\(user.amount) kr"
+        cell.profilePicture.image = user.profilePicture.image
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+        return 48.0
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         cell.contentView.backgroundColor = UIColor.clearColor()
         
-        let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, 120))
+        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height))
         
-        whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
-        whiteRoundedView.layer.opacity = 50
-        whiteRoundedView.layer.masksToBounds = false
+        view.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
+        view.layer.opacity = 50
+        view.layer.masksToBounds = false
         
-        cell.contentView.addSubview(whiteRoundedView)
-        cell.contentView.sendSubviewToBack(whiteRoundedView)
+        cell.contentView.addSubview(view)
+        cell.contentView.sendSubviewToBack(view)
+        
+        //tableView.tableFooterView = UIView(frame: .zero)
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

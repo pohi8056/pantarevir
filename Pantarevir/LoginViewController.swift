@@ -81,6 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }else{
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                     self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+                    print("Logged in successfully via email/password")
                 }
                 
             })

@@ -20,6 +20,7 @@
 		3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */; };
 		3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BC1CBD2D4600D32D65 /* DataService.swift */; };
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
+		3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630178A81CC4FAD200769027 /* ToplistViewController.swift */; };
 		632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */; };
@@ -27,6 +28,7 @@
 		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
+		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A90A8BC1CBD2D4600D32D65 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanReceiptViewController.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		630178A81CC4FAD200769027 /* ToplistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistViewController.swift; sourceTree = "<group>"; };
 		632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		635DDA1B1CC06D8C00AA6503 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CFC13975D2AA81C9331ADD0B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1901AB9E4B130491AED80F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,8 @@
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
+				636E4C901CD79BDD00904A43 /* MapViewController.swift */,
+				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
 				636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */,
 				636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */,
 				632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */,
@@ -393,7 +399,9 @@
 				630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */,
 				3A50AB531CBD299300BD7B1B /* ForgotPasswordViewController.swift in Sources */,
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
+				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
+				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +477,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -514,6 +523,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -539,6 +549,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
@@ -557,6 +568,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
@@ -570,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PantarevirTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
@@ -582,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PantarevirTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirTests;
@@ -593,6 +607,7 @@
 		3A50AB4E1CBD1C5100BD7B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PantarevirUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;
@@ -604,6 +619,7 @@
 		3A50AB4F1CBD1C5100BD7B1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PantarevirUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.PantarevirUITests;

@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PantarevirUITests/FBSDKLoginKit.framework"
   install_framework "Pods-PantarevirUITests/FBSDKShareKit.framework"
   install_framework "Pods-PantarevirUITests/Firebase.framework"
+  install_framework "Pods-PantarevirUITests/TesseractOCR.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PantarevirUITests/Bolts.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PantarevirUITests/FBSDKLoginKit.framework"
   install_framework "Pods-PantarevirUITests/FBSDKShareKit.framework"
   install_framework "Pods-PantarevirUITests/Firebase.framework"
+  install_framework "Pods-PantarevirUITests/TesseractOCR.framework"
 fi
