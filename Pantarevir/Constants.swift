@@ -10,3 +10,5 @@ import Foundation
 
 let ROOT_URL = "https://pantarevir.firebaseio.com/"
 let validReceiptType = "org.gs1.EAN-13"
+
+let uppsalaRevirURL = "https://mappapptest.firebaseio.com/cities/uppsala/revir"
