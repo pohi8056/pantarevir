@@ -146,7 +146,6 @@
 				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
-				636E4C901CD79BDD00904A43 /* MapViewController.swift */,
 				B0F363AB1CD91133000D6D30 /* Scan */,
 				B0F363A91CD9109A000D6D30 /* Settings */,
 				B0F363AA1CD9111C000D6D30 /* Menu */,
@@ -220,6 +219,7 @@
 		B0F363B21CD91531000D6D30 /* RevirMaps */ = {
 			isa = PBXGroup;
 			children = (
+				636E4C901CD79BDD00904A43 /* MapViewController.swift */,
 				B0F363C11CD918A5000D6D30 /* Revir.swift */,
 				B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */,
 				B0F363BF1CD91837000D6D30 /* MKRevirCircleRenderer.swift */,
