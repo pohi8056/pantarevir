@@ -10,26 +10,39 @@ import UIKit
 
 class ToplistViewController: UIViewController {
     
-    /*@IBAction func veckaButton(sender: UIButton) {
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("ToplistTableViewController") as! ToplistTableViewController
-        controller.veckaState = true
-    }
-    
-    @IBAction func totaltButton(sender: UIButton) {
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("ToplistTableViewController") as! ToplistTableViewController
-        controller.veckaState = false
-    }*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    var containedVC: ToplistTableViewController!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "embedContainedToplist" {
+            containedVC = segue.destinationViewController as! ToplistTableViewController
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //var buttonVeckaState: Bool = true
+    
+    @IBAction func veckaButton(sender: UIButton) {
+        containedVC.setVeckaState(true)
+        //buttonVeckaState = true
+        
+        //veckaButton.titleLabel.textColor = UIColor.whiteColor()
+    }
+    
+    @IBAction func totaltButton(sender: UIButton) {
+        containedVC.setVeckaState(false)
+        //buttonVeckaState = false
+    }
+    
     
     /*
     // MARK: - Navigation
