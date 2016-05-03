@@ -11,6 +11,7 @@ import Firebase
 
 class ToplistTableViewController: UITableViewController {
 
+    var veckaState: Bool?
     var users = [UserInfo]()
     var names = [String]()
     var amounts = [String]()
@@ -18,8 +19,15 @@ class ToplistTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadUsers()
+    }
+    
+    func setVeckaState(state: Bool) {
+        if (state != veckaState) {
+            users.removeAll()
+            self.veckaState = state
+            loadUsers()
+        }
     }
     
     func loadUsers() {
@@ -28,8 +36,14 @@ class ToplistTableViewController: UITableViewController {
                 for snap in snapshots {
                     
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
-                    let amount = snap.value.objectForKey("total") as! String
+                    let amount: String?
                     
+                    if self.veckaState == false {
+                        amount = snap.value.objectForKey("total") as? String
+                    }
+                    else {
+                        amount = snap.value.objectForKey("weekly") as? String
+                    }
                     
                     //För att fixa FB-profilbilderna
                     let facebookID = snap.value.objectForKey("fbID") as! String
@@ -40,13 +54,13 @@ class ToplistTableViewController: UITableViewController {
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                         let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture!), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture!), atIndex: 0)
                     }
                     else {
                         let pic : UIImage = UIImage(named: "empty.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture), atIndex: 0)
                     }
                 }
             }
