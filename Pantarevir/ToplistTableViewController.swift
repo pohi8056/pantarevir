@@ -115,7 +115,7 @@ class ToplistTableViewController: UITableViewController {
         cell.positionLabel.text = "\(indexPath.row + 1)."
         cell.nameLabel.text = user.name
         cell.amountLabel.text = "\(user.amount) kr"
-        cell.profilePicture.image = user.profilePicture.image
+        cell.profilePicture.image = user.profilePicture!.image
         
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero

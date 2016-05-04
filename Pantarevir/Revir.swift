@@ -6,6 +6,7 @@
 //  Copyright © 2016 Lulbasaurus X. All rights reserved.
 //
 
+
 import Foundation
 import MapKit
 import Firebase
@@ -26,6 +27,7 @@ class Revir{
     private var currentUserID: String?
     
 
+    // M I A M I   <3   V I C E
     
     init(name: String, latitude: Double, longitude: Double, userID: String, radius: CLLocationDistance, intColor: Int){
         
@@ -43,8 +45,14 @@ class Revir{
             self.color = UIColor.cyanColor()
         case 3:
             self.color = UIColor.yellowColor()
+        case 4:
+            self.color = UIColor.orangeColor()
+        case 5:
+            self.color = UIColor.magentaColor()
+        case 6:
+            self.color = UIColor.greenColor()
         default:
-            self.color = UIColor.purpleColor()
+            self.color = UIColor.blackColor()
         }
         self.revirCircle = createAndReturnRevirCircle(latitude, andLongitude: longitude, radius: radius, name: name, color: self.color!)
     }
@@ -53,7 +61,8 @@ class Revir{
     
     
     func createAndReturnRevirCircle(latitude: Double, andLongitude longitude: Double,radius: CLLocationDistance ,name: String, color: UIColor) -> MKCircle{
-     print("create")
+        
+        print("create")
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         //self.revirCircle = MKRevirCircle(centerCoordinate: coordinates, radius: radius)
