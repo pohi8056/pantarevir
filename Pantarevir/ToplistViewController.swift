@@ -17,7 +17,7 @@ class ToplistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
+        //veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
     }
 
@@ -38,14 +38,16 @@ class ToplistViewController: UIViewController {
     
     @IBAction func veckaButton(sender: UIButton) {
         containedVC.setVeckaState(true)
-        sender.titleLabel?.textColor = UIColor.whiteColor()
-        totaltOutlet.titleLabel?.textColor = UIColor.grayColor()
+        //veckaOutlet.titleLabel?.textColor = UIColor.whiteColor()
+        veckaOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        totaltOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+
     }
     
     @IBAction func totaltButton(sender: UIButton) {
         containedVC.setVeckaState(false)
-        sender.titleLabel?.textColor = UIColor.whiteColor()
-        veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
+        totaltOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        veckaOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
     }
     
     /*

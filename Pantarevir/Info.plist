@@ -39,7 +39,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>FacebookAppID</key>
 	<string>1786381208247835</string>
 	<key>FacebookDisplayName</key>
@@ -67,6 +67,8 @@
 		<string>MKDirectionsModeTaxi</string>
 		<string>MKDirectionsModeTrain</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This information is required to show your current location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This information is required to show your current location</string>
 	<key>UILaunchStoryboardName</key>
