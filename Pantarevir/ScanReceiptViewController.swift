@@ -4,7 +4,6 @@
 //
 //  Created by Pontus Hilding on 26/04/16.
 //  Copyright © 2016 PonyCorp Inc. All rights reserved.
-//  The majority of the capturing code is taken from Jordan Morgan.
 //  sitepoint.com/creating-barcode-metadata-reader-ios/
 //
 
@@ -128,9 +127,11 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             if barcodePrefix != "9" || calculateBarcodeChecksum(barcode) != true || validateAmountOfReceipt(barcodeAmount) != true{
                 errorLabel.text = "Ej giltligt kvitto scannat."
                 errorLabel.textColor = UIColor.redColor()
+                print("Not a valid prefix or amount.")
             }else{
                 errorLabel.textColor = UIColor.greenColor()
-                errorLabel.text = "Everything OK."
+                errorLabel.text = "Pantkvitto OK."
+                print("Everything ok!")
                 return true
             }
         }
@@ -228,6 +229,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     
     
     @IBAction func backButton(sender: UIButton) {
+        print("Backed from scanner.")
         let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
         UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
     

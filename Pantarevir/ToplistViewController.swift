@@ -10,9 +10,14 @@ import UIKit
 
 class ToplistViewController: UIViewController {
     
+    @IBOutlet weak var veckaOutlet: UIButton!
+    @IBOutlet weak var totaltOutlet: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
     }
 
@@ -29,20 +34,21 @@ class ToplistViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //var buttonVeckaState: Bool = true
+
     
     @IBAction func veckaButton(sender: UIButton) {
         containedVC.setVeckaState(true)
-        //buttonVeckaState = true
-        
-        //veckaButton.titleLabel.textColor = UIColor.whiteColor()
+        //veckaOutlet.titleLabel?.textColor = UIColor.whiteColor()
+        veckaOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        totaltOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+
     }
     
     @IBAction func totaltButton(sender: UIButton) {
         containedVC.setVeckaState(false)
-        //buttonVeckaState = false
+        totaltOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        veckaOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
     }
-    
     
     /*
     // MARK: - Navigation
