@@ -14,7 +14,7 @@ import CoreLocation
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
     
     var revirArray: [Revir] = []
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // M I A M I   <3   V I C E
     
     func checkLocationAuthorizationStatus() {
-      
+        
         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
             mapView.showsUserLocation = true
             locationManager.delegate = self
@@ -34,7 +34,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.requestWhenInUseAuthorization()
         }
         
-     
+        
         if CLLocationManager.locationServicesEnabled() {
             print("Location service disabled")
         }
@@ -44,30 +44,30 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     override func viewDidAppear(animated: Bool) {
-  
+        
         super.viewDidAppear(animated)
         
         checkLocationAuthorizationStatus()
         
-
+        
     }
     
     
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
-
+        
         mapView.mapType = MKMapType.Standard
-
+        
         self.mapView.delegate = self
-
+        
         updateRevir()
         
     }
     
     
-
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         //later
@@ -82,7 +82,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-
+    
     
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -108,10 +108,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
         print("Fault in mapView Overlay Rendering!")
-
+        
         return MKRevirCircleRenderer(overlay:overlay, color: UIColor.purpleColor())
     }
-
+    
     
     
     func updateRevir(){
@@ -120,7 +120,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             mapView.removeAnnotation(revir.revirAnnotation!)
         }
         self.revirArray.removeAll()
-
+        
         let ref = Firebase(url: uppsalaRevirURL)
         
         
@@ -134,7 +134,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let userID  = rest.childSnapshotForPath("UserID").value as! String
                 let color  = rest.childSnapshotForPath("Color").value as! Int
                 let radius  = rest.childSnapshotForPath("Radie").value as! Double
-
+                
                 print("UPDATE_REVIR_ARRAY:")
                 print(nam)
                 print(lat)
@@ -153,41 +153,54 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 self.mapView.addOverlay(newRevir.revirCircle!)
                 self.mapView.addAnnotation(newRevirAnnotation)
-            
+                
                 
             }
         })
     }
-
+    
+    
+    func updateRevir2(city: String){
+        for revir in self.revirArray{
+            mapView.removeOverlay(revir.revirCircle!)
+            mapView.removeAnnotation(revir.revirAnnotation!)
+        }
+        self.revirArray.removeAll()
+        
+        
+        DataService.service.returnCityRevirRef(city)
+        
+    }
+    
     func drawRevir(revir: [Revir]){
         print("Draw_revir")
         for item in revirArray {
             print("Draw_revir_loop:")
             print(item.latitude)
             print(item.longitude)
-    
+            
             self.mapView.addOverlay(item.revirCircle!)
             //loadOverlayForRegionWithLatitude(item.latitude!, andLongitude: item.longitude!)
             
         }
     }
     
-
+    
 }
 
 extension MapViewController {
-
+    
     func mapView(mapView: MKMapView,viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
         if (annotation is MKUserLocation) {
             return nil
         }
         else{
-
-        let revirAnnotationView = RevirAnnotationView(annotation: annotation, reuseIdentifier: "Revir")
-        
-        revirAnnotationView.canShowCallout = true
+            
+            let revirAnnotationView = RevirAnnotationView(annotation: annotation, reuseIdentifier: "Revir")
+            
+            revirAnnotationView.canShowCallout = true
             return revirAnnotationView
-        
+            
         }
     }
 }
