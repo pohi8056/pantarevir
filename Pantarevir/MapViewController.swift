@@ -9,36 +9,82 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate{
-    var circle: MKCircle!
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
+    
     var revirArray: [Revir] = []
 
     @IBOutlet weak var mapView: MKMapView!
     
+    var locationManager = CLLocationManager()
+    
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            mapView.showsUserLocation = true
+            locationManager.delegate = self;
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            //locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                locationManager.startUpdatingLocation()
+                print("Location service enabled")
+                
+                let userLocation = locationManager.location
+                centerMapOnLocation(userLocation!)
+
+
+            }
+            else{
+                print("Location service disabled")
+            }
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        checkLocationAuthorizationStatus()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         // Do any additional setup after loading the view, typically from a nib.
         mapView.mapType = MKMapType.Standard
-        mapView.showsUserLocation = true
 
         self.mapView.delegate = self
 
-        //let userLocation = MKUserLocation()
-
-        let initialLocation = CLLocation(latitude: 59.8586, longitude: 17.6389)
-        
-        centerMapOnLocation(initialLocation)
-        //mapView.setCenterCoordinate(userLocation.coordinate, animated: true)
         
         updateRevirArray()
         
     }
-
     
-    let regionRadius: CLLocationDistance = 1000
+    
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+   /*
+        let location = locations.last! as CLLocation
+        
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.mapView.setRegion(region, animated: true)
+        //centerMapOnLocation(location)
+ */
+    }
+    
+    
     
     func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(
             location.coordinate,
             regionRadius * 2.0,
@@ -46,17 +92,6 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
-    @IBAction func zoomIn(sender: AnyObject) {
-        let userLocation = mapView.userLocation
-        
-        let region = MKCoordinateRegionMakeWithDistance(
-            userLocation.location!.coordinate, 2000, 2000)
-        
-        mapView.setRegion(region, animated: true)
-    }
-    
-    
-    
     
     
     
@@ -64,12 +99,13 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         
         if let overlay = overlay as? MKCircle{
             var color: UIColor?
-            for item in revirArray{
+            for item in self.revirArray{
                 if item.name == overlay.title{
                     color = item.color
                 }
                 else{
-                     color = UIColor.purpleColor()
+                    print("renderer purple")
+                    color = UIColor.purpleColor()
                 }
             }
             
@@ -148,8 +184,15 @@ extension MapViewController {
 
 
     func mapView(mapView: MKMapView,viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
+        if (annotation is MKUserLocation) {
+            return nil
+        }
+        else{
+
         let revirAnnotationView = RevirAnnotationView(annotation: annotation, reuseIdentifier: "Revir")
         revirAnnotationView.canShowCallout = true
-        return revirAnnotationView
+            return revirAnnotationView
+        
+        }
     }
 }
