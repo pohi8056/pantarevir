@@ -49,9 +49,13 @@ class DataService{
         userRef.childByAppendingPath(uid).setValue(user)
     }
     
+    
+    
+    
+    //NOTE TO TOMORROW: Read last total/weekly and add instead of overwrite.
     func addReceipt(receipt : Receipt){
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
-        print(variablesOfReceipt)
+
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
         userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
         userRef.childByAppendingPath(receipt.userUID).updateChildValues(["weekly" : receipt.amount])
