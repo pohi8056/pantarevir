@@ -42,7 +42,10 @@ class DataService{
     }
     
     func addReceipt(receipt : Receipt){
-       receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(receipt)
+        let variablesOfReceipt = receipt.prepareReceiptForFirebase()
+        print(variablesOfReceipt)
+        receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
+        userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
     }
 
 }

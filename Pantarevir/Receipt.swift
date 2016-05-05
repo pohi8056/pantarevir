@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Firebase
 
 class Receipt{
     
+    private var _receiptRef : Firebase!
     private var _receiptEAN : String!
     private var _userUID : String!
     private var _timeStamp : Int!
-    
+    private var _amount : Double!
     
     var receiptEAN: String{
         return _receiptEAN
@@ -27,15 +29,26 @@ class Receipt{
         return "\(_timeStamp)"
     }
     
-    init(receiptEAN : String, userUID : String){
+    var amount: String{
+        return "\(_amount)"
+    }
+    
+    init(receiptEAN : String, userUID : String, amount : Double){
         self._receiptEAN = receiptEAN
         self._userUID = userUID
+        self._amount = amount
+        
         let date = NSDate()
         let cal = NSCalendar.currentCalendar()
         let comps = cal.component([.Year, .Month, .Day, .Hour, .Minute], fromDate: date)
         self._timeStamp = comps
+        
+        self._receiptRef = DataService.service.receiptRef.childByAppendingPath(self._receiptEAN)
+        
     }
     
-    
-    
+    func prepareReceiptForFirebase() -> Dictionary<String, String>{
+        let dic = ["uid" : userUID, "time" : timeStamp, "amount" : amount]
+        return dic
+    }
 }
