@@ -78,6 +78,11 @@ class Revir{
             return self.revirAnnotation!
     }
     
+    func createRevirAnnotation(title: String, subtitle: String, lat: Double, long: Double){
+        self.revirAnnotation = MKRevirAnnotation(
+            title: title, subtitle: subtitle, coordinate: CLLocationCoordinate2DMake(lat, long))
+    }
+    
     
     
     

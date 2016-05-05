@@ -17,6 +17,8 @@ class UserInfo{
     var name:           String?
     var profilePicture: UIImageView?
     var city:           String?
+    
+    var userID:         String?
 
     
     // login details
@@ -39,7 +41,7 @@ class UserInfo{
     
     
     // M I A M I V I C E L U L L
-    init(firstName: String, surname: String, total: Int, weekly: Int, profilePicture: UIImageView, city: String, fbID: String, provider: String, email: String){
+    init(firstName: String, surname: String, total: Int, weekly: Int, profilePicture: UIImageView, city: String, fbID: String, provider: String, email: String, userID: String){
 
         self.firstName      = firstName
         self.surname        = surname
@@ -47,6 +49,7 @@ class UserInfo{
         self.city           = city
         self.profilePicture = profilePicture
         
+        self.userID         = userID
         
         // login details
         self.fbID           = fbID
