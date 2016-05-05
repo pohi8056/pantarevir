@@ -46,6 +46,7 @@ class DataService{
         print(variablesOfReceipt)
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
         userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
+        userRef.childByAppendingPath(receipt.userUID).updateChildValues(["weekly" : receipt.amount])
     }
 
 }
