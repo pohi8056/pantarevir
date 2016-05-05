@@ -109,10 +109,17 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         }
     }
  
- 
+    //note to self: Glöm inte kolla om ean redan finns
+    
+    
     //Add the recycled amount to Firebase
-    private func addAmountToFirebase(amount : String){
-        ///let
+    private func addAmountToFirebase(amount : Double, EAN : String){
+        
+        let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
+        print(currentUser)
+        let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
+        //print(receipt.returnReceipt())
+        DataService.service.addReceipt(receipt)
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
@@ -149,6 +156,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 //Fullösning inc.
                 let amountDouble = Double(barcodeAmount)!/10.0
                 if showConfirmationPopup(amountDouble) == true{
+                    addAmountToFirebase(amountDouble, EAN: barcode)
                     return true
                 }
                 
