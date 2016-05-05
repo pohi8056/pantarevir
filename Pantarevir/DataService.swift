@@ -8,6 +8,8 @@
 
 import Foundation
 import Firebase
+import MapKit
+
 
 class DataService{
     
@@ -135,42 +137,6 @@ class DataService{
     }
  
     
-    // update revir by city
-    func updateRevir(city: String)-> [Revir]{
-        
-        var revirArray: [Revir] = []
-        
-        DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.childrenCount) // I got the expected number of items
-            let enumerator = snapshot.children
-            while let rest = enumerator.nextObject() as? FDataSnapshot {
-                let nam = rest.key as String
-                let lat  = rest.childSnapshotForPath("Latitud").value as! Double
-                let lon  = rest.childSnapshotForPath("Longitud").value as! Double
-                let userID  = rest.childSnapshotForPath("UserID").value as! String
-                let color  = rest.childSnapshotForPath("Color").value as! Int
-                let radius  = rest.childSnapshotForPath("Radie").value as! Double
-                
-                print("UPDATE_REVIR_ARRAY_DATASERVICE:")
-                print(nam)
-                print(lat)
-                print(lon)
-                print(userID)
-                print(color)
-                print(radius)
-                
-                let newRevir = Revir(name: nam,latitude: lat,longitude: lon, userID: userID, radius: radius, intColor: color)
-                
-                newRevir.createRevirAnnotation(nam,subtitle: userID,lat: lat,long: lon)
-                
-                revirArray.append(newRevir)
-                
-                print(revirArray)
-                
-            }
-        })
-        
-        return revirArray
-    }
+
 
 }

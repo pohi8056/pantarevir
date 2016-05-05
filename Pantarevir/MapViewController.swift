@@ -36,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         
         if CLLocationManager.locationServicesEnabled() {
-            print("Location service disabled")
+            print("Location service enabled")
         }
         else{
             print("Location service disabled")
@@ -62,7 +62,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         self.mapView.delegate = self
         
-        updateRevir()
+        updateRevir("uppsala")
         
     }
     
@@ -71,6 +71,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         //later
+
     }
     
     
@@ -114,17 +115,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     
     
-    func updateRevir(){
-        for revir in self.revirArray{
-            mapView.removeOverlay(revir.revirCircle!)
-            mapView.removeAnnotation(revir.revirAnnotation!)
-        }
-        self.revirArray.removeAll()
+    
+    
+    // update revir by city
+    func updateRevir(city: String){
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.removeOverlays(mapView.overlays)
+
         
-        let ref = Firebase(url: uppsalaRevirURL)
-        
-        
-        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
             print(snapshot.childrenCount) // I got the expected number of items
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? FDataSnapshot {
@@ -135,7 +134,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let color  = rest.childSnapshotForPath("Color").value as! Int
                 let radius  = rest.childSnapshotForPath("Radie").value as! Double
                 
-                print("UPDATE_REVIR_ARRAY:")
+                print("UPDATE_REVIR_ARRAY_DATASERVICE:")
                 print(nam)
                 print(lat)
                 print(lon)
@@ -145,32 +144,22 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 
                 let newRevir = Revir(name: nam,latitude: lat,longitude: lon, userID: userID, radius: radius, intColor: color)
                 
-                let newRevirAnnotation = newRevir.createAndReturnRevirAnnotation(nam, subtitle: userID, coordinate: CLLocationCoordinate2DMake(lat, lon))
+                newRevir.createRevirAnnotation(nam,subtitle: userID,lat: lat,long: lon)
                 
                 self.revirArray.append(newRevir)
-                
-                print(self.revirArray)
+
                 
                 self.mapView.addOverlay(newRevir.revirCircle!)
-                self.mapView.addAnnotation(newRevirAnnotation)
-                
+                self.mapView.addAnnotation(newRevir.revirAnnotation!)
                 
             }
+            
         })
+        
+        
     }
     
     
-    func updateRevir2(city: String){
-        for revir in self.revirArray{
-            mapView.removeOverlay(revir.revirCircle!)
-            mapView.removeAnnotation(revir.revirAnnotation!)
-        }
-        self.revirArray.removeAll()
-        
-        
-        DataService.service.returnCityRevirRef(city)
-        
-    }
     
     func drawRevir(revir: [Revir]){
         print("Draw_revir")
