@@ -327,6 +327,9 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="DIN STATISTIK"/>
+                                <connections>
+                                    <segue destination="4wz-v2-VLN" kind="show" identifier="fromMainMenuToStatisticsSegue" id="aab-3G-A14"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_din_statistik" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-lG-CYM">
                                 <rect key="frame" x="532" y="340" width="47" height="48"/>
@@ -648,6 +651,74 @@
             </objects>
             <point key="canvasLocation" x="1436" y="-974"/>
         </scene>
+        <!--Statistics Table View Controller-->
+        <scene sceneID="JaO-Dt-tOu">
+            <objects>
+                <tableViewController id="4wz-v2-VLN" customClass="StatisticsTableViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" id="0k4-xW-0WN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="WnQ-VW-IJH" customClass="StatisticsTableViewCell" customModule="Pantarevir" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="131"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WnQ-VW-IJH" id="Dl3-aP-nmw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="131"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-hG-OYu">
+                                            <rect key="frame" x="19" y="13" width="60" height="43"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du har pantat tillräckligt för att..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-9Y-xoC">
+                                            <rect key="frame" x="19" y="99" width="247" height="24"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jwo-2c-kDD">
+                                            <rect key="frame" x="512" y="8" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="d5o-2E-lqr"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X st/timmar/%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yb-U2-6Sb">
+                                            <rect key="frame" x="394" y="89" width="198" height="43"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.16185897435897434" green="0.16185897435897434" blue="0.16185897435897434" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Voe-9Y-xoC" firstAttribute="leading" secondItem="Dl3-aP-nmw" secondAttribute="leadingMargin" constant="11" id="74M-oI-V2W"/>
+                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="centerY" secondItem="Voe-9Y-xoC" secondAttribute="centerY" id="9ka-Ng-RlV"/>
+                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="top" secondItem="jwo-2c-kDD" secondAttribute="bottom" constant="1" id="NwZ-0X-0Ua"/>
+                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="trailing" secondItem="jwo-2c-kDD" secondAttribute="trailing" id="Owg-jd-bNF"/>
+                                        <constraint firstAttribute="topMargin" secondItem="jwo-2c-kDD" secondAttribute="top" id="PjB-XI-XfJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jwo-2c-kDD" secondAttribute="trailing" id="TsD-aJ-Ahd"/>
+                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="leading" secondItem="Dl3-aP-nmw" secondAttribute="leadingMargin" constant="11" id="c1c-U2-rlR"/>
+                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="top" secondItem="Dl3-aP-nmw" secondAttribute="topMargin" constant="5" id="fFe-n6-AjI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Voe-9Y-xoC" secondAttribute="bottom" id="itb-ir-THV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="4wz-v2-VLN" id="0os-Nb-KtZ"/>
+                            <outlet property="delegate" destination="4wz-v2-VLN" id="Vcj-oa-ITR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emu-RS-NHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2280" y="-974"/>
+        </scene>
         <!--Toplist View Controller-->
         <scene sceneID="sZV-Aj-w3p">
             <objects>
@@ -793,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAF-Qx-2eW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="-1040"/>
+            <point key="canvasLocation" x="2280" y="-206"/>
         </scene>
         <!--Toplist Table View Controller-->
         <scene sceneID="q8G-X9-ris">
@@ -873,7 +944,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wfb-Vj-eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3008" y="-1040.5"/>
+            <point key="canvasLocation" x="3008" y="-207"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Xrj-c6-aqd">
