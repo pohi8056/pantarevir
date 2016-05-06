@@ -120,6 +120,13 @@ class StatisticsTableViewController: UITableViewController {
         if (activity.type == "car") {
             cell.dataLabel.text = "\(String(activity.dataInt)) mil"
         }
+        if (activity.type == "flight") {
+            cell.dataLabel.text = "\(String(activity.dataInt)) %"
+        }
+            
+        if (activity.type == "bus" || activity.type == "food") {
+            cell.dataLabel.text = "\(String(activity.dataInt)) st"
+        }
         else {
             cell.dataLabel.text = "\(convertMinutesToMessage(activity.dataInt))"
         }
@@ -128,7 +135,10 @@ class StatisticsTableViewController: UITableViewController {
         cell.titleLabel.text = activity.title
         cell.explanationLabel.text = activity.description
         
-        print(activity.dataInt)
+        cell.preservesSuperviewLayoutMargins = false
+        cell.layoutMargins = UIEdgeInsetsZero
+        
+        //print(activity.dataInt)
         
         return cell
     }

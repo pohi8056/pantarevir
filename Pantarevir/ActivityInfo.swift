@@ -31,47 +31,47 @@ class ActivityInfo{
         switch type {
         case "house":
             self.dataInt = Int((amount / 0.02564583333).roundToPlaces(0))
-            self.description = "...Värma upp ett"
+            self.description = "...Att värma upp ett"
             self.title = "Svenskt medelhus"
         case "shower":
             self.dataInt = Int((amount / 0.44).roundToPlaces(0))
-            self.description = "...Slå på"
+            self.description = "...Att slå på"
             self.title = "Duschen"
         case "dryer":
             self.dataInt = Int((amount / 0.027).roundToPlaces(0))
-            self.description = "...Torka håret med"
+            self.description = "...Att torka håret med"
             self.title = "Hårfön"
         case "microwave":
             self.dataInt = Int((amount / 0.02333333333).roundToPlaces(0))
-            self.description = "...Värma din matlåda i"
+            self.description = "...Att värma din matlåda i"
             self.title = "Mikrovågsugn"
         case "charger":
             self.dataInt = Int((amount / 0.0001666666667).roundToPlaces(0))
-            self.description = "...Ladda"
+            self.description = "...Att ladda"
             self.title = "Mobilen"
         case "computer":
             self.dataInt = Int((amount / 0.0008333333333).roundToPlaces(0))
-            self.description = "...Ha igång din"
+            self.description = "...Att ha igång din"
             self.title = "Dator"
         case "lamp":
             self.dataInt = Int((amount / 0.0006666666667).roundToPlaces(0))
-            self.description = "...Lysa upp en"
+            self.description = "...Att lysa upp en"
             self.title = "Glödlampa (40 W)"
         case "car":
             self.dataInt = Int((amount / 1.86).roundToPlaces(0))
-            self.description = "...Åka omkring i en"
+            self.description = "...Utsläppen från att åka omkring i en"
             self.title = "Medelstor bil"
         case "flight":
-            self.data = amount / 230
-            self.description = "...Motsvara en flygresa"
+            self.dataInt = Int((amount / 230).roundToPlaces(1))
+            self.description = "...Utsläppen från en persons flygresa mellan"
             self.title = "Arlanda-Berlin"
         case "bus":
-            self.data = amount / 16.63
-            self.description = "...Motsvara en bussresa"
+            self.dataInt = Int((amount / 16.63).roundToPlaces(0))
+            self.description = "...Utsläppen från en persons bussresa mellan"
             self.title = "Göteborg-Stockholm"
         case "food":
             self.dataInt = Int((amount / 1.8).roundToPlaces(0))
-            self.description = "...Konsumera"
+            self.description = "...Utsläppen från en"
             self.title = "Hamburgermeny"
         default:
             self.data = 0
