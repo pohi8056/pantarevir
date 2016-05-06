@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.service.currentUserRef.authData != nil{
             
             //Avkommentera sen! xD
-            //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil
+            self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
         }
         
     }

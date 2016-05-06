@@ -29,6 +29,19 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         self.setupCaptureSession()
     }
     
+    
+    private func showConfirmationPopup(amount : Double) -> Bool{
+        let alertPopup = UIAlertController(title: "Bekräfta pantning", message: "Belopp: \(amount)0 kr", preferredStyle: UIAlertControllerStyle.Alert)
+        alertPopup.addAction(UIAlertAction(title: "Bekräfta", style: UIAlertActionStyle.Default, handler: nil))
+        alertPopup.addAction(UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.Default, handler: nil))
+        
+        
+        
+        self.presentViewController(alertPopup, animated: true, completion: nil)
+        return true
+    }
+    
+    
     //Calculates and validates the barcode checksum https://en.wikipedia.org/wiki/International_Article_Number_(EAN)
     private func calculateBarcodeChecksum(barcode : String) -> Bool{
         print("Validating barcode checksum...")
@@ -96,10 +109,17 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         }
     }
  
- 
+    //note to self: Glöm inte kolla om ean redan finns
+    
+    
     //Add the recycled amount to Firebase
-    private func addAmountToFirebase(amount : String){
+    private func addAmountToFirebase(amount : Double, EAN : String){
         
+        let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
+        print(currentUser)
+        let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
+        //print(receipt.returnReceipt())
+        DataService.service.addReceipt(receipt)
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
@@ -132,7 +152,14 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 errorLabel.textColor = UIColor.greenColor()
                 errorLabel.text = "Pantkvitto OK."
                 print("Everything ok!")
-                return true
+                
+                //Fullösning inc.
+                let amountDouble = Double(barcodeAmount)!/10.0
+                if showConfirmationPopup(amountDouble) == true{
+                    addAmountToFirebase(amountDouble, EAN: barcode)
+                    return true
+                }
+                
             }
         }
         return false

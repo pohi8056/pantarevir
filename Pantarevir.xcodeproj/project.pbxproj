@@ -20,6 +20,7 @@
 		3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */; };
 		3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BC1CBD2D4600D32D65 /* DataService.swift */; };
 		3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */; };
+		3A9412AF1CDA712E00F13CDD /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9412AE1CDA712E00F13CDD /* Receipt.swift */; };
 		3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */; };
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		6300E0061CDA837300A4F4E2 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300E0051CDA837300A4F4E2 /* StatisticsTableViewController.swift */; };
@@ -74,6 +75,7 @@
 		3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3A90A8BC1CBD2D4600D32D65 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3A9412AE1CDA712E00F13CDD /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanReceiptViewController.swift; sourceTree = "<group>"; };
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6300E0051CDA837300A4F4E2 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
+				3A9412AE1CDA712E00F13CDD /* Receipt.swift */,
 				B0F363AB1CD91133000D6D30 /* Scan */,
 				B0F363A91CD9109A000D6D30 /* Settings */,
 				B0F363AA1CD9111C000D6D30 /* Menu */,
@@ -331,7 +334,7 @@
 				TargetAttributes = {
 					3A50AB1E1CBD1C5000BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = L5HGLF5QBY;
+						DevelopmentTeam = 6X7A5PH8N2;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -448,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9412AF1CDA712E00F13CDD /* Receipt.swift in Sources */,
 				B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */,
 				635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */,
 				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
@@ -620,7 +624,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
@@ -639,7 +643,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir1;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
