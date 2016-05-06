@@ -12,7 +12,7 @@ import Firebase
 class StatisticsTableViewController: UITableViewController {
 
     var activities = [ActivityInfo]()
-    var amount: Double = 27
+    var amount: Double = 320
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,29 +25,52 @@ class StatisticsTableViewController: UITableViewController {
         return (Double(amount) * 0.1574)
     }
     
-    func convertMinutes(data : Int) -> String {
+    func convertToString(value : Int, unitSingular : String, unitPlural : String) -> String {
+        var valueString = ""
+        if (value != 0) {
+            if (value >= 2) {
+                valueString = "\(String(value)) \(unitPlural)"
+            }
+            else {
+                valueString = "\(String(value)) \(unitSingular)"
+            }
+        }
+        return valueString
+    }
+    
+    func convertMinutesToMessage(data : Int) -> String {
         
-        /*var totalMinutes = data
+        let years = data / 525600
+        let months = (data % 525600) / 43800
+        let weeks = (data % 43800) / 10080
+        let days = (data % 10080) / 1440
+        let hours = (data % 1440) / 60
+        let minutes = (data % 60)
         
-        var yearsString = ""
-        var weeksString = ""
-        var daysString = ""
-        var hoursString = ""
-        var minutesString = ""
+        var yearString = ""
+        var monthString = ""
+        var weekString = ""
+        var dayString = ""
+        var hourString = ""
+        var minuteString = ""
         
-        var yearUnit = ""
-        var weekUnit = ""
-        var dayUnit = ""
-        var hourUnit = ""
-        var minuteUnit = ""
-
-        let years = data / 3679200
-        let weeks = data / 10080
-        let days = data / 1440*/
-        let hours = data / 60
-        let minutes = data % 60
+        yearString = convertToString(years, unitSingular: "år", unitPlural: "år")
+        monthString = convertToString(months, unitSingular: "månad", unitPlural: "månader")
+        weekString = convertToString(weeks, unitSingular: "vecka", unitPlural: "veckor")
         
-        return "\(hours) tim, \(minutes) min"
+        if (yearString == "") {
+           dayString = convertToString(days, unitSingular: "dag", unitPlural: "dagar")
+        }
+        
+        if (monthString == "") {
+            hourString = convertToString(hours, unitSingular: "timme", unitPlural: "timmar")
+        }
+        
+        if (weekString == "") {
+            minuteString = convertToString(minutes, unitSingular: "minut", unitPlural: "minuter")
+        }
+        
+        return "\(yearString) \(monthString) \(weekString) \(dayString) \(hourString) \(minuteString)"
     }
     
     func loadStatistics() {
@@ -97,7 +120,7 @@ class StatisticsTableViewController: UITableViewController {
             cell.dataLabel.text = "\(String(activity.dataInt)) km"
         }
         else {
-            cell.dataLabel.text = "\(convertMinutes(activity.dataInt))"
+            cell.dataLabel.text = "\(convertMinutesToMessage(activity.dataInt))"
         }
 
         

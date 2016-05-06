@@ -18,7 +18,6 @@ extension Double {
 
 class ActivityInfo{
     
-    // amount
     var type: String!
     var data: Double!
     var dataInt: Int!
