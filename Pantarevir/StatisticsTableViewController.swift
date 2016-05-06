@@ -12,7 +12,7 @@ import Firebase
 class StatisticsTableViewController: UITableViewController {
 
     var activities = [ActivityInfo]()
-    var amount: Double = 320
+    var amount: Int = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class StatisticsTableViewController: UITableViewController {
 
     //  Räkna på: 0.1574 kWh/kr samt 0.1574 kg/kr i belopp.
     func convertAmount(amount : Int) -> Double {
+        //print ("JKDSFKJNSKF: \(Double(amount) * 0.1574)")
         return (Double(amount) * 0.1574)
     }
     
@@ -82,14 +83,14 @@ class StatisticsTableViewController: UITableViewController {
             self.amount = totalOfCurrentUser
         })*/
 
-        self.activities.insert(ActivityInfo(type: "shower", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "computer", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "house", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "dryer", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "microwave", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "charger", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "lamp", amount: self.amount), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "car", amount: self.amount), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "shower", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "computer", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "house", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "dryer", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "microwave", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "charger", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "lamp", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "car", amount: convertAmount(self.amount)), atIndex: 0)
         
     }
     
@@ -117,7 +118,7 @@ class StatisticsTableViewController: UITableViewController {
         let activity = activities[indexPath.row]
         
         if (activity.type == "car") {
-            cell.dataLabel.text = "\(String(activity.dataInt)) km"
+            cell.dataLabel.text = "\(String(activity.dataInt)) mil"
         }
         else {
             cell.dataLabel.text = "\(convertMinutesToMessage(activity.dataInt))"

@@ -58,7 +58,7 @@ class ActivityInfo{
             self.description = "...Lysa upp en"
             self.title = "Glödlampa (40 W)"
         case "car":
-            self.dataInt = Int((amount / 0.186).roundToPlaces(0))
+            self.dataInt = Int((amount / 1.86).roundToPlaces(0))
             self.description = "...Åka omkring i en"
             self.title = "Medelstor bil"
         case "flight":
