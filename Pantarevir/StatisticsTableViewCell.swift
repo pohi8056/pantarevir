@@ -10,6 +10,12 @@ import UIKit
 
 class StatisticsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var explanationLabel: UILabel!
+    
+    @IBOutlet weak var dataLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

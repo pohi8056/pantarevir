@@ -655,57 +655,57 @@
         <scene sceneID="JaO-Dt-tOu">
             <objects>
                 <tableViewController id="4wz-v2-VLN" customClass="StatisticsTableViewController" customModule="Pantarevir" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" id="0k4-xW-0WN">
+                    <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="28" sectionFooterHeight="28" id="0k4-xW-0WN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="WnQ-VW-IJH" customClass="StatisticsTableViewCell" customModule="Pantarevir" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="131"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatisticsTableViewCell" rowHeight="126" id="WnQ-VW-IJH" customClass="StatisticsTableViewCell" customModule="Pantarevir" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WnQ-VW-IJH" id="Dl3-aP-nmw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="131"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="126"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-hG-OYu">
-                                            <rect key="frame" x="19" y="13" width="60" height="43"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mikrovågsugn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2Z-hG-OYu">
+                                            <rect key="frame" x="19" y="34" width="314" height="46"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="314" id="giy-yH-bdg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
+                                            <color key="textColor" red="0.086274509803921567" green="0.42745098039215684" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Du har pantat tillräckligt för att..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-9Y-xoC">
-                                            <rect key="frame" x="19" y="99" width="247" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...värma din mat i" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-9Y-xoC">
+                                            <rect key="frame" x="19" y="11" width="132" height="24"/>
                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jwo-2c-kDD">
-                                            <rect key="frame" x="512" y="8" width="80" height="80"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="d5o-2E-lqr"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X st/timmar/%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yb-U2-6Sb">
-                                            <rect key="frame" x="394" y="89" width="198" height="43"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="31"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 tim, 46 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yb-U2-6Sb">
+                                            <rect key="frame" x="393" y="71" width="199" height="47"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="34"/>
+                                            <color key="textColor" red="0.99215686274509807" green="0.82352941176470584" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.16185897435897434" green="0.16185897435897434" blue="0.16185897435897434" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="Voe-9Y-xoC" firstAttribute="leading" secondItem="Dl3-aP-nmw" secondAttribute="leadingMargin" constant="11" id="74M-oI-V2W"/>
-                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="centerY" secondItem="Voe-9Y-xoC" secondAttribute="centerY" id="9ka-Ng-RlV"/>
-                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="top" secondItem="jwo-2c-kDD" secondAttribute="bottom" constant="1" id="NwZ-0X-0Ua"/>
-                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="trailing" secondItem="jwo-2c-kDD" secondAttribute="trailing" id="Owg-jd-bNF"/>
-                                        <constraint firstAttribute="topMargin" secondItem="jwo-2c-kDD" secondAttribute="top" id="PjB-XI-XfJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="jwo-2c-kDD" secondAttribute="trailing" id="TsD-aJ-Ahd"/>
-                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="leading" secondItem="Dl3-aP-nmw" secondAttribute="leadingMargin" constant="11" id="c1c-U2-rlR"/>
-                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="top" secondItem="Dl3-aP-nmw" secondAttribute="topMargin" constant="5" id="fFe-n6-AjI"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Voe-9Y-xoC" secondAttribute="bottom" id="itb-ir-THV"/>
+                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="top" secondItem="Dl3-aP-nmw" secondAttribute="topMargin" constant="26" id="6PZ-ce-PPU"/>
+                                        <constraint firstItem="Voe-9Y-xoC" firstAttribute="leading" secondItem="Dl3-aP-nmw" secondAttribute="leadingMargin" constant="11" id="J8D-BC-uKA"/>
+                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="top" secondItem="Dl3-aP-nmw" secondAttribute="topMargin" constant="63" id="YmN-kP-lsw"/>
+                                        <constraint firstItem="p2Z-hG-OYu" firstAttribute="leading" secondItem="Voe-9Y-xoC" secondAttribute="leading" id="ZLF-LF-gDx"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="p2Z-hG-OYu" secondAttribute="bottom" constant="37.5" id="mTf-pO-3Mj"/>
+                                        <constraint firstItem="Voe-9Y-xoC" firstAttribute="top" secondItem="Dl3-aP-nmw" secondAttribute="topMargin" constant="3" id="sYt-AW-cpF"/>
+                                        <constraint firstItem="0yb-U2-6Sb" firstAttribute="trailing" secondItem="Dl3-aP-nmw" secondAttribute="trailingMargin" id="vam-ON-8nj"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dataLabel" destination="0yb-U2-6Sb" id="a0Y-y2-Efe"/>
+                                    <outlet property="explanationLabel" destination="Voe-9Y-xoC" id="ggN-oZ-Nrh"/>
+                                    <outlet property="titleLabel" destination="p2Z-hG-OYu" id="LVR-W8-naR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>

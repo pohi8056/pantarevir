@@ -25,6 +25,7 @@
 		52CCED67302B48158E12C7ED /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC13975D2AA81C9331ADD0B /* Pods.framework */; };
 		6300E0061CDA837300A4F4E2 /* StatisticsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300E0051CDA837300A4F4E2 /* StatisticsTableViewController.swift */; };
 		6300E0081CDB770B00A4F4E2 /* StatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300E0071CDB770B00A4F4E2 /* StatisticsTableViewCell.swift */; };
+		6300E00A1CDD009900A4F4E2 /* ActivityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6300E0091CDD009900A4F4E2 /* ActivityInfo.swift */; };
 		630178A91CC4FAD200769027 /* ToplistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630178A81CC4FAD200769027 /* ToplistViewController.swift */; };
 		632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */; };
 		635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DDA1B1CC06D8C00AA6503 /* MenuController.swift */; };
@@ -80,6 +81,7 @@
 		500D809DD0C2AE3391037C7A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6300E0051CDA837300A4F4E2 /* StatisticsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewController.swift; sourceTree = "<group>"; };
 		6300E0071CDB770B00A4F4E2 /* StatisticsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewCell.swift; sourceTree = "<group>"; };
+		6300E0091CDD009900A4F4E2 /* ActivityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityInfo.swift; sourceTree = "<group>"; };
 		630178A81CC4FAD200769027 /* ToplistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistViewController.swift; sourceTree = "<group>"; };
 		632264BD1CC50A48008D7A86 /* ToplistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewCell.swift; sourceTree = "<group>"; };
 		635DDA1B1CC06D8C00AA6503 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				6300E0071CDB770B00A4F4E2 /* StatisticsTableViewCell.swift */,
 				6300E0051CDA837300A4F4E2 /* StatisticsTableViewController.swift */,
+				6300E0091CDD009900A4F4E2 /* ActivityInfo.swift */,
 			);
 			name = Statistics;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */,
 				B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */,
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
+				6300E00A1CDD009900A4F4E2 /* ActivityInfo.swift in Sources */,
 				6300E0081CDB770B00A4F4E2 /* StatisticsTableViewCell.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
 				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
