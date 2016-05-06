@@ -62,7 +62,7 @@ class Receipt{
     
     
     func prepareReceiptForFirebase() -> Dictionary<String, String>{
-        let dic = ["uid" : userUID, "time" : timeStamp, "amount" : amount]
+        let dic = ["UserID" : userUID, "time" : timeStamp, "amount" : amount, "ean" : receiptEAN]
         return dic
     }
 }
