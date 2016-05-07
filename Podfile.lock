@@ -13,6 +13,7 @@ PODS:
     - FBSDKCoreKit
   - Firebase (2.5.1)
   - TesseractOCRiOS (4.0.0)
+  - UICountingLabel (1.4.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Firebase
   - TesseractOCRiOS
+  - UICountingLabel
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
@@ -28,5 +30,6 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 2d1746144cfc8a9dbbd24997c34ee0471be51b6a
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+  UICountingLabel: ed5ce5b6d5ef278ff40d99cfa49577a30ab0c87b
 
 COCOAPODS: 0.39.0

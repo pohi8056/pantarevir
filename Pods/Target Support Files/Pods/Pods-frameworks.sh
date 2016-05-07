@@ -90,6 +90,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Firebase.framework"
   install_framework "Pods/TesseractOCR.framework"
+  install_framework "Pods/UICountingLabel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Bolts.framework"
@@ -98,4 +99,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/FBSDKShareKit.framework"
   install_framework "Pods/Firebase.framework"
   install_framework "Pods/TesseractOCR.framework"
+  install_framework "Pods/UICountingLabel.framework"
 fi

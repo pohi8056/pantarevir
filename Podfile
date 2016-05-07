@@ -7,6 +7,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'TesseractOCRiOS'
+pod 'UICountingLabel'
 
 target 'Pantarevir' do
 
