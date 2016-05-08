@@ -145,7 +145,7 @@ class DataService{
     //NOTE TO TOMORROW: Read last total/weekly and add instead of overwrite.
     func addReceipt(receipt : Receipt){
         //test()
-        let previousTotal = loadSpecificData(.User, val: .Total)
+        //let previousTotal = loadSpecificData(.User, val: .Total)
         print("kom hit")
         //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
         print("men inte hit")
