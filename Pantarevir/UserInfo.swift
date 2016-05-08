@@ -27,7 +27,7 @@ class UserInfo{
     var email:      String?
     
     // amount
-    var amount:     String?
+    var amount:     String
     var total:      Int?
     var weekly:     Int?
     
@@ -69,10 +69,10 @@ class UserInfo{
     }
     
     func returnAmount() -> String{
-        return amount!
+        return amount
     }
     
     func returnAmountInt() -> Int{
-        return Int(amount!)!
+        return Int(amount)!
     }
 }
