@@ -21,7 +21,6 @@ class DataService{
     private var _citiesRef = Firebase(url: "\(ROOT_URL)/cities")
     
     
-    //Borde vara indelat i enums av de olika brancherna för att förkorta funktionen sen men blir knäppt. Gonna fix l8r for niceness
     enum Data{
         enum Branch{
             case User
@@ -49,31 +48,24 @@ class DataService{
         }
 }
     
-    func test(){
-        let i = 2
-        
-        switch i{
-        case 2:
-            DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
-                print("ssss: \(snapshot.value)")
-                }, withCancelBlock: { error in
-                    print("dfgfdg")
-            })
-        default:
-            print(i)
-        }
-    }
-    
-    //Load specific data
-    func loadSpecificData(branch : Data.Branch, val : Data.Value) -> String{
-        var obtainedData = "No data obtained"
-        let semaphore = dispatch_semaphore_create(0)
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)){
 
+    
+    //Load specific data, WORK IN PROGRESS
+    func loadSpecificData(branch : Data.Branch, val : Data.Value) -> String{
+
+        let semaphore = dispatch_semaphore_create(0)
+        var obtainedData = "No data obtained"
+        print("Current thread \(NSThread.currentThread()).1")
+
+        
         switch branch {
         case .User:
                 print("yesp im here")
+                print("Current thread \(NSThread.currentThread()).2")
+
                 DataService.service.currentUserRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    print("Current thread \(NSThread.currentThread()).3")
+
                     print("sdf: \(snapshot.value)")
                     obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                     print("Value obtained from \(val): \(obtainedData)")
@@ -81,39 +73,39 @@ class DataService{
                     }, withCancelBlock: { error in
                         print("Error retrieving \(val)")
                 })
-            
+
             case .City:
                 DataService.service.citiesRef.observeEventType(.Value, withBlock: { snapshot in
                     obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                     print("Value obtained from \(val): \(obtainedData)")
+                    dispatch_semaphore_signal(semaphore)
+
                     }, withCancelBlock: { error in
                         print("Error retrieving \(val)")
                 })
-                //dispatch_semaphore_signal(semaphore)
 
             case .Receipt:
                 DataService.service.receiptRef.observeEventType(.Value, withBlock: { snapshot in
                 obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                 print("Value obtained from \(val): \(obtainedData)")
+                dispatch_semaphore_signal(semaphore)
+
                 }, withCancelBlock: { error in
                     print("Error retrieving \(val)")
             })
-                //dispatch_semaphore_signal(semaphore)
+        }
 
-        }
-        
-        }
-        //print("value of semaphore: \(semaphore)")
-        //let timeOut = dispatch_time(DISPATCH_TIME_NOW, 1000000000)
+        print("Current thread \(NSThread.currentThread()).4")
+
         print("obtained data: \(obtainedData)")
-        //print(dispatch_semaphore_wait(semaphore, timeOut))
-        //print(dispatch_semaphore_signal(semaphore))
-        //print(dispatch_semaphore_wait(semaphore, timeOut))
 
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        print("dispatch main queue: \(obtainedData)")
+
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) //funkar med fast dispatch time
         print("Timed out.")
         print("obtained data: \(obtainedData)")
-
+            
+        
         return obtainedData
     }
     
