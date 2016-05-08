@@ -16,6 +16,9 @@ class Receipt{
     private var _userUID : String!
     private var _timeStamp : Int!
     private var _amount : Double!
+    private var _weekly : String!
+    private var _total : String!
+    
     
     var receiptEAN: String{
         return _receiptEAN
@@ -33,6 +36,15 @@ class Receipt{
         return "\(_amount)"
     }
     
+    var weekly: String{
+        return _weekly
+    }
+    
+    var total: String{
+        return _total
+    }
+    
+    
     init(receiptEAN : String, userUID : String, amount : Double){
         self._receiptEAN = receiptEAN
         self._userUID = userUID
@@ -44,11 +56,13 @@ class Receipt{
         self._timeStamp = comps
         
         self._receiptRef = DataService.service.receiptRef.childByAppendingPath(self._receiptEAN)
-        
     }
     
+    
+    
+    
     func prepareReceiptForFirebase() -> Dictionary<String, String>{
-        let dic = ["uid" : userUID, "time" : timeStamp, "amount" : amount]
+        let dic = ["UserID" : userUID, "time" : timeStamp, "amount" : amount, "ean" : receiptEAN]
         return dic
     }
 }

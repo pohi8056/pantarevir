@@ -59,7 +59,7 @@ class MainMenuViewController: UIViewController {
         if obtainedImage != nil{
             self.profilePicture.image = UIImage(data: obtainedImage!)
             
-            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
+            let square = CGSize(width: min(400, 400), height: min(400, 400))
             let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
             imageView.contentMode = .ScaleAspectFill
             imageView.image = self.profilePicture.image
