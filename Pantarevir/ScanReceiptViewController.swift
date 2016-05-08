@@ -120,6 +120,8 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
         //print(receipt.returnReceipt())
         DataService.service.addReceipt(receipt)
+        captureSession.stopRunning()
+        
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
@@ -238,6 +240,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             
             if validateReceiptType(decodedData.stringValue, barcodeType: decodedData.type) == true{
                 //koden om bra kvitto
+                
             }
         }
     }

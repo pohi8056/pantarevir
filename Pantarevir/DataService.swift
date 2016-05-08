@@ -15,10 +15,100 @@ class DataService{
     
     static let service = DataService()
     
-    private var _rootRef = Firebase(url: "\(ROOT_URL)")
-    private var _userRef = Firebase(url: "\(ROOT_URL)/users")
+    private let _rootRef = Firebase(url: "\(ROOT_URL)")
+    private let _userRef = Firebase(url: "\(ROOT_URL)/users")
     private var _receiptRef = Firebase(url: "\(ROOT_URL)/receipts")
     private var _citiesRef = Firebase(url: "\(ROOT_URL)/cities")
+    
+    
+    enum Data{
+        enum Branch{
+            case User
+            case City
+            case Receipt
+        }
+        enum Value : String{
+            case Name = "name"
+            case Surname = "surname"
+            case City = "city"
+            case Email = "email"
+            case Total = "total"
+            case Weekly = "weekly"
+            case FbID = "fbid"
+            case Provider = "provider"
+            case Amount = "amount"
+            case Time = "time"
+            case Uid = "UserID"
+            case Color = "Color"
+            case Street = "Gata"
+            case Latitude = "Latitud"
+            case Longitude = "Longitude"
+            case Zip = "Postnr"
+            case Radius = "Radie"
+        }
+}
+    
+
+    
+    //Load specific data, WORK IN PROGRESS
+    func loadSpecificData(branch : Data.Branch, val : Data.Value) -> String{
+
+        let semaphore = dispatch_semaphore_create(0)
+        var obtainedData = "No data obtained"
+        print("Current thread \(NSThread.currentThread()).1")
+
+        
+        switch branch {
+        case .User:
+                print("yesp im here")
+                print("Current thread \(NSThread.currentThread()).2")
+
+                DataService.service.currentUserRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    print("Current thread \(NSThread.currentThread()).3")
+
+                    print("sdf: \(snapshot.value)")
+                    obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                    print("Value obtained from \(val): \(obtainedData)")
+                    dispatch_semaphore_signal(semaphore)
+                    }, withCancelBlock: { error in
+                        print("Error retrieving \(val)")
+                })
+
+            case .City:
+                DataService.service.citiesRef.observeEventType(.Value, withBlock: { snapshot in
+                    obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                    print("Value obtained from \(val): \(obtainedData)")
+                    dispatch_semaphore_signal(semaphore)
+
+                    }, withCancelBlock: { error in
+                        print("Error retrieving \(val)")
+                })
+
+            case .Receipt:
+                DataService.service.receiptRef.observeEventType(.Value, withBlock: { snapshot in
+                obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                print("Value obtained from \(val): \(obtainedData)")
+                dispatch_semaphore_signal(semaphore)
+
+                }, withCancelBlock: { error in
+                    print("Error retrieving \(val)")
+            })
+        }
+
+        print("Current thread \(NSThread.currentThread()).4")
+
+        print("obtained data: \(obtainedData)")
+
+        print("dispatch main queue: \(obtainedData)")
+
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) //funkar med fast dispatch time
+        print("Timed out.")
+        print("obtained data: \(obtainedData)")
+            
+        
+        return obtainedData
+    }
+    
     
     var citiesRef: Firebase {
         return _citiesRef
@@ -54,6 +144,11 @@ class DataService{
     
     //NOTE TO TOMORROW: Read last total/weekly and add instead of overwrite.
     func addReceipt(receipt : Receipt){
+        //test()
+        let previousTotal = loadSpecificData(.User, val: .Total)
+        print("kom hit")
+        //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
+        print("men inte hit")
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
 
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
