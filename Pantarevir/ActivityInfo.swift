@@ -62,9 +62,9 @@ class ActivityInfo{
             self.description = "...Utsläppen från att åka omkring i en"
             self.title = "Medelstor bil"
         case "flight":
-            self.dataInt = Int((amount / 230).roundToPlaces(1))
+            self.dataInt = Int((amount / 49).roundToPlaces(1))
             self.description = "...Utsläppen från en persons flygresa mellan"
-            self.title = "Arlanda-Berlin"
+            self.title = "Arlanda-Visby"
         case "bus":
             self.dataInt = Int((amount / 16.63).roundToPlaces(0))
             self.description = "...Utsläppen från en persons bussresa mellan"

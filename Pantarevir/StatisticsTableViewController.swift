@@ -12,7 +12,7 @@ import Firebase
 class StatisticsTableViewController: UITableViewController {
 
     var activities = [ActivityInfo]()
-    var amount: Int = 200
+    var amount: Int = 2000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +91,9 @@ class StatisticsTableViewController: UITableViewController {
         self.activities.insert(ActivityInfo(type: "charger", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "lamp", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "car", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "flight", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "bus", amount: convertAmount(self.amount)), atIndex: 0)
+        self.activities.insert(ActivityInfo(type: "food", amount: convertAmount(self.amount)), atIndex: 0)
         
     }
     
@@ -120,13 +123,15 @@ class StatisticsTableViewController: UITableViewController {
         if (activity.type == "car") {
             cell.dataLabel.text = "\(String(activity.dataInt)) mil"
         }
-        if (activity.type == "flight") {
+        
+        else if (activity.type == "flight") {
             cell.dataLabel.text = "\(String(activity.dataInt)) %"
         }
             
-        if (activity.type == "bus" || activity.type == "food") {
+        else if (activity.type == "bus" || activity.type == "food") {
             cell.dataLabel.text = "\(String(activity.dataInt)) st"
         }
+            
         else {
             cell.dataLabel.text = "\(convertMinutesToMessage(activity.dataInt))"
         }
