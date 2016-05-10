@@ -54,13 +54,13 @@ class ToplistTableViewController: UITableViewController {
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                         let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture!), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture!), atIndex: 0)
                     }
                     else {
                         let pic : UIImage = UIImage(named: "empty.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount, profilePicture: profilePicture), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture), atIndex: 0)
                     }
                 }
             }
