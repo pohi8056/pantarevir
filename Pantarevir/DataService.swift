@@ -168,13 +168,11 @@ class DataService{
     func loadUsers() -> [UserInfo]{
         
         var users: [UserInfo] = []
-        var datacount = -1
         
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     
-                    datacount = Int(snapshot.childrenCount)
                     // user details
                     let name           = snap.value.objectForKey("name")     as! String
                     let surname        = snap.value.objectForKey("surname")  as! String
@@ -185,8 +183,8 @@ class DataService{
                     let userID         = snap.key
                     
                     // amount
-                    let total    = snap.value.objectForKey("total")          as! Int
-                    let weekly   = snap.value.objectForKey("weekly")         as! Int
+                    let total    = snap.value.objectForKey("total")          as! Double
+                    let weekly   = snap.value.objectForKey("weekly")         as! Double
                     
                     // login details
                     let facebookID = snap.value.objectForKey("fbID")         as! String
@@ -200,14 +198,14 @@ class DataService{
                         let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
                         
                         users.append(
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                            UserInfo(firstName: name, surname: surname, total: total ,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
                     }
                     else {
                         
                         let pic = UIImage(named: "empty.png")!
                         profilePicture = UIImageView(image: pic)
                         users.append(
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                            UserInfo(firstName: name, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
                     }
                     
                     
@@ -216,8 +214,6 @@ class DataService{
             }
         })
         //dangerzone !  !  !
-        while users.count != datacount{ }
-        
         return users
     }
     
@@ -249,27 +245,25 @@ class DataService{
     
     // M I A M I V I C E L U L L
     // obs! cunncurency issues?
-  /*  func loadUsers2() -> [UserInfo]{
+    func loadUser(userID: String) -> UserInfo{
         
-        var users: [UserInfo] = []
+        var user: UserInfo
         
         let ref =  DataService.service.userRef
                     // user details
-                    let name           = objectForKey("name")     as! String
-                    let surname        = objectForKey("surname")  as! String
-                    let city           = objectForKey("city")     as! String
-                    let email          = objectForKey("email")    as! String
+                    let name           = ref.childByAppendingPath(userID).valueForKey("name")     as! String
+                    let surname        = ref.childByAppendingPath(userID).valueForKey("surname")  as! String
+                    let city           = ref.childByAppendingPath(userID).valueForKey("city")     as! String
+                    let email          = ref.childByAppendingPath(userID).valueForKey("email")    as! String
                     let profilePicture: UIImageView
-                    
-                    let userID         = snap.key
-                    
+        
                     // amount
-                    let total    = objectForKey("total")          as! Int
-                    let weekly   = objectForKey("weekly")         as! Int
+                    let total    = ref.childByAppendingPath(userID).valueForKey("total")          as! Double
+                    let weekly   = ref.childByAppendingPath(userID).valueForKey("weekly")         as! Double
                     
                     // login details
-                    let facebookID   = objectForKey("fbID")       as! String
-                    let loginService = objectForKey("provider")   as! String
+                    let facebookID   = ref.childByAppendingPath(userID).valueForKey("fbID")       as! String
+                    let loginService = ref.childByAppendingPath(userID).valueForKey("provider")   as! String
                     
                     
                     // set FB-pictures or "empty" picture
@@ -278,26 +272,22 @@ class DataService{
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                         let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
                         
-                        users.append(
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                        user =
+                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID)
                     }
                     else {
                         
                         let pic = UIImage(named: "empty.png")!
                         profilePicture = UIImageView(image: pic)
-                        users.append(
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                        
+                        user =
+                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID)
                     }
-                    
-                    
-                    
-                }
-            }
-        })
+   
         
-        return users
+        return user
     }
-    */
+
     
     
     
