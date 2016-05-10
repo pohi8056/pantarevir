@@ -48,7 +48,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
-
     }
     
     func validateFields(field1 : String, field2 : String) -> Bool{

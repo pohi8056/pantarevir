@@ -30,15 +30,45 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     }
     
     
-    private func showConfirmationPopup(amount : Double) -> Bool{
-        let alertPopup = UIAlertController(title: "Bekräfta pantning", message: "Belopp: \(amount)0 kr", preferredStyle: UIAlertControllerStyle.Alert)
-        alertPopup.addAction(UIAlertAction(title: "Bekräfta", style: UIAlertActionStyle.Default, handler: nil))
-        alertPopup.addAction(UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.Default, handler: nil))
+    private func showConfirmationPopup(receipt : Receipt){
+        //var confirmedAmount = false
+        //let semaphore = dispatch_semaphore_create(0)
+        captureSession.stopRunning()
+
+        print("IM HERE")
         
+        //let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        //let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
         
+        //dispatch_async(dispatch_get_main_queue()){
+        let alertPopup = UIAlertController(title: "Bekräfta pantning", message: "Belopp: \(receipt.amount)0 kr", preferredStyle: UIAlertControllerStyle.Alert)
+        let confirmAction = UIAlertAction(title: "Bekräfta", style: UIAlertActionStyle.Default, handler: { Void in
+                print("CONFIRMHERE")
+                self.addAmountToFirebase(receipt)
+                //confirmedAmount = true
+                //dispatch_semaphore_signal(semaphore)
+            })
+        let cancelAction = UIAlertAction(title: "Avbryt", style: UIAlertActionStyle.Cancel, handler: { Void in
+                print("CANCEL HERE")
+                self.captureSession.startRunning()
+                //confirmedAmount = false
+                //self.captureSession.startRunning()
+                //dispatch_semaphore_signal(semaphore)
+            })
+        //dispatch_async(backgroundQueue, {
+        alertPopup.addAction(confirmAction)
+        alertPopup.addAction(cancelAction)
         
+        print("ASDASDASDASD")
+           // }
+        //}
         self.presentViewController(alertPopup, animated: true, completion: nil)
-        return true
+            //dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+
+
+        print("HERE")
+        //return confirmedAmount
     }
     
     
@@ -113,14 +143,14 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     
     
     //Add the recycled amount to Firebase
-    private func addAmountToFirebase(amount : Double, EAN : String){
+    private func addAmountToFirebase(receipt : Receipt){
         
-        let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
-        print(currentUser)
-        let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
+        //let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
+        //print(currentUser)
+        //let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
         //print(receipt.returnReceipt())
         DataService.service.addReceipt(receipt)
-        captureSession.stopRunning()
+        returnToMainMenu()
         
     }
     
@@ -155,12 +185,15 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 errorLabel.text = "Pantkvitto OK."
                 print("Everything ok!")
                 
-                //Fullösning inc.
+                //inc.
                 let amountDouble = Double(barcodeAmount)!/10.0
-                if showConfirmationPopup(amountDouble) == true{
-                    addAmountToFirebase(amountDouble, EAN: barcode)
+                let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
+                let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble)
+
+                showConfirmationPopup(receipt)
+                //    addAmountToFirebase(amountDouble, EAN: barcode)
                     return true
-                }
+                
                 
             }
         }
@@ -257,12 +290,14 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    
-    @IBAction func backButton(sender: UIButton) {
+    func returnToMainMenu(){
         print("Backed from scanner.")
         let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
         UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
+    }
     
+    @IBAction func backButton(sender: UIButton) {
+        returnToMainMenu()
     }
     
 }
