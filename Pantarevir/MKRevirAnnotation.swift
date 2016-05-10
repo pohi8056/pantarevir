@@ -26,6 +26,8 @@ class MKRevirAnnotation: NSObject, MKAnnotation{
     var image: UIImage?
     
     var type: revirType
+    
+    var id: String?
 
     init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
         
@@ -37,6 +39,16 @@ class MKRevirAnnotation: NSObject, MKAnnotation{
         super.init()
     }
     
+    
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D, id: String) {
+        
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
+        self.type = revirType.free
+        self.id = id
+        super.init()
+    }
     
 
 
