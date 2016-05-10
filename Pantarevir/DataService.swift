@@ -51,34 +51,44 @@ class DataService{
 
     
     //Load specific data, WORK IN PROGRESS
-    func loadSpecificData(branch : Data.Branch, val : Data.Value) -> String{
+    func updateSpecificData(branch : Data.Branch, val : Data.Value, newEntry : AnyObject){
 
-        let semaphore = dispatch_semaphore_create(0)
-        var obtainedData = "No data obtained"
-        print("Current thread \(NSThread.currentThread()).1")
+        
+        //let semaphore = dispatch_semaphore_create(0)
+        //print("Current thread \(NSThread.currentThread()).1")
 
         
         switch branch {
         case .User:
                 print("yesp im here")
-                print("Current thread \(NSThread.currentThread()).2")
+                //print("Current thread \(NSThread.currentThread()).2")
 
                 DataService.service.currentUserRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-                    print("Current thread \(NSThread.currentThread()).3")
-
-                    print("sdf: \(snapshot.value)")
-                    obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
-                    print("Value obtained from \(val): \(obtainedData)")
-                    dispatch_semaphore_signal(semaphore)
+                    //print("Current thread \(NSThread.currentThread()).3")
+                    if val == Data.Value.Total{
+                        print("HERE INSIDE TOTAL IN THE LOOP IN THE SWITCH")
+                        let obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! Double
+                        let tmpRec = newEntry as! Receipt
+                        let newAmount = obtainedData + Double(tmpRec.amount)!
+                        print(tmpRec.amount)
+                        print(newAmount)
+                        self.userRef.childByAppendingPath(tmpRec.userUID).updateChildValues(["total" : newAmount])
+                        self.userRef.childByAppendingPath(tmpRec.userUID).updateChildValues(["weekly" : newAmount])
+                        
+                    }
+                    //print("sdf: \(snapshot.value)")
+                    //obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                    //print("Value obtained from \(val): \(obtainedData)")
+                    //dispatch_semaphore_signal(semaphore)
                     }, withCancelBlock: { error in
                         print("Error retrieving \(val)")
                 })
 
             case .City:
                 DataService.service.citiesRef.observeEventType(.Value, withBlock: { snapshot in
-                    obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                    let obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                     print("Value obtained from \(val): \(obtainedData)")
-                    dispatch_semaphore_signal(semaphore)
+                    //dispatch_semaphore_signal(semaphore)
 
                     }, withCancelBlock: { error in
                         print("Error retrieving \(val)")
@@ -86,9 +96,9 @@ class DataService{
 
             case .Receipt:
                 DataService.service.receiptRef.observeEventType(.Value, withBlock: { snapshot in
-                obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
+                let obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                 print("Value obtained from \(val): \(obtainedData)")
-                dispatch_semaphore_signal(semaphore)
+                //dispatch_semaphore_signal(semaphore)
 
                 }, withCancelBlock: { error in
                     print("Error retrieving \(val)")
@@ -97,16 +107,15 @@ class DataService{
 
         print("Current thread \(NSThread.currentThread()).4")
 
-        print("obtained data: \(obtainedData)")
+        //print("obtained data: \(obtainedData)")
 
-        print("dispatch main queue: \(obtainedData)")
+        //print("dispatch main queue: \(obtainedData)")
 
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) //funkar med fast dispatch time
+        //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER) //funkar med fast dispatch time
         print("Timed out.")
-        print("obtained data: \(obtainedData)")
-            
+        //print("obtained data: \(obtainedData)")
         
-        return obtainedData
+        //return obtainedData
     }
     
     
@@ -145,15 +154,15 @@ class DataService{
     //NOTE TO TOMORROW: Read last total/weekly and add instead of overwrite.
     func addReceipt(receipt : Receipt){
         //test()
-        let previousTotal = loadSpecificData(.User, val: .Total)
+        updateSpecificData(.User, val: .Total, newEntry: receipt)
         print("kom hit")
         //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
         print("men inte hit")
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
 
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
-        userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
-        userRef.childByAppendingPath(receipt.userUID).updateChildValues(["weekly" : receipt.amount])
+        //userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
+        //userRef.childByAppendingPath(receipt.userUID).updateChildValues(["weekly" : receipt.amount])
     }
     
     

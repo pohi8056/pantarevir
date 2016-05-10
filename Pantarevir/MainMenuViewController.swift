@@ -37,7 +37,7 @@ class MainMenuViewController: UIViewController {
         DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
             let nameOfCurrentUser = snapshot.value.objectForKey("name") as! String
             let surnameOfCurrentUser = snapshot.value.objectForKey("surname") as! String
-            let totalOfCurrentUser = snapshot.value.objectForKey("total") as! String
+            let totalOfCurrentUser = snapshot.value.objectForKey("total") as! Double
             let facebookID = snapshot.value.objectForKey("fbID") as! String
             let loginService = snapshot.value.objectForKey("provider") as! String
             
