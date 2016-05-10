@@ -13,9 +13,6 @@ class ToplistTableViewController: UITableViewController {
 
     var veckaState: Bool? = false
     var users = [UserInfo]()
-    var names = [String]()
-    var amounts = [String]()
-    var profilePictures = [UIImageView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +33,13 @@ class ToplistTableViewController: UITableViewController {
                 for snap in snapshots {
                     
                     let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
-                    let amount: String?
+                    let amount: Double?
                     
                     if self.veckaState == false {
-                        amount = snap.value.objectForKey("total") as? String
+                        amount = snap.value.objectForKey("total") as? Double
                     }
                     else {
-                        amount = snap.value.objectForKey("weekly") as? String
+                        amount = snap.value.objectForKey("weekly") as? Double
                     }
                     
                     //För att fixa FB-profilbilderna
@@ -54,13 +51,13 @@ class ToplistTableViewController: UITableViewController {
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                         let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture!), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: String(amount!), profilePicture: profilePicture!), atIndex: 0)
                     }
                     else {
                         let pic : UIImage = UIImage(named: "empty.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(name: name, amount: amount!, profilePicture: profilePicture), atIndex: 0)
+                        self.users.insert(UserInfo(name: name, amount: String(amount!), profilePicture: profilePicture), atIndex: 0)
                     }
                 }
             }
