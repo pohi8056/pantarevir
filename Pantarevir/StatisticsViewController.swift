@@ -22,6 +22,12 @@ class StatisticsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func backButton(sender: UIButton) {
+        let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
+    }
+    
     /*
      // MARK: - Navigation
      

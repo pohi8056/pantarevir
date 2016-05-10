@@ -28,6 +28,12 @@ class SettingsViewController: UIViewController {
         let loginView = self.storyboard!.instantiateViewControllerWithIdentifier("Login")
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginView
     }
+    
+    @IBAction func backButton(sender: UIButton) {
+        let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
+    }
+    
 
     /*
     // MARK: - Navigation

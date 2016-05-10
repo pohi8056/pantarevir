@@ -257,12 +257,10 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    
     @IBAction func backButton(sender: UIButton) {
-        print("Backed from scanner.")
         let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
         UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
-    
+        
     }
     
 }
