@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.service.currentUserRef.authData != nil{
             
             //Avkommentera sen! xD
-            self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+            //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
         }
         
     }
@@ -136,8 +136,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 
                                 //----------IMPORTANT: CHECK IF VALUES ARE BEING OVERWRITTEN FOR A USER THAT LOGS OUT--------------------
                                 
-                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : "0", "weekly" : "0", "fbID" : fbID]
-                                DataService.service.createNewAccount(authData.uid, user: newUser)
+                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : 0, "weekly" : 0, "fbID" : fbID]
+                                DataService.service.createNewAccount(authData.uid, user: newUser as! Dictionary<String, AnyObject>)
                             })
                                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                         }

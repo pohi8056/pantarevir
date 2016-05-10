@@ -69,7 +69,7 @@ class DataService{
                         print("HERE INSIDE TOTAL IN THE LOOP IN THE SWITCH")
                         let obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! Double
                         let tmpRec = newEntry as! Receipt
-                        let newAmount = obtainedData + Double(tmpRec.amount)!
+                        let newAmount = obtainedData + Double(tmpRec.amount)
                         print(tmpRec.amount)
                         print(newAmount)
                         self.userRef.childByAppendingPath(tmpRec.userUID).updateChildValues(["total" : newAmount])
@@ -144,7 +144,7 @@ class DataService{
         return currentUser!
     }
     
-    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+    func createNewAccount(uid: String, user: Dictionary<String, AnyObject>) {
         userRef.childByAppendingPath(uid).setValue(user)
     }
     
@@ -161,8 +161,7 @@ class DataService{
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
 
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
-        //userRef.childByAppendingPath(receipt.userUID).updateChildValues(["total" : receipt.amount])
-        //userRef.childByAppendingPath(receipt.userUID).updateChildValues(["weekly" : receipt.amount])
+
     }
     
     

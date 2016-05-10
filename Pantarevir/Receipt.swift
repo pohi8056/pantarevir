@@ -16,8 +16,8 @@ class Receipt{
     private var _userUID : String!
     private var _timeStamp : Int!
     private var _amount : Double!
-    private var _weekly : String!
-    private var _total : String!
+    private var _weekly : Double!
+    private var _total : Double!
     
     
     var receiptEAN: String{
@@ -32,15 +32,15 @@ class Receipt{
         return "\(_timeStamp)"
     }
     
-    var amount: String{
-        return "\(_amount)"
+    var amount: Double{
+        return _amount
     }
     
-    var weekly: String{
+    var weekly: Double{
         return _weekly
     }
     
-    var total: String{
+    var total: Double{
         return _total
     }
     
@@ -61,8 +61,8 @@ class Receipt{
     
     
     
-    func prepareReceiptForFirebase() -> Dictionary<String, String>{
+    func prepareReceiptForFirebase() -> Dictionary<String, AnyObject>{
         let dic = ["UserID" : userUID, "time" : timeStamp, "amount" : amount, "ean" : receiptEAN]
-        return dic
+        return dic as! Dictionary<String, AnyObject>
     }
 }
