@@ -133,7 +133,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let userID  = rest.childSnapshotForPath("UserID").value as! String
                 let color  = rest.childSnapshotForPath("Color").value as! Int
                 let radius  = rest.childSnapshotForPath("Radie").value as! Double
+                let playerName  = rest.childSnapshotForPath("playerName").value as! String
+                let value  = rest.childSnapshotForPath("belopp").value as! Double
+
                 
+                let subtitle = "Ägare: \(playerName) | Belopp: \(value)kr"
                 print("UPDATE_REVIR_ARRAY_DATASERVICE:")
                 print(nam)
                 print(lat)
@@ -145,7 +149,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let newRevir = Revir(name: nam,latitude: lat,longitude: lon, userID: userID, radius: radius, intColor: color)
                 
                 
-                newRevir.createRevirAnnotation(nam,subtitle: userID,lat: lat,long: lon)
+                //newRevir.createRevirAnnotation(nam,subtitle: userID,lat: lat,long: lon)
+                //newRevir.createRevirAnnotation2(nam,subtitle: playerName,lat: lat,long: lon, id: userID)
+                newRevir.createRevirAnnotation2(nam,subtitle: subtitle,lat: lat,long: lon, id: userID)
+
                 
                 self.revirArray.append(newRevir)
 
@@ -248,9 +255,13 @@ extension MapViewController {
             revirAnnotationView.canShowCallout = true
             print("annotaionimage load before print")
             print(users.count)
+            let annot = annotation as! MKRevirAnnotation
             for item in users {
-                if item.userID != nil && item.userID == annotation.subtitle!{
+                // if item.userID != nil && item.userID == annotation.subtitle!{
+                if item.userID != nil && item.userID == annot.id{
+
                     print("annotaionimage load")
+                
                     image = item.profilePicture!.image
                 }else{
                     image = UIImage(named: "logo")!
