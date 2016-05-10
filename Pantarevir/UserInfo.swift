@@ -28,8 +28,8 @@ class UserInfo{
     
     // amount
     var amount:     String
-    var total:      Int?
-    var weekly:     Int?
+    var total:      Double?
+    var weekly:     Double?
     
     
     // antes: untouched
@@ -41,7 +41,7 @@ class UserInfo{
     
     
     // M I A M I V I C E L U L L
-    init(firstName: String, surname: String, total: Int, weekly: Int, profilePicture: UIImageView, city: String, fbID: String, provider: String, email: String, userID: String){
+    init(firstName: String, surname: String, total: Double, weekly: Double, profilePicture: UIImageView, city: String, fbID: String, provider: String, email: String, userID: String){
 
         self.firstName      = firstName
         self.surname        = surname
