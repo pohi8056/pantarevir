@@ -50,6 +50,12 @@ class ToplistViewController: UIViewController {
         veckaOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
     }
     
+    @IBAction func backButton(sender: UIButton) {
+        let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
+    }
+    
+    
     /*
     // MARK: - Navigation
 

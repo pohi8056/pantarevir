@@ -169,8 +169,7 @@ class DataService{
         return self.citiesRef.childByAppendingPath("\(city)/revir")
     }
     
-    
-    
+ /*
     // M I A M I V I C E L U L L
     // obs! cunncurency issues?
     func loadUsers() -> [UserInfo]{
@@ -225,7 +224,7 @@ class DataService{
         return users
     }
     
-    
+    */
     
     // set fb-pic to correct format (helper function)
     func setProfileImage(imageURL : NSURL) -> UIImageView {
@@ -253,25 +252,27 @@ class DataService{
     
     // M I A M I V I C E L U L L
     // obs! cunncurency issues?
-    func loadUser(userID: String) -> UserInfo{
+/*    func loadUser(userID: String) -> UserInfo{
         
         var user: UserInfo
         
         let ref =  DataService.service.userRef
                     // user details
-                    let name           = ref.childByAppendingPath(userID).valueForKey("name")     as! String
-                    let surname        = ref.childByAppendingPath(userID).valueForKey("surname")  as! String
-                    let city           = ref.childByAppendingPath(userID).valueForKey("city")     as! String
-                    let email          = ref.childByAppendingPath(userID).valueForKey("email")    as! String
+        //obs
+                    let name           = ref.childByAppendingPath(userID).childByAppendingPath("name").key as String
+                    let surname        = ref.childByAppendingPath(userID).childByAppendingPath("surname").key  as String
+                    let city           = ref.childByAppendingPath(userID).childByAppendingPath("city").key     as String
+                    let email          = ref.childByAppendingPath(userID).childByAppendingPath("email").key    as String
                     let profilePicture: UIImageView
         
                     // amount
-                    let total    = ref.childByAppendingPath(userID).valueForKey("total")          as! Double
-                    let weekly   = ref.childByAppendingPath(userID).valueForKey("weekly")         as! Double
+                    let total    = ref.childByAppendingPath(userID).childByAppendingPath("total")          as! Double
+                    let weekly   = ref.childByAppendingPath(userID).childByAppendingPath("weekly")        as! Double
                     
                     // login details
-                    let facebookID   = ref.childByAppendingPath(userID).valueForKey("fbID")       as! String
-                    let loginService = ref.childByAppendingPath(userID).valueForKey("provider")   as! String
+                    let facebookID   = ref.childByAppendingPath(userID).childByAppendingPath("fbID").key       as String
+                    let loginService = ref.childByAppendingPath(userID).childByAppendingPath("provider").key
+                        as String
                     
                     
                     // set FB-pictures or "empty" picture
@@ -295,7 +296,7 @@ class DataService{
         
         return user
     }
-
+*/
     
     
     
