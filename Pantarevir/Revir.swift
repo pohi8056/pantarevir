@@ -62,10 +62,8 @@ class Revir{
     
     func createAndReturnRevirCircle(latitude: Double, andLongitude longitude: Double,radius: CLLocationDistance ,name: String, color: UIColor) -> MKCircle{
         
-        print("create")
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        //self.revirCircle = MKRevirCircle(centerCoordinate: coordinates, radius: radius)
         self.revirCircle = MKCircle(centerCoordinate: coordinates, radius: radius)
         revirCircle?.title = name
         return self.revirCircle!
