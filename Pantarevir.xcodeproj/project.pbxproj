@@ -340,7 +340,7 @@
 				TargetAttributes = {
 					3A50AB1E1CBD1C5000BD7B1B = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5R334J9G7P;
+						DevelopmentTeam = 6U95LCK397;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -632,7 +632,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir3;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
@@ -651,7 +651,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Pantarevir/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir3;
+				PRODUCT_BUNDLE_IDENTIFIER = PonyCorp.Pantarevir4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pantarevir/Pantarevir-Bridging-Header.h";
