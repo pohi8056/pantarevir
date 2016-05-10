@@ -12,14 +12,14 @@ import Firebase
 class StatisticsTableViewController: UITableViewController {
 
     var activities = [ActivityInfo]()
-    var amount: Int = 2000
+    var amount: Int = 62
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadStatistics()
     }
-
+    
     //  Räkna på: 0.1574 kWh/kr samt 0.1574 kg/kr i belopp.
     func convertAmount(amount : Int) -> Double {
         //print ("JKDSFKJNSKF: \(Double(amount) * 0.1574)")
@@ -40,7 +40,6 @@ class StatisticsTableViewController: UITableViewController {
     }
     
     func convertMinutesToMessage(data : Int) -> String {
-        
         let years = data / 525600
         let months = (data % 525600) / 43800
         let weeks = (data % 43800) / 10080
@@ -135,16 +134,13 @@ class StatisticsTableViewController: UITableViewController {
         else {
             cell.dataLabel.text = "\(convertMinutesToMessage(activity.dataInt))"
         }
-
         
         cell.titleLabel.text = activity.title
         cell.explanationLabel.text = activity.description
         
         cell.preservesSuperviewLayoutMargins = false
         cell.layoutMargins = UIEdgeInsetsZero
-        
-        //print(activity.dataInt)
-        
+                
         return cell
     }
     

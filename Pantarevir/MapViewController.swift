@@ -64,6 +64,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         updateRevir("uppsala")
         
+        let users = DataService.service.loadUsers()
+        for item in users{
+            print(item.firstName)
+        }
     }
     
     

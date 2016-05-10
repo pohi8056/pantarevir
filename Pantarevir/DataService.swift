@@ -167,7 +167,7 @@ class DataService{
     
     
     func returnCityRevirRef(city : String)-> Firebase{
-        return Firebase(url: "\(_citiesRef)/\(city)/revir")
+        return self.citiesRef.childByAppendingPath("\(city)/revir")
     }
     
     
@@ -177,11 +177,13 @@ class DataService{
     func loadUsers() -> [UserInfo]{
         
         var users: [UserInfo] = []
+        var datacount = -1
         
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     
+                    datacount = Int(snapshot.childrenCount)
                     // user details
                     let name           = snap.value.objectForKey("name")     as! String
                     let surname        = snap.value.objectForKey("surname")  as! String
@@ -222,6 +224,8 @@ class DataService{
                 }
             }
         })
+        //dangerzone !  !  !
+        while users.count != datacount{ }
         
         return users
     }
@@ -250,5 +254,61 @@ class DataService{
  
     
 
+    
+    
+    // M I A M I V I C E L U L L
+    // obs! cunncurency issues?
+  /*  func loadUsers2() -> [UserInfo]{
+        
+        var users: [UserInfo] = []
+        
+        let ref =  DataService.service.userRef
+                    // user details
+                    let name           = objectForKey("name")     as! String
+                    let surname        = objectForKey("surname")  as! String
+                    let city           = objectForKey("city")     as! String
+                    let email          = objectForKey("email")    as! String
+                    let profilePicture: UIImageView
+                    
+                    let userID         = snap.key
+                    
+                    // amount
+                    let total    = objectForKey("total")          as! Int
+                    let weekly   = objectForKey("weekly")         as! Int
+                    
+                    // login details
+                    let facebookID   = objectForKey("fbID")       as! String
+                    let loginService = objectForKey("provider")   as! String
+                    
+                    
+                    // set FB-pictures or "empty" picture
+                    if loginService == "facebook" {
+                        
+                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
+                        let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
+                        
+                        users.append(
+                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                    }
+                    else {
+                        
+                        let pic = UIImage(named: "empty.png")!
+                        profilePicture = UIImageView(image: pic)
+                        users.append(
+                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                    }
+                    
+                    
+                    
+                }
+            }
+        })
+        
+        return users
+    }
+    */
+    
+    
+    
 
 }

@@ -16,6 +16,9 @@ class StatisticsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dataLabel: UILabel!
     
+    @IBOutlet weak var testLabel: UILabel!
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
