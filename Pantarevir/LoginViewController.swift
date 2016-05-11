@@ -79,6 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("Gick inte logga invettu")
                 }else{
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+
                     self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
                     print("Logged in successfully via email/password")
                 }
@@ -124,7 +125,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 print(result["first_name"])
                                 print(result["last_name"])
                                 print(result["id"])
-                                
+                                let name = result["name"] as! String
                                 let firstName = result["first_name"] as! String
                                 let surName = result["last_name"] as! String
                                 let email = result["email"] as! String
@@ -137,6 +138,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 
                                 let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : 0, "weekly" : 0, "fbID" : fbID]
                                 DataService.service.createNewAccount(authData.uid, user: newUser as! Dictionary<String, AnyObject>)
+                                NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
+
                             })
                                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                         }

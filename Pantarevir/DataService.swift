@@ -19,7 +19,7 @@ class DataService{
     private let _userRef = Firebase(url: "\(ROOT_URL)/users")
     private var _receiptRef = Firebase(url: "\(ROOT_URL)/receipts")
     private var _citiesRef = Firebase(url: "\(ROOT_URL)/cities")
-    
+    private let _cityUserRef = Firebase(url: "\(ROOT_URL)/cities")
     
     enum Data{
         enum Branch{
@@ -89,8 +89,10 @@ class DataService{
                 DataService.service.citiesRef.observeEventType(.Value, withBlock: { snapshot in
                     let obtainedData = snapshot.value.objectForKey("\(val.rawValue)") as! String
                     print("Value obtained from \(val): \(obtainedData)")
-                    //dispatch_semaphore_signal(semaphore)
-
+                    
+                    
+                        
+                    
                     }, withCancelBlock: { error in
                         print("Error retrieving \(val)")
                 })
@@ -104,6 +106,7 @@ class DataService{
                 }, withCancelBlock: { error in
                     print("Error retrieving \(val)")
             })
+            
         }
 
         print("Current thread \(NSThread.currentThread()).4")
@@ -117,6 +120,30 @@ class DataService{
         //print("obtained data: \(obtainedData)")
         
         //return obtainedData
+    }
+    
+    func updateUserIDList(city : String, store : String, receipt : Receipt){
+        
+        DataService.service.returnCityUserRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print("A")
+            if snapshot.value.objectForKey("\(receipt.userUID)") != nil{
+                print("B")
+                print(receipt.userUID)
+
+                let obtainedData = snapshot.childSnapshotForPath("\(receipt.userUID)").value.objectForKey(Data.Value.Belopp.rawValue) as! Double
+                print("C")
+                
+                let newAmount = obtainedData + receipt.amount
+                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
+                print("D")
+            }else {
+                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
+            }
+           
+            }, withCancelBlock: { error in
+                print("Error with the userlist")
+            
+        })
     }
     
     
@@ -157,13 +184,21 @@ class DataService{
         //test()
         updateSpecificData(.User, val: .Total, newEntry: receipt)
         print("kom hit")
+        updateUserIDList("uppsala", store: "ICA Nära Folkes Livs", receipt: receipt)
         //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
         print("men inte hit")
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
-        returnCityRevirRef("uppsala").childByAppendingPath("ICA Nära Folkes Livs").updateChildValues([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Uid.rawValue : receipt.userUID])
+        //returnCityRevirRef("uppsala").childByAppendingPath("ICA Nära Folkes Livs").updateChildValues([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Uid.rawValue : receipt.userUID])
     }
     
+    func returnUserInCity(city : String, store : String, uid : String) -> Firebase{
+        return self.citiesRef.childByAppendingPath("\(city)/revir/\(store)/UserIDList/\(uid)")
+    }
+    
+    func returnCityUserRef(city : String, store : String) -> Firebase{
+        return self.citiesRef.childByAppendingPath("\(city)/revir/\(store)/UserIDList")
+    }
     
     func returnCityRevirRef(city : String)-> Firebase{
         return self.citiesRef.childByAppendingPath("\(city)/revir")
