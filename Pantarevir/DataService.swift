@@ -45,6 +45,7 @@ class DataService{
             case Longitude = "Longitude"
             case Zip = "Postnr"
             case Radius = "Radie"
+            case Belopp = "belopp"
         }
 }
     
@@ -159,9 +160,8 @@ class DataService{
         //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
         print("men inte hit")
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
-
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
-
+        returnCityRevirRef("uppsala").childByAppendingPath("ICA Nära Folkes Livs").updateChildValues([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Uid.rawValue : receipt.userUID])
     }
     
     
