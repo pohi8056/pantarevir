@@ -135,15 +135,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 //let profilepic = result["picture.type(large)"]
                                 
                                 //----------IMPORTANT: CHECK IF VALUES ARE BEING OVERWRITTEN FOR A USER THAT LOGS OUT--------------------
+                                DataService.service.userRef.observeSingleEventOfType(.Value, withBlock: { snapshot in 
+                                    if snapshot.value.objectForKey(authData.uid) == nil{
+                                        let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : 0, "weekly" : 0, "fbID" : fbID]
+                                        DataService.service.createNewAccount(authData.uid, user: newUser as! Dictionary<String, AnyObject>)
+                                    }
+                                    NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
+                                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                                    self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+
+                                    
+                                    }, withCancelBlock: { error in
+                                        print("Error looking for existing user.")
+                                })
                                 
-                                let newUser = ["provider": authData.provider!, "name" : firstName, "surname" : surName, "email" : email, "city" : "Uppsala", "total" : 0, "weekly" : 0, "fbID" : fbID]
-                                DataService.service.createNewAccount(authData.uid, user: newUser as! Dictionary<String, AnyObject>)
-                                NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
+
+                                //NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
 
                             })
-                                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                                //NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                         }
-                        self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
+                        //self.performSegueWithIdentifier("fromLoginToMainMenuSegue", sender: nil)
                     }
                 })
             }

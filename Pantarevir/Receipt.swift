@@ -14,7 +14,7 @@ class Receipt{
     private var _receiptRef : Firebase!
     private var _receiptEAN : String!
     private var _userUID : String!
-    private var _timeStamp : Int!
+    private var _timeStamp : String!
     private var _amount : Double!
     private var _weekly : Double!
     private var _total : Double!
@@ -34,7 +34,7 @@ class Receipt{
     }
     
     var timeStamp: String{
-        return "\(_timeStamp)"
+        return _timeStamp
     }
     
     var amount: Double{
@@ -57,9 +57,10 @@ class Receipt{
         self._name = NSUserDefaults.standardUserDefaults().stringForKey("name")
 
         let date = NSDate()
-        let cal = NSCalendar.currentCalendar()
-        let comps = cal.component([.Year, .Month, .Day, .Hour, .Minute], fromDate: date)
-        self._timeStamp = comps
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmm"
+        let dateWithFormat = dateFormatter.stringFromDate(date)
+        self._timeStamp = dateWithFormat
         
         self._receiptRef = DataService.service.receiptRef.childByAppendingPath(self._receiptEAN)
     }
