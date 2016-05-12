@@ -19,6 +19,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var locationManager = CLLocationManager()
     
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     // M I A M I   <3   V I C E
     
     func checkLocationAuthorizationStatus() {
@@ -40,6 +46,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         else{
             print("Location service disabled")
+            let defaultLocation = CLLocation(latitude: 59.8588200, longitude: 17.6388900)
+            centerMapOnLocation(defaultLocation)
         }
     }
     
@@ -72,8 +80,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        //later
-
     }
     
     
@@ -86,7 +92,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    
+    func centerMapOnLocationDefault(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 2000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(
+            location.coordinate,
+            regionRadius,
+            regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         
@@ -259,7 +272,6 @@ extension MapViewController {
             print(users.count)
             let annot = annotation as! MKRevirAnnotation
             for item in users {
-                // if item.userID != nil && item.userID == annotation.subtitle!{
                 if item.userID != nil && item.userID == annot.id{
 
                     print("annotaionimage load")
@@ -276,7 +288,6 @@ extension MapViewController {
             button.frame.size.height = 44
             button.backgroundColor = UIColor.clearColor()
             button.setImage(image, forState: .Normal)
-            //            button.setImage(UIImage(named: image), forState: .Normal)
             revirAnnotationView.leftCalloutAccessoryView = button
 
             return revirAnnotationView
