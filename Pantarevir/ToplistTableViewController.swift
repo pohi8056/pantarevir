@@ -32,36 +32,39 @@ class ToplistTableViewController: UITableViewController {
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     
-                    let name = "\(snap.value.objectForKey("name") as! String) \(snap.value.objectForKey("surname") as! String)"
-                    let amount: Double?
+                    let firstName = snap.value.objectForKey("name") as! String
+                    let surname = snap.value.objectForKey("surname") as! String
+                    let total = snap.value.objectForKey("total") as! Double
+                    let weekly = snap.value.objectForKey("weekly") as! Double
+                    let city = snap.value.objectForKey("city") as! String
+                    let fbID = snap.value.objectForKey("fbID") as! String
+                    let provider = snap.value.objectForKey("provider") as! String
+                    let email = snap.value.objectForKey("email") as! String
+                    let userID = snap.key
                     
-                    if self.veckaState == false {
-                        amount = snap.value.objectForKey("total") as? Double
-                    }
-                    else {
-                        amount = snap.value.objectForKey("weekly") as? Double
-                    }
                     
                     //För att fixa FB-profilbilderna
-                    let facebookID = snap.value.objectForKey("fbID") as! String
-                    let loginService = snap.value.objectForKey("provider") as! String
-                    
-                    if loginService == "facebook" {
-                        
-                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
+                    if provider == "facebook" {
+                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(fbID)/picture?type=square")
                         let profilePicture: UIImageView? = self.setProfileImage(facebookProfilePictureURL!)
                         
-                        self.users.insert(UserInfo(name: name, amount: String(amount!), profilePicture: profilePicture!), atIndex: 0)
+                        self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture!, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
                     }
                     else {
                         let pic : UIImage = UIImage(named: "empty.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(name: name, amount: String(amount!), profilePicture: profilePicture), atIndex: 0)
+                        self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
                     }
                 }
             }
-            self.users.sortInPlace({ $0.amount > $1.amount })
+            if (self.veckaState == true) {
+                self.users.sortInPlace({ $0.weekly > $1.weekly })
+            }
+            else {
+                self.users.sortInPlace({ $0.total > $1.total })
+            }
+            
             self.tableView.reloadData()
         })
     }
@@ -109,9 +112,17 @@ class ToplistTableViewController: UITableViewController {
         let user = users[indexPath.row]
         //let profilePicture = profilePictures[indexPath.row]
 
+        let amount: Double
+        if (veckaState == true) {
+            amount = user.weekly!
+        }
+        else {
+            amount = user.total!
+        }
+        
         cell.positionLabel.text = "\(indexPath.row + 1)."
         cell.nameLabel.text = user.name
-        cell.amountLabel.text = "\(user.amount) kr"
+        cell.amountLabel.text = "\(amount) kr"
         cell.profilePicture.image = user.profilePicture!.image
         
         cell.preservesSuperviewLayoutMargins = false

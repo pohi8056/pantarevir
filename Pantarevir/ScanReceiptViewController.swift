@@ -158,6 +158,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     private func validateReceiptBarcode(barcode : String) -> Bool{
         let barcodePrefix = barcode.substringToIndex(barcode.startIndex.advancedBy(1))
         let barcodeAmount = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(8)..<barcode.endIndex.advancedBy(-1)))
+        let barcodeAmountHigh = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(5)..<barcode.endIndex.advancedBy(-5))) //KAN VARA FEL I VISSA BUTIKER med advanceby(5) då det ibland borde vara 4, fix here if probs.
         let barcode23 = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(2)..<barcode.startIndex.advancedBy(4))) //inte testat
 
         
@@ -186,7 +187,9 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 print("Everything ok!")
                 
                 //inc.
-                let amountDouble = Double(barcodeAmount)!/10.0
+                let amountDoubleLow = Double(barcodeAmount)!/10.0
+                let amountDoubleHigh = Double(barcodeAmountHigh)!/10.0
+                let amountDouble = amountDoubleLow + amountDoubleHigh
                 let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
                 let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble)
 
