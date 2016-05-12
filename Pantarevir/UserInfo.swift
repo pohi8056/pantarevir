@@ -33,11 +33,12 @@ class UserInfo{
     
     
     // antes: untouched
-    init(name: String, amount: String, profilePicture: UIImageView){
+    /*init(name: String, total: Double, weekly: Double, profilePicture: UIImageView){
         self.name = name
-        self.amount = amount
+        self.total = total
+        self.weekly = weekly
         self.profilePicture = profilePicture
-    }
+    }*/
     
     
     // M I A M I V I C E L U L L
@@ -75,4 +76,5 @@ class UserInfo{
     func returnAmountInt() -> Int{
         return Int(amount)!
     }
+
 }
