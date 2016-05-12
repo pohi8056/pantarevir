@@ -132,12 +132,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // update revir by city
     func updateRevir(city: String){
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.removeOverlays(mapView.overlays)
-
         
-        DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.childrenCount) // I got the expected number of items
+        //DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityRevirRef(city).observeEventType(.Value, withBlock: { snapshot in
+
+            print(snapshot.childrenCount)
+            
+            //remove old overlays and annotaitons
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.removeOverlays(self.mapView.overlays)
+            
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? FDataSnapshot {
                 let nam = rest.key as String
