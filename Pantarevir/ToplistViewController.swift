@@ -38,7 +38,6 @@ class ToplistViewController: UIViewController {
     
     @IBAction func veckaButton(sender: UIButton) {
         containedVC.setVeckaState(true)
-        //veckaOutlet.titleLabel?.textColor = UIColor.whiteColor()
         veckaOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         totaltOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
 
