@@ -60,7 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func tmpAutoFillFields(){
-        emailTextField.text = "noreply@ponycorp.com"
+        emailTextField.text = "clark@nielsen.corp"
         passwordTextField.text = "Clark"
     }
     
