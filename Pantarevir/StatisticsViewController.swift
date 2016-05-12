@@ -10,11 +10,27 @@ import UIKit
 
 class StatisticsViewController: UIViewController {
     
+    @IBOutlet weak var textLabel: UILabel!
+    var userAmount: Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.textLabel.text = "Din återvinning på \(self.userAmount) kr motsvarar..."
+        
+        print("KOLLA: \(self.userAmount)")
+        
         //veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
+    }
+    
+    var containedVC: StatisticsTableViewController!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "embedContainedStatistics" {
+            containedVC = segue.destinationViewController as! StatisticsTableViewController
+            containedVC.amount = userAmount
+        }
     }
     
     override func didReceiveMemoryWarning() {

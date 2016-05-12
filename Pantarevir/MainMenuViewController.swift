@@ -30,6 +30,7 @@ class MainMenuViewController: UIViewController {
     @IBAction func LoggaUtButton(sender: UIButton) {
     }
     
+    var totalOfCurrentUser: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class MainMenuViewController: UIViewController {
         DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
             let nameOfCurrentUser = snapshot.value.objectForKey("name") as! String
             let surnameOfCurrentUser = snapshot.value.objectForKey("surname") as! String
-            let totalOfCurrentUser = snapshot.value.objectForKey("total") as! Double
+            self.totalOfCurrentUser = snapshot.value.objectForKey("total") as! Double
             let facebookID = snapshot.value.objectForKey("fbID") as! String
             let loginService = snapshot.value.objectForKey("provider") as! String
 
@@ -51,7 +52,7 @@ class MainMenuViewController: UIViewController {
                 NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
             }
             self.nameLabel.text = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
-            self.amountLabel.text = "\(totalOfCurrentUser) kr"
+            self.amountLabel.text = "\(self.totalOfCurrentUser) kr"
             }, withCancelBlock: { error in
                 print("Error retrieving or displaying the user's name.")
         })
@@ -77,6 +78,13 @@ class MainMenuViewController: UIViewController {
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "fromMainMenuToStatisticsSegue" {
+            let statisticsViewController = segue.destinationViewController as! StatisticsViewController
+            statisticsViewController.userAmount = self.totalOfCurrentUser
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
