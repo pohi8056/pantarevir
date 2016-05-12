@@ -18,8 +18,6 @@ class StatisticsViewController: UIViewController {
         
         self.textLabel.text = "Din återvinning på \(self.userAmount) kr motsvarar..."
         
-        print("KOLLA: \(self.userAmount)")
-        
         //veckaOutlet.titleLabel?.textColor = UIColor.grayColor()
         // Do any additional setup after loading the view.
     }

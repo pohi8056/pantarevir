@@ -17,13 +17,6 @@ class StatisticsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
-            self.amount = snapshot.value.objectForKey("total") as! Double
-            print ("HEJ!!! \(self.amount)")
-            //self.amount = totalOfCurrentUser
-        })*/
-        
-        print("HEJ HEJ!!! \(self.amount)")
         loadStatistics()
     }
     
