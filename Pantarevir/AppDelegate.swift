@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKAppEvents.activateApp()
 
     }
-    //DELETED ? in AnyObject? !!!!!!!
+    //DELETED ? in AnyObject? !!!!!!! Added by popp, works every time. The error is in lull adds
     func application(application: UIApplication, openURL url: NSURL,
                      sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance()

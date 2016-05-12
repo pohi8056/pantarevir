@@ -40,10 +40,15 @@ class MainMenuViewController: UIViewController {
             let totalOfCurrentUser = snapshot.value.objectForKey("total") as! Double
             let facebookID = snapshot.value.objectForKey("fbID") as! String
             let loginService = snapshot.value.objectForKey("provider") as! String
+
+
             
             if loginService == "facebook"{
                 let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
                 self.setProfileImage(facebookProfilePictureURL!)
+            }else{
+                let name = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
+                NSUserDefaults.standardUserDefaults().setValue(name, forKey: "name")
             }
             self.nameLabel.text = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
             self.amountLabel.text = "\(totalOfCurrentUser) kr"

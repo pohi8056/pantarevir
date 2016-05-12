@@ -21,6 +21,7 @@ class Revir{
     var radius: CLLocationDistance?
     var revirCircle: MKCircle?
     var revirImage: UIImage?
+    var belopp : Double?
     
     var revirAnnotation: MKRevirAnnotation?
     
@@ -30,12 +31,12 @@ class Revir{
     // M I A M I   <3   V I C E
     
     init(name: String, latitude: Double, longitude: Double, userID: String, radius: CLLocationDistance, intColor: Int){
-        
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
         self.currentUserID = userID
         self.radius = radius
+        self.belopp = radius
         switch intColor {
         case 0:
             self.color = UIColor.redColor()
@@ -86,7 +87,9 @@ class Revir{
             title: title, subtitle: subtitle, coordinate: CLLocationCoordinate2DMake(lat, long), id: id)
     }
     
-    
+    func prepareForFirebase() -> Dictionary<String, AnyObject>{
+        return [DataService.Data.Value.Uid.rawValue : currentUserID!, DataService.Data.Value.Belopp.rawValue : belopp!]
+    }
     
     
 }

@@ -18,7 +18,12 @@ class Receipt{
     private var _amount : Double!
     private var _weekly : Double!
     private var _total : Double!
+    private var _name : String!
     
+    
+    var name: String{
+        return _name
+    }
     
     var receiptEAN: String{
         return _receiptEAN
@@ -49,7 +54,8 @@ class Receipt{
         self._receiptEAN = receiptEAN
         self._userUID = userUID
         self._amount = amount
-        
+        self._name = NSUserDefaults.standardUserDefaults().stringForKey("name")
+
         let date = NSDate()
         let cal = NSCalendar.currentCalendar()
         let comps = cal.component([.Year, .Month, .Day, .Hour, .Minute], fromDate: date)
