@@ -161,8 +161,7 @@ class DataService{
             if oldValue < newValue{
                 //OBS: radie ökning med multipel 2
                 
-                //let uid = receipt.userUID.substringWithRange(Range<String.Index>(receipt.userUID.startIndex.advancedBy(7)..<receipt.userUID.endIndex)) as AnyObject
-                self.returnCityStoreRef(city, store: store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2, Data.Value.Uid.rawValue: receipt.userUID])
+                self.returnCityStoreRef(city, store: receipt.store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2, Data.Value.Uid.rawValue: receipt.userUID])
             }
             
             
