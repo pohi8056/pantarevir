@@ -774,6 +774,9 @@
                             <constraint firstItem="neD-h2-VXR" firstAttribute="leading" secondItem="FkN-Ti-VSj" secondAttribute="leading" id="xcz-v9-8np"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLabel" destination="DCa-uF-tnq" id="Bwq-Nq-jh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLi-XH-vaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

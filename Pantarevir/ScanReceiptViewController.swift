@@ -191,7 +191,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 let amountDoubleHigh = Double(barcodeAmountHigh)!/10.0
                 let amountDouble = amountDoubleLow + amountDoubleHigh
                 let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
-                let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble)
+                let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble, store: "ICA Nära Folkes Livs")
 
                 showConfirmationPopup(receipt)
                 //    addAmountToFirebase(amountDouble, EAN: barcode)

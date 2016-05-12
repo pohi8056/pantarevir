@@ -12,18 +12,25 @@ import Firebase
 class StatisticsTableViewController: UITableViewController {
 
     var activities = [ActivityInfo]()
-    var amount: Int = 62
+    var amount = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
+            self.amount = snapshot.value.objectForKey("total") as! Double
+            print ("HEJ!!! \(self.amount)")
+            //self.amount = totalOfCurrentUser
+        })*/
+        
+        print("HEJ HEJ!!! \(self.amount)")
         loadStatistics()
     }
     
     //  Räkna på: 0.1574 kWh/kr samt 0.1574 kg/kr i belopp.
-    func convertAmount(amount : Int) -> Double {
+    func convertAmount(amount : Double) -> Double {
         //print ("JKDSFKJNSKF: \(Double(amount) * 0.1574)")
-        return (Double(amount) * 0.1574)
+        return (amount * 0.1574)
     }
     
     func convertToString(value : Int, unitSingular : String, unitPlural : String) -> String {

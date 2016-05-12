@@ -123,9 +123,9 @@ class DataService{
         //return obtainedData
     }
     
-    func updateUserIDList(city : String, store : String, receipt : Receipt){
+    func updateUserIDList(city : String, receipt : Receipt){
         
-        DataService.service.returnCityUserRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityUserRef(city, store: receipt.store).observeSingleEventOfType(.Value, withBlock: { snapshot in
             print("A")
             if snapshot.value.objectForKey("\(receipt.userUID)") != nil{
                 print("B")
@@ -135,13 +135,13 @@ class DataService{
                 print("C")
                 
                 let newAmount = obtainedData + receipt.amount
-                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
+                self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
                 print("D")
                 
-                self.updateStoreOwner(city, store: store, receipt: receipt, newValue: newAmount)
+                self.updateStoreOwner(city, receipt: receipt, newValue: newAmount)
                 
             }else {
-                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
+                self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
             }
             
            
@@ -151,9 +151,9 @@ class DataService{
         })
     }
     
-    func updateStoreOwner(city : String, store : String, receipt : Receipt, newValue: Double){
+    func updateStoreOwner(city : String, receipt : Receipt, newValue: Double){
         
-        DataService.service.returnCityStoreRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityStoreRef(city, store: receipt.store).observeSingleEventOfType(.Value, withBlock: { snapshot in
 
                 
             let oldValue = snapshot.childSnapshotForPath("belopp").value as! Double
@@ -211,7 +211,7 @@ class DataService{
         //test()
         updateSpecificData(.User, val: .Total, newEntry: receipt)
         print("kom hit")
-        updateUserIDList("uppsala", store: "ICA Nära Folkes Livs", receipt: receipt)
+        updateUserIDList("uppsala", receipt: receipt)
         //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
         print("men inte hit")
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
