@@ -19,6 +19,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var locationManager = CLLocationManager()
     
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     // M I A M I   <3   V I C E
     
     func checkLocationAuthorizationStatus() {
@@ -40,6 +46,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         else{
             print("Location service disabled")
+            let defaultLocation = CLLocation(latitude: 59.8588200, longitude: 17.6388900)
+            centerMapOnLocation(defaultLocation)
         }
     }
     
@@ -72,8 +80,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        //later
-
     }
     
     
@@ -86,7 +92,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    
+    func centerMapOnLocationDefault(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 2000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(
+            location.coordinate,
+            regionRadius,
+            regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         
@@ -119,12 +132,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // update revir by city
     func updateRevir(city: String){
-        mapView.removeAnnotations(mapView.annotations)
-        mapView.removeOverlays(mapView.overlays)
-
         
-        DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.childrenCount) // I got the expected number of items
+        //DataService.service.returnCityRevirRef(city).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityRevirRef(city).observeEventType(.Value, withBlock: { snapshot in
+
+            print(snapshot.childrenCount)
+            
+            //remove old overlays and annotaitons
+            self.mapView.removeAnnotations(self.mapView.annotations)
+            self.mapView.removeOverlays(self.mapView.overlays)
+            
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? FDataSnapshot {
                 let nam = rest.key as String
@@ -259,7 +276,6 @@ extension MapViewController {
             print(users.count)
             let annot = annotation as! MKRevirAnnotation
             for item in users {
-                // if item.userID != nil && item.userID == annotation.subtitle!{
                 if item.userID != nil && item.userID == annot.id{
 
                     print("annotaionimage load")
@@ -276,7 +292,6 @@ extension MapViewController {
             button.frame.size.height = 44
             button.backgroundColor = UIColor.clearColor()
             button.setImage(image, forState: .Normal)
-            //            button.setImage(UIImage(named: image), forState: .Normal)
             revirAnnotationView.leftCalloutAccessoryView = button
 
             return revirAnnotationView

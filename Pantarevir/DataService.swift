@@ -29,6 +29,7 @@ class DataService{
         }
         enum Value : String{
             case Name = "name"
+            case Owner = "playerName"
             case Surname = "surname"
             case City = "city"
             case Email = "email"
@@ -136,13 +137,37 @@ class DataService{
                 let newAmount = obtainedData + receipt.amount
                 self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
                 print("D")
+                
+                self.updateStoreOwner(city, store: store, receipt: receipt, newValue: newAmount)
+                
             }else {
                 self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
             }
+            
            
             }, withCancelBlock: { error in
                 print("Error with the userlist")
             
+        })
+    }
+    
+    func updateStoreOwner(city : String, store : String, receipt : Receipt, newValue: Double){
+        
+        DataService.service.returnCityStoreRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+
+                
+            let oldValue = snapshot.childSnapshotForPath("belopp").value as! Double
+            
+            if oldValue < newValue{
+                //OBS: radie ökning med multipel 2
+                self.returnCityStoreRef(city, store: store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2])
+            }
+            
+            
+            
+            }, withCancelBlock: { error in
+                print("Error with the storeowner")
+                
         })
     }
     
@@ -200,138 +225,15 @@ class DataService{
         return self.citiesRef.childByAppendingPath("\(city)/revir/\(store)/UserIDList")
     }
     
+    func returnCityStoreRef(city : String, store : String) -> Firebase{
+        return self.citiesRef.childByAppendingPath("\(city)/revir/\(store)")
+    }
+    
     func returnCityRevirRef(city : String)-> Firebase{
         return self.citiesRef.childByAppendingPath("\(city)/revir")
     }
     
- /*
-    // M I A M I V I C E L U L L
-    // obs! cunncurency issues?
-    func loadUsers() -> [UserInfo]{
-        
-        var users: [UserInfo] = []
-        
-        DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                for snap in snapshots {
-                    
-                    // user details
-                    let name           = snap.value.objectForKey("name")     as! String
-                    let surname        = snap.value.objectForKey("surname")  as! String
-                    let city           = snap.value.objectForKey("city")     as! String
-                    let email          = snap.value.objectForKey("email")    as! String
-                    let profilePicture: UIImageView
-                    
-                    let userID         = snap.key
-                    
-                    // amount
-                    let total    = snap.value.objectForKey("total")          as! Double
-                    let weekly   = snap.value.objectForKey("weekly")         as! Double
-                    
-                    // login details
-                    let facebookID = snap.value.objectForKey("fbID")         as! String
-                    let loginService = snap.value.objectForKey("provider")   as! String
-                    
-                    
-                    // set FB-pictures or "empty" picture
-                    if loginService == "facebook" {
-                        
-                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
-                        let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
-                        
-                        users.append(
-                            UserInfo(firstName: name, surname: surname, total: total ,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
-                    }
-                    else {
-                        
-                        let pic = UIImage(named: "empty.png")!
-                        profilePicture = UIImageView(image: pic)
-                        users.append(
-                            UserInfo(firstName: name, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
-                    }
-                    
-                    
-                    
-                }
-            }
-        })
-        //dangerzone !  !  !
-        return users
-    }
-    
-    */
-    
-    // set fb-pic to correct format (helper function)
-    func setProfileImage(imageURL : NSURL) -> UIImageView {
-        let obtainedImage = NSData(contentsOfURL: imageURL)
-        let profilePicture : UIImageView = UIImageView(image: UIImage(data: obtainedImage!))
-        if obtainedImage != nil{
-            profilePicture.image = UIImage(data: obtainedImage!)!
-            let square = CGSize(width: min(profilePicture.frame.size.width, profilePicture.frame.size.height), height: min(profilePicture.frame.size.width, profilePicture.frame.size.height))
-            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
-            imageView.contentMode = .ScaleAspectFill
-            imageView.image = profilePicture.image
-            imageView.layer.cornerRadius = square.width/2
-            imageView.layer.masksToBounds = true
-            UIGraphicsBeginImageContext(imageView.bounds.size)
-            let context = UIGraphicsGetCurrentContext()
-            imageView.layer.renderInContext(context!)
-            profilePicture.image = UIGraphicsGetImageFromCurrentImageContext()
-        }
-        return profilePicture
-    }
- 
-    
 
-    
-    
-    // M I A M I V I C E L U L L
-    // obs! cunncurency issues?
-/*    func loadUser(userID: String) -> UserInfo{
-        
-        var user: UserInfo
-        
-        let ref =  DataService.service.userRef
-                    // user details
-        //obs
-                    let name           = ref.childByAppendingPath(userID).childByAppendingPath("name").key as String
-                    let surname        = ref.childByAppendingPath(userID).childByAppendingPath("surname").key  as String
-                    let city           = ref.childByAppendingPath(userID).childByAppendingPath("city").key     as String
-                    let email          = ref.childByAppendingPath(userID).childByAppendingPath("email").key    as String
-                    let profilePicture: UIImageView
-        
-                    // amount
-                    let total    = ref.childByAppendingPath(userID).childByAppendingPath("total")          as! Double
-                    let weekly   = ref.childByAppendingPath(userID).childByAppendingPath("weekly")        as! Double
-                    
-                    // login details
-                    let facebookID   = ref.childByAppendingPath(userID).childByAppendingPath("fbID").key       as String
-                    let loginService = ref.childByAppendingPath(userID).childByAppendingPath("provider").key
-                        as String
-                    
-                    
-                    // set FB-pictures or "empty" picture
-                    if loginService == "facebook" {
-                        
-                        let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(facebookID)/picture?type=square")
-                        let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
-                        
-                        user =
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID)
-                    }
-                    else {
-                        
-                        let pic = UIImage(named: "empty.png")!
-                        profilePicture = UIImageView(image: pic)
-                        
-                        user =
-                            UserInfo(firstName: name, surname: surname, total: total,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID)
-                    }
-   
-        
-        return user
-    }
-*/
     
     
     

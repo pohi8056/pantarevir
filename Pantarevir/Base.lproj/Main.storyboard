@@ -530,8 +530,7 @@
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-FS-EwC">
                                 <rect key="frame" x="9" y="23" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="Qvf-x1-Yn3"/>
-                                    <constraint firstAttribute="height" constant="32" id="Wfu-P1-3jo"/>
+                                    <constraint firstAttribute="width" constant="32" id="luL-64-ulq"/>
                                 </constraints>
                                 <state key="normal" image="back_arrow_dropshadow copy">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -543,13 +542,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6B9-FN-7F4" firstAttribute="top" secondItem="FUd-mV-fh2" secondAttribute="top" id="4x6-q2-Ya4"/>
-                            <constraint firstItem="OW3-FS-EwC" firstAttribute="leading" secondItem="FUd-mV-fh2" secondAttribute="leadingMargin" constant="-11" id="IYz-Iy-eea"/>
-                            <constraint firstItem="6B9-FN-7F4" firstAttribute="top" secondItem="OW3-FS-EwC" secondAttribute="bottom" constant="-55" id="KcV-uX-h2w"/>
-                            <constraint firstItem="6B9-FN-7F4" firstAttribute="leading" secondItem="FUd-mV-fh2" secondAttribute="leading" id="NiN-x6-7TO"/>
-                            <constraint firstAttribute="trailing" secondItem="6B9-FN-7F4" secondAttribute="trailing" id="WFU-G8-Tdw"/>
-                            <constraint firstItem="6B9-FN-7F4" firstAttribute="bottom" secondItem="I1h-VO-hFM" secondAttribute="top" id="nQq-gR-gsb"/>
-                            <constraint firstItem="OW3-FS-EwC" firstAttribute="top" secondItem="XvS-Hu-JjI" secondAttribute="bottom" constant="3" id="nRH-yn-FaF"/>
+                            <constraint firstItem="I1h-VO-hFM" firstAttribute="top" secondItem="OW3-FS-EwC" secondAttribute="bottom" constant="545" id="1sj-Og-5ge"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="bottom" secondItem="I1h-VO-hFM" secondAttribute="top" id="6OK-1N-8qQ"/>
+                            <constraint firstItem="OW3-FS-EwC" firstAttribute="leading" secondItem="FUd-mV-fh2" secondAttribute="leadingMargin" constant="-11" id="MQ7-Hz-Y9a"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="top" secondItem="FUd-mV-fh2" secondAttribute="top" id="csJ-pV-e3M"/>
+                            <constraint firstAttribute="trailing" secondItem="6B9-FN-7F4" secondAttribute="trailing" id="e5R-Ug-gIJ"/>
+                            <constraint firstItem="6B9-FN-7F4" firstAttribute="leading" secondItem="FUd-mV-fh2" secondAttribute="leading" id="eSZ-qi-Jyh"/>
+                            <constraint firstItem="OW3-FS-EwC" firstAttribute="top" secondItem="XvS-Hu-JjI" secondAttribute="bottom" constant="3" id="hwL-Zc-F3g"/>
                         </constraints>
                     </view>
                     <connections>
