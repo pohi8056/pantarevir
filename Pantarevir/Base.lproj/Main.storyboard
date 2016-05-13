@@ -469,8 +469,8 @@
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-25-Ldf">
                                 <rect key="frame" x="13" y="25" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="jlr-fJ-qTi"/>
-                                    <constraint firstAttribute="width" constant="32" id="uTU-xp-t8W"/>
+                                    <constraint firstAttribute="height" constant="32" id="J3f-vr-j4h"/>
+                                    <constraint firstAttribute="width" constant="32" id="Q7Z-GG-wdo"/>
                                 </constraints>
                                 <state key="normal" image="back_arrow_dropshadow copy">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -488,15 +488,15 @@
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="26" id="EHV-Qp-2JH"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="gHf-hh-pyZ" secondAttribute="bottom" id="NBX-iz-wEE"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="U8e-vO-fpr"/>
-                            <constraint firstItem="wJw-25-Ldf" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="5" id="Vbb-p7-Yjq"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="mTq-yj-v9z" secondAttribute="bottom" constant="29" id="ZYt-C0-Cu3"/>
-                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="11" id="bL3-gK-dn9"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="d0w-Io-t1G"/>
+                            <constraint firstItem="wJw-25-Ldf" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-7" id="dSb-aS-gcM"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="dc6-71-xHW"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="pED-Iu-oPz"/>
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-20" id="rCv-M7-tnJ"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="top" secondItem="GPT-I3-8VL" secondAttribute="topMargin" id="uPs-By-pnb"/>
-                            <constraint firstItem="wJw-25-Ldf" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-7" id="zIH-ha-ilG"/>
+                            <constraint firstItem="wJw-25-Ldf" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="25" id="ufM-1f-DMt"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="11" id="zm8-Pq-xI7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -529,7 +529,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZdQ-N7-cMS" id="c6m-Ez-52G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Butiksnamn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jca-Ql-QQm">
