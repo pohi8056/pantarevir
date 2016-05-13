@@ -16,7 +16,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     
-    var storeName: String!
+    var storeName: String?
     
     let captureSession = AVCaptureSession()
     var captureDevice:AVCaptureDevice?
@@ -211,7 +211,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 let amountDoubleHigh = Double(barcodeAmountHigh)!/10.0
                 let amountDouble = amountDoubleLow + amountDoubleHigh
                 let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
-                let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble, store: "ICA Nära Folkes Livs")
+                let receipt = Receipt(receiptEAN: barcode, userUID: currentUser!, amount: amountDouble, store: storeName!)
 
                 showConfirmationPopup(receipt)
                 //    addAmountToFirebase(amountDouble, EAN: barcode)
