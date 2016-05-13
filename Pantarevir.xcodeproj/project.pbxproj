@@ -33,6 +33,10 @@
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
 		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
+		63FECA751CE53F980091A682 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA741CE53F980091A682 /* StoresTableViewController.swift */; };
+		63FECA771CE53FE00091A682 /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */; };
+		63FECA7B1CE549580091A682 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA7A1CE549580091A682 /* Store.swift */; };
+		63FECA7D1CE554040091A682 /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA7C1CE554040091A682 /* StoresViewController.swift */; };
 		B0F363B11CD9148E000D6D30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F363B01CD9148E000D6D30 /* MapKit.framework */; };
 		B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */; };
 		B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */; };
@@ -90,6 +94,10 @@
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63FECA741CE53F980091A682 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewController.swift; sourceTree = "<group>"; };
+		63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
+		63FECA7A1CE549580091A682 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		63FECA7C1CE554040091A682 /* StoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
 		B0F363AC1CD913C4000D6D30 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0F363B01CD9148E000D6D30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirAnnotation.swift; sourceTree = "<group>"; };
@@ -235,6 +243,10 @@
 			isa = PBXGroup;
 			children = (
 				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
+				63FECA7C1CE554040091A682 /* StoresViewController.swift */,
+				63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */,
+				63FECA741CE53F980091A682 /* StoresTableViewController.swift */,
+				63FECA7A1CE549580091A682 /* Store.swift */,
 			);
 			name = Scan;
 			sourceTree = "<group>";
@@ -457,9 +469,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FECA7D1CE554040091A682 /* StoresViewController.swift in Sources */,
 				3A9412AF1CDA712E00F13CDD /* Receipt.swift in Sources */,
 				B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */,
 				635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */,
+				63FECA7B1CE549580091A682 /* Store.swift in Sources */,
 				6300E00E1CDD55C000A4F4E2 /* StatisticsViewController.swift in Sources */,
 				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
 				3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */,
@@ -476,10 +490,12 @@
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
 				B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */,
 				B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */,
+				63FECA771CE53FE00091A682 /* StoresTableViewCell.swift in Sources */,
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				6300E00A1CDD009900A4F4E2 /* ActivityInfo.swift in Sources */,
 				6300E0081CDB770B00A4F4E2 /* StatisticsTableViewCell.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
+				63FECA751CE53F980091A682 /* StoresTableViewController.swift in Sources */,
 				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

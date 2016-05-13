@@ -15,6 +15,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     
+    var storeName: String!
     
     let captureSession = AVCaptureSession()
     var captureDevice:AVCaptureDevice?
@@ -22,6 +23,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.storeName)
     }
     
     override func viewDidAppear(animated: Bool) {
