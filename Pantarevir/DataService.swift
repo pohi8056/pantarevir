@@ -123,9 +123,9 @@ class DataService{
         //return obtainedData
     }
     
-    func updateUserIDList(city : String, store : String, receipt : Receipt){
+    func updateUserIDList(city : String, receipt : Receipt){
         
-        DataService.service.returnCityUserRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityUserRef(city, store: receipt.store).observeSingleEventOfType(.Value, withBlock: { snapshot in
             print("A")
             if snapshot.value.objectForKey("\(receipt.userUID)") != nil{
                 print("B")
@@ -135,13 +135,13 @@ class DataService{
                 print("C")
                 
                 let newAmount = obtainedData + receipt.amount
-                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
+                self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
                 print("D")
                 
-                self.updateStoreOwner(city, store: store, receipt: receipt, newValue: newAmount)
+                self.updateStoreOwner(city, receipt: receipt, newValue: newAmount)
                 
             }else {
-                self.returnCityUserRef(city, store: store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
+                self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
             }
             
            
@@ -151,16 +151,18 @@ class DataService{
         })
     }
     
-    func updateStoreOwner(city : String, store : String, receipt : Receipt, newValue: Double){
+    func updateStoreOwner(city : String, receipt : Receipt, newValue: Double){
         
-        DataService.service.returnCityStoreRef(city, store: store).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.service.returnCityStoreRef(city, store: receipt.store).observeSingleEventOfType(.Value, withBlock: { snapshot in
 
                 
             let oldValue = snapshot.childSnapshotForPath("belopp").value as! Double
             
             if oldValue < newValue{
                 //OBS: radie ökning med multipel 2
-                self.returnCityStoreRef(city, store: store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2])
+                
+                //let uid = receipt.userUID.substringWithRange(Range<String.Index>(receipt.userUID.startIndex.advancedBy(7)..<receipt.userUID.endIndex)) as AnyObject
+                self.returnCityStoreRef(city, store: receipt.store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2, Data.Value.Uid.rawValue: receipt.userUID])
             }
             
             
@@ -206,15 +208,19 @@ class DataService{
     
     //NOTE TO TOMORROW: Read last total/weekly and add instead of overwrite.
     func addReceipt(receipt : Receipt){
-        //test()
         updateSpecificData(.User, val: .Total, newEntry: receipt)
-        print("kom hit")
-        updateUserIDList("uppsala", store: "ICA Nära Folkes Livs", receipt: receipt)
-        //let newTotal = Double(previousTotal)! + Double(receipt.amount)!
-        print("men inte hit")
+        updateUserIDList("uppsala", receipt: receipt)
         let variablesOfReceipt = receipt.prepareReceiptForFirebase()
         receiptRef.childByAppendingPath(receipt.receiptEAN).setValue(variablesOfReceipt)
-        //returnCityRevirRef("uppsala").childByAppendingPath("ICA Nära Folkes Livs").updateChildValues([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Uid.rawValue : receipt.userUID])
+        returnUserReceiptRef(receipt).setValue([Data.Value.Time.rawValue : receipt.timeStamp])
+    }
+    
+    func returnUserReceiptRef(receipt : Receipt) -> Firebase{
+        return self.currentUserRef.childByAppendingPath("receipts/\(receipt.receiptEAN)")
+    }
+    
+    func returnUserReceipt(receipt : Receipt) -> Firebase{
+        return self.currentUserRef.childByAppendingPath("receipts/")
     }
     
     func returnUserInCity(city : String, store : String, uid : String) -> Firebase{

@@ -138,6 +138,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
             print(snapshot.childrenCount)
             
+            //remove array values
+            self.revirArray.removeAll()
+
+            
             //remove old overlays and annotaitons
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.mapView.removeOverlays(self.mapView.overlays)
@@ -162,6 +166,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 print(userID)
                 print(color)
                 print(radius)
+
                 
                 let newRevir = Revir(name: nam,latitude: lat,longitude: lon, userID: userID, radius: radius, intColor: color)
                 
@@ -191,6 +196,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
                     
+                    
                     // user details
                     let name           = snap.value.objectForKey("name")     as! String
                     let surname        = snap.value.objectForKey("surname")  as! String
@@ -216,7 +222,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         let profilePicture = self.setProfileImage(facebookProfilePictureURL!)
                         
                         self.users.append(
-                            UserInfo(firstName: name, surname: surname, total: total ,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
+                            UserInfo(firstName: name, surname: surname, total: total ,weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email, userID: userID))
                     }
                     else {
                         
@@ -277,10 +283,12 @@ extension MapViewController {
             let annot = annotation as! MKRevirAnnotation
             for item in users {
                 if item.userID != nil && item.userID == annot.id{
+                //if item.fbID != nil && item.fbID == annot.id{
 
                     print("annotaionimage load")
                 
                     image = item.profilePicture!.image
+                    
                 }else{
                     image = UIImage(named: "logo")!
                 }

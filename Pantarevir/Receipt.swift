@@ -19,7 +19,7 @@ class Receipt{
     private var _weekly : Double!
     private var _total : Double!
     private var _name : String!
-    
+    private var _store : String!
     
     var name: String{
         return _name
@@ -49,13 +49,16 @@ class Receipt{
         return _total
     }
     
+    var store: String{
+        return _store
+    }
     
-    init(receiptEAN : String, userUID : String, amount : Double){
+    init(receiptEAN : String, userUID : String, amount : Double, store : String){
         self._receiptEAN = receiptEAN
         self._userUID = userUID
         self._amount = amount
         self._name = NSUserDefaults.standardUserDefaults().stringForKey("name")
-
+        self._store = store
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyyMMddHHmm"
