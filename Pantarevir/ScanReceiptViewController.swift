@@ -9,6 +9,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
     
@@ -44,7 +45,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         let alertPopup = UIAlertController(title: "Bekräfta pantning", message: "Belopp: \(receipt.amount)0 kr", preferredStyle: UIAlertControllerStyle.Alert)
         let confirmAction = UIAlertAction(title: "Bekräfta", style: UIAlertActionStyle.Default, handler: { Void in
                 print("CONFIRMHERE")
-                self.addAmountToFirebase(receipt)
+                self.checkForPreviousReceiptsInFirebase(receipt)
                 //confirmedAmount = true
                 //dispatch_semaphore_signal(semaphore)
             })
@@ -141,16 +142,33 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
  
     //note to self: Glöm inte kolla om ean redan finns
     
-    
-    //Add the recycled amount to Firebase
-    private func addAmountToFirebase(receipt : Receipt){
+    //Check if receipt is already scanned by the user
+    private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
+        var receiptAlreadyScanned = false
+        DataService.service.returnUserReceipt(receipt).observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots{
+                    let receiptEAN = snap.key
+                    if receiptEAN == receipt.receiptEAN{
+                        //INSERT TIME CHECK HERE
+                        receiptAlreadyScanned = true
+                    }
+                }
+            }
+            
+            if receiptAlreadyScanned == false{
+                DataService.service.addReceipt(receipt)
+                self.returnToMainMenu()
+            }else{
+                self.errorLabel.text = "Kvitto redan skannat."
+                self.errorLabel.textColor = UIColor.yellowColor()
+            }
+
+            
+        })
         
-        //let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
-        //print(currentUser)
-        //let receipt = Receipt(receiptEAN: EAN, userUID: currentUser!, amount: amount)
-        //print(receipt.returnReceipt())
-        DataService.service.addReceipt(receipt)
-        returnToMainMenu()
+        
+
         
     }
     
