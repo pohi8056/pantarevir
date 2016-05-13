@@ -525,11 +525,11 @@
                         <color key="sectionIndexBackgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoresTableViewCell" rowHeight="89" id="ZdQ-N7-cMS" customClass="StoresTableViewCell" customModule="Pantarevir" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoresTableViewCell" rowHeight="89" id="ZdQ-N7-cMS" customClass="StoresTableViewCell" customModule="Pantarevir" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZdQ-N7-cMS" id="c6m-Ez-52G">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Butiksnamn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jca-Ql-QQm">
@@ -553,22 +553,25 @@
                                             <color key="textColor" red="0.54160657050000005" green="0.54160657050000005" blue="0.54160657050000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VÄLJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-97-zBn">
-                                            <rect key="frame" x="504" y="29" width="57" height="28.5"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
-                                            <color key="textColor" red="0.99215686270000003" green="0.82352941180000006" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-RK-Y9m">
+                                            <rect key="frame" x="563" y="30" width="29" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="29" id="uQe-Uq-JLW"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="leading" secondItem="b3D-Rc-vyx" secondAttribute="leading" id="4os-AJ-ILQ"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" id="C1U-Jc-1B8"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" constant="22" id="Emo-We-Uhx"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="trailing" secondItem="c6m-Ez-52G" secondAttribute="trailingMargin" id="Pbw-P2-cUg"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="leading" secondItem="c6m-Ez-52G" secondAttribute="leadingMargin" constant="9" id="Qm0-Es-dyS"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="JJf-q8-v6S" secondAttribute="bottom" constant="3.5" id="SU1-gD-pSI"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="centerX" secondItem="c6m-Ez-52G" secondAttribute="centerX" id="e1b-vy-vCA"/>
                                         <constraint firstItem="JJf-q8-v6S" firstAttribute="top" secondItem="Jca-Ql-QQm" secondAttribute="bottom" constant="16" id="eVk-N0-vMp"/>
                                         <constraint firstItem="b3D-Rc-vyx" firstAttribute="leading" secondItem="JJf-q8-v6S" secondAttribute="leading" id="gwe-0z-pQ2"/>
                                         <constraint firstItem="b3D-Rc-vyx" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" constant="30" id="jXp-oi-qTT"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="centerY" secondItem="c6m-Ez-52G" secondAttribute="centerY" id="vgf-4X-Qpz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
@@ -1423,6 +1426,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_yellow" width="82" height="82"/>
         <image name="back_arrow copy" width="82" height="82"/>
         <image name="back_arrow_dropshadow copy" width="100" height="100"/>
         <image name="bg_moreblur" width="2362" height="1581"/>
