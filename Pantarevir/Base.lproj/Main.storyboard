@@ -469,8 +469,8 @@
                             <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-25-Ldf">
                                 <rect key="frame" x="13" y="25" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="jlr-fJ-qTi"/>
-                                    <constraint firstAttribute="width" constant="32" id="uTU-xp-t8W"/>
+                                    <constraint firstAttribute="height" constant="32" id="J3f-vr-j4h"/>
+                                    <constraint firstAttribute="width" constant="32" id="Q7Z-GG-wdo"/>
                                 </constraints>
                                 <state key="normal" image="back_arrow_dropshadow copy">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -488,15 +488,15 @@
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="26" id="EHV-Qp-2JH"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="gHf-hh-pyZ" secondAttribute="bottom" id="NBX-iz-wEE"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="U8e-vO-fpr"/>
-                            <constraint firstItem="wJw-25-Ldf" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="5" id="Vbb-p7-Yjq"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="mTq-yj-v9z" secondAttribute="bottom" constant="29" id="ZYt-C0-Cu3"/>
-                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="11" id="bL3-gK-dn9"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="d0w-Io-t1G"/>
+                            <constraint firstItem="wJw-25-Ldf" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-7" id="dSb-aS-gcM"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="dc6-71-xHW"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="pED-Iu-oPz"/>
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-20" id="rCv-M7-tnJ"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="top" secondItem="GPT-I3-8VL" secondAttribute="topMargin" id="uPs-By-pnb"/>
-                            <constraint firstItem="wJw-25-Ldf" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-7" id="zIH-ha-ilG"/>
+                            <constraint firstItem="wJw-25-Ldf" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="25" id="ufM-1f-DMt"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="11" id="zm8-Pq-xI7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -525,7 +525,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoresTableViewCell" rowHeight="89" id="ZdQ-N7-cMS" customClass="StoresTableViewCell" customModule="Pantarevir" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoresTableViewCell" rowHeight="89" id="ZdQ-N7-cMS" customClass="StoresTableViewCell" customModule="Pantarevir" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZdQ-N7-cMS" id="c6m-Ez-52G">
@@ -563,12 +563,15 @@
                                     <constraints>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="leading" secondItem="b3D-Rc-vyx" secondAttribute="leading" id="4os-AJ-ILQ"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" id="C1U-Jc-1B8"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" constant="22" id="Emo-We-Uhx"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="trailing" secondItem="c6m-Ez-52G" secondAttribute="trailingMargin" id="Pbw-P2-cUg"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="leading" secondItem="c6m-Ez-52G" secondAttribute="leadingMargin" constant="9" id="Qm0-Es-dyS"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="JJf-q8-v6S" secondAttribute="bottom" constant="3.5" id="SU1-gD-pSI"/>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="centerX" secondItem="c6m-Ez-52G" secondAttribute="centerX" id="e1b-vy-vCA"/>
                                         <constraint firstItem="JJf-q8-v6S" firstAttribute="top" secondItem="Jca-Ql-QQm" secondAttribute="bottom" constant="16" id="eVk-N0-vMp"/>
                                         <constraint firstItem="b3D-Rc-vyx" firstAttribute="leading" secondItem="JJf-q8-v6S" secondAttribute="leading" id="gwe-0z-pQ2"/>
                                         <constraint firstItem="b3D-Rc-vyx" firstAttribute="top" secondItem="c6m-Ez-52G" secondAttribute="topMargin" constant="30" id="jXp-oi-qTT"/>
+                                        <constraint firstItem="omJ-RK-Y9m" firstAttribute="centerY" secondItem="c6m-Ez-52G" secondAttribute="centerY" id="vgf-4X-Qpz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.1110576923" green="0.1110576923" blue="0.1110576923" alpha="1" colorSpace="calibratedRGB"/>
@@ -1423,6 +1426,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_yellow" width="82" height="82"/>
         <image name="back_arrow copy" width="82" height="82"/>
         <image name="back_arrow_dropshadow copy" width="100" height="100"/>
         <image name="bg_moreblur" width="2362" height="1581"/>
