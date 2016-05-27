@@ -30,6 +30,7 @@ class ToplistTableViewController: UITableViewController {
     func loadUsers() {
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                self.users.removeAll()
                 for snap in snapshots {
             
                     let firstName = snap.value.objectForKey("name") as! String

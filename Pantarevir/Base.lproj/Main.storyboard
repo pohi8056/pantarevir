@@ -485,18 +485,21 @@
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="7sN-E0-nwW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mTq-yj-v9z" secondAttribute="trailing" constant="-20" id="7vF-ep-Gux"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="DDs-CC-dYJ"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="13" id="E0c-hU-vyM"/>
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="26" id="EHV-Qp-2JH"/>
                             <constraint firstItem="wJw-25-Ldf" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-7" id="Gpz-tT-vn4"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="H9Z-4f-grB"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="gHf-hh-pyZ" secondAttribute="bottom" id="NBX-iz-wEE"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" id="U8e-vO-fpr"/>
                             <constraint firstItem="n2f-jG-Bqo" firstAttribute="top" secondItem="mTq-yj-v9z" secondAttribute="bottom" constant="29" id="ZYt-C0-Cu3"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="d0w-Io-t1G"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="dc6-71-xHW"/>
-                            <constraint firstItem="VGj-Wv-miw" firstAttribute="top" secondItem="wJw-25-Ldf" secondAttribute="bottom" constant="13" id="gS4-TS-IoD"/>
+                            <constraint firstItem="mTq-yj-v9z" firstAttribute="top" secondItem="VGj-Wv-miw" secondAttribute="bottom" constant="26" id="mPP-4e-kbe"/>
                             <constraint firstItem="wJw-25-Ldf" firstAttribute="top" secondItem="n5A-4R-Zgb" secondAttribute="bottom" constant="23" id="mw9-6G-yPB"/>
                             <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="pED-Iu-oPz"/>
                             <constraint firstItem="mTq-yj-v9z" firstAttribute="leading" secondItem="GPT-I3-8VL" secondAttribute="leadingMargin" constant="-20" id="rCv-M7-tnJ"/>
                             <constraint firstItem="gHf-hh-pyZ" firstAttribute="top" secondItem="GPT-I3-8VL" secondAttribute="topMargin" id="uPs-By-pnb"/>
+                            <constraint firstItem="VGj-Wv-miw" firstAttribute="trailing" secondItem="GPT-I3-8VL" secondAttribute="trailingMargin" id="zMg-6D-fzi"/>
                         </constraints>
                     </view>
                     <connections>
