@@ -31,7 +31,7 @@ class ToplistTableViewController: UITableViewController {
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots {
-                    
+            
                     let firstName = snap.value.objectForKey("name") as! String
                     let surname = snap.value.objectForKey("surname") as! String
                     let total = snap.value.objectForKey("total") as! Double
@@ -41,8 +41,8 @@ class ToplistTableViewController: UITableViewController {
                     let provider = snap.value.objectForKey("provider") as! String
                     let email = snap.value.objectForKey("email") as! String
                     let userID = snap.key
-                    
-                    
+                        
+                        
                     //För att fixa FB-profilbilderna
                     if provider == "facebook" {
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(fbID)/picture?type=square")
@@ -64,9 +64,9 @@ class ToplistTableViewController: UITableViewController {
             else {
                 self.users.sortInPlace({ $0.total > $1.total })
             }
-            
             self.tableView.reloadData()
         })
+        
     }
     
     func setProfileImage(imageURL : NSURL) -> UIImageView {
