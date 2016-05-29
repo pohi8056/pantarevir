@@ -175,7 +175,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
-    private func validateReceiptBarcode(barcode : String) -> Bool{
+    private func validateReceiptBarcode(barcode : String, type: String) -> Bool{
         let barcodePrefix = barcode.substringToIndex(barcode.startIndex.advancedBy(1))
         let barcodeAmount = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(8)..<barcode.endIndex.advancedBy(-1)))
         let barcodeAmountHigh = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(5)..<barcode.endIndex.advancedBy(-5))) //KAN VARA FEL I VISSA BUTIKER med advanceby(5) då det ibland borde vara 4, fix here if probs.
@@ -227,14 +227,15 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     //Validate the receipt type. Only the type org.gs1.EAN-13 is used for receipts in Sweden.
     private func validateReceiptType(barcode : String, barcodeType : String) -> Bool{
         print("Validating if barcode is of type EAN-13...")
-        if barcodeType == validReceiptType{
+        if barcodeType == validReceiptType || barcodeType == validReceiptTypeReferenceSystem{
             print("Barcode type OK.")
-            if validateReceiptBarcode(barcode) == true{
+            if validateReceiptBarcode(barcode, type: barcodeType) == true{
                 return true
             }
         }else{
             errorLabel.text = "Inte ett giltligt pantkvitto"
             errorLabel.textColor = UIColor.redColor()
+            print(barcodeType)
             print("Not a valid barcode type.")
         }
         return false

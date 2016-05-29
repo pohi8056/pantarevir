@@ -444,7 +444,7 @@
                                     <constraint firstAttribute="width" constant="560" id="uij-ff-PpZ"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw">
                                 <rect key="frame" x="20" y="68" width="560" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -466,7 +466,7 @@
                                     <constraint firstItem="eHr-Qh-ha3" firstAttribute="bottom" secondItem="mTq-yj-v9z" secondAttribute="bottomMargin" id="tTE-mR-3vf"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-25-Ldf">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-25-Ldf">
                                 <rect key="frame" x="13" y="25" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="J3f-vr-j4h"/>
@@ -553,12 +553,12 @@
                                             <color key="textColor" red="0.54160657050000005" green="0.54160657050000005" blue="0.54160657050000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VÄLJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPJ-97-zBn">
-                                            <rect key="frame" x="504" y="29" width="57" height="29"/>
-                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
-                                            <color key="textColor" red="0.99215686270000003" green="0.82352941180000006" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-RK-Y9m">
+                                            <rect key="frame" x="563" y="30" width="29" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="29" id="uQe-Uq-JLW"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Jca-Ql-QQm" firstAttribute="leading" secondItem="b3D-Rc-vyx" secondAttribute="leading" id="4os-AJ-ILQ"/>
