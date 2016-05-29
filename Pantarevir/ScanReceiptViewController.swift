@@ -324,4 +324,5 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         returnToMainMenu()
     }
     
+    
 }
