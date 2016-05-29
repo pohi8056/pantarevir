@@ -33,6 +33,7 @@
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
 		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
+		63A790B21CFB7A07001463DA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */; };
 		63FECA751CE53F980091A682 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA741CE53F980091A682 /* StoresTableViewController.swift */; };
 		63FECA771CE53FE00091A682 /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */; };
 		63FECA7B1CE549580091A682 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA7A1CE549580091A682 /* Store.swift */; };
@@ -94,6 +95,7 @@
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		63FECA741CE53F980091A682 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewController.swift; sourceTree = "<group>"; };
 		63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
 		63FECA7A1CE549580091A682 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
 				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
+				63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
 				B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */,
+				63A790B21CFB7A07001463DA /* ChangePasswordViewController.swift in Sources */,
 				3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */,
 				636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,

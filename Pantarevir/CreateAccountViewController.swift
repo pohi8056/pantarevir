@@ -132,7 +132,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             DataService.service.rootRef.createUser(email, password: password, withValueCompletionBlock: {error, result in
                 
                 if error != nil{
-                    print("Fel vid skapande av konto. Vänligen försök igen!")
+                    print("Fel vid skapande av konto. Vänligen försök igen! \(error)")
                 }else{
                         DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {
                         err, authData in
