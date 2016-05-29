@@ -269,7 +269,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poppe" translatesAutoresizingMaskIntoConstraints="NO" id="ehq-7j-WyS">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="revirprofilbild" translatesAutoresizingMaskIntoConstraints="NO" id="ehq-7j-WyS">
                                         <rect key="frame" x="549" y="17" width="43" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="43" id="cJg-3k-vbM"/>
@@ -1437,5 +1437,6 @@
         <image name="icon_topplista" width="792" height="792"/>
         <image name="logotext" width="792" height="792"/>
         <image name="poppe" width="77" height="77"/>
+        <image name="revirprofilbild" width="77" height="77"/>
     </resources>
 </document>

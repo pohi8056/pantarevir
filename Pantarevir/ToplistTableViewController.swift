@@ -52,10 +52,12 @@ class ToplistTableViewController: UITableViewController {
                         self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture!, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
                     }
                     else {
-                        let pic : UIImage = UIImage(named: "empty.png")!
+                        let pic : UIImage = UIImage(named: "revirprofilbild.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
+                        if (self.users.count < 98) {
+                            self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
+                        }
                     }
                 }
             }
