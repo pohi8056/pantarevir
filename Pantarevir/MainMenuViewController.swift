@@ -34,6 +34,11 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // added by lull
+        nameLabel.hidden = true
+        amountLabel.hidden = true
+        profilePicture.hidden = true
 
         DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
             let nameOfCurrentUser = snapshot.value.objectForKey("name") as! String
@@ -53,6 +58,13 @@ class MainMenuViewController: UIViewController {
             }
             self.nameLabel.text = "\(nameOfCurrentUser) \(surnameOfCurrentUser)"
             self.amountLabel.text = "\(self.totalOfCurrentUser) kr"
+            
+            // added by lull
+            self.amountLabel.hidden = false
+            self.nameLabel.hidden = false
+            self.profilePicture.hidden = false
+
+            
             }, withCancelBlock: { error in
                 print("Error retrieving or displaying the user's name.")
         })

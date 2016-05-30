@@ -905,8 +905,8 @@
                                     <segue destination="npG-Wz-Ins" kind="embed" identifier="embedContainedStores" id="T9O-fN-Hrv"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
-                                <rect key="frame" x="20" y="34.5" width="98" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
+                                <rect key="frame" x="20" y="35" width="98" height="23"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1027,23 +1027,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXx-SK-8dz">
                                 <rect key="frame" x="0.0" y="130" width="600" height="60"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N64-F6-M4V">
-                                        <rect key="frame" x="534" y="14" width="51" height="31"/>
-                                        <color key="onTintColor" red="1" green="0.99057359699360115" blue="0.99374744607653087" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="thumbTintColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTÄLLNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WP-9t-O8D">
-                                        <rect key="frame" x="10" y="16" width="128" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Revirfärg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WP-9t-O8D">
+                                        <rect key="frame" x="59" y="16" width="79" height="28"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXi-wk-siF">
+                                        <rect key="frame" x="0.0" y="-58" width="600" height="175"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="OjK-Kw-m1W" id="57h-x9-Oxl"/>
+                                            <outlet property="delegate" destination="OjK-Kw-m1W" id="BHl-zL-NaZ"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6MD-FD-Ngt"/>
-                                    <constraint firstItem="N64-F6-M4V" firstAttribute="top" secondItem="ZXx-SK-8dz" secondAttribute="top" constant="14" id="T3e-n0-Z5Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="N64-F6-M4V" secondAttribute="trailing" constant="17" id="Yeh-G2-62f"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1060,6 +1060,9 @@
                             <constraint firstItem="OGz-LU-FMc" firstAttribute="leading" secondItem="Auj-OE-17P" secondAttribute="trailing" constant="-97" id="umW-eD-vNs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="revirColorPicker" destination="RXi-wk-siF" id="GMz-kz-Ugr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S40-cA-tZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
