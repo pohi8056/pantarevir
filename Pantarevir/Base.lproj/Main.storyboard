@@ -742,10 +742,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTq-yj-v9z">
                                 <rect key="frame" x="0.0" y="43" width="600" height="438"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info om scanningen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHr-Qh-ha3">
-                                        <rect key="frame" x="208" y="9" width="185" height="29"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFO OM SKANNING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sI7-2z-1J1">
+                                        <rect key="frame" x="210" y="399" width="180" height="25"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" red="0.98553685899999999" green="0.98553685899999999" blue="0.98553685899999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
