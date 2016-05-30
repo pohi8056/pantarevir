@@ -906,8 +906,8 @@
                                     <segue destination="npG-Wz-Ins" kind="embed" identifier="embedContainedStores" id="T9O-fN-Hrv"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
-                                <rect key="frame" x="20" y="34.5" width="98" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
+                                <rect key="frame" x="20" y="35" width="98" height="23"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
