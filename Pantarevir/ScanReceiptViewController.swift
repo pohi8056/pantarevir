@@ -143,7 +143,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     }
  
     //note to self: Glöm inte kolla om ean redan finns
-    
+    /*
     //Check if receipt is already scanned by the user
     private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
         var receiptAlreadyScanned = false
@@ -173,10 +173,78 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
 
             
         })
-        
-        
+    }
+    */
+    
+    //Convert String to NSDate using the same format as in the receipt
+    private func getDateAndTimeFromFirebase(timestamp : String) -> NSDate{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmm"
+        let date = formatter.dateFromString(timestamp)
+        return date!
+    }
+    
+    private func compareDates(time1 : NSDate, time2 : NSDate) -> Int{
+        let timeDifference = time1.timeIntervalSinceDate(time2)
+        let timeDifferenceInSeconds = Int(timeDifference)
+        return timeDifferenceInSeconds
+    }
+    
+    
+    private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
+        var receiptAlreadyScanned = false
+        var receiptScannedByOtherUser = false
+        DataService.service.rootRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            /*----------------Check this user.-------------------*/
+            if let snapshots = snapshot.childSnapshotForPath("users/\(receipt.userUID)/receipts").children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots{
+                    let receiptEAN = snap.key
+                    if receiptEAN == receipt.receiptEAN{
 
-        
+                        receiptAlreadyScanned = true
+                    }
+                }
+            }
+            /*---------------------------------------------------*/
+
+            /*-------------Check all receipts scanned by all users ----------------*/
+
+            if let snapshots = snapshot.childSnapshotForPath("receipts/").children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots{
+                    let receiptEAN = snap.key
+                    if receiptEAN == receipt.receiptEAN{
+                        let timeOfOldReceipt = snap.childSnapshotForPath("time").value as! String
+                        let timeOfCurrentReceipt = self.getDateAndTimeFromFirebase(receipt.timeStamp)
+                        
+                        print("Time of that receipt is: \(timeOfOldReceipt)")
+                        let timeOfOldReceiptNSDate = self.getDateAndTimeFromFirebase(timeOfOldReceipt)
+                        let timeDifference = self.compareDates(timeOfCurrentReceipt, time2: timeOfOldReceiptNSDate)
+                        print("Time of old receipt in date format: \(timeOfOldReceiptNSDate)")
+                        print("Time of new receipt in date format: \(timeOfCurrentReceipt)")
+
+                        print("Time difference: \(timeDifference)")
+                        if timeDifference < 240{
+                            receiptScannedByOtherUser = true
+                        }
+                    }
+                }
+            }
+            /*---------------------------------------------------*/
+
+            
+            
+            if receiptAlreadyScanned == false && receiptScannedByOtherUser == false{
+                DataService.service.addReceipt(receipt)
+                self.returnToMainMenu()
+            }else{
+                print("Scanned by this user: \(receiptAlreadyScanned)")
+                print("Scanned by another user within 3 minutes: \(receiptScannedByOtherUser)")
+                self.errorLabel.text = "Kvitto redan skannat."
+                self.errorLabel.textColor = UIColor.yellowColor()
+            }
+            
+            
+        })
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
