@@ -444,7 +444,7 @@
                                     <constraint firstAttribute="width" constant="560" id="uij-ff-PpZ"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw2">
                                 <rect key="frame" x="20" y="68" width="560" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -465,8 +465,12 @@
                                     <constraint firstItem="eHr-Qh-ha3" firstAttribute="centerY" secondItem="mTq-yj-v9z" secondAttribute="centerY" id="Fd7-ug-WIq"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-25-Ldf">
-                                <rect key="frame" x="13" y="25" width="32" height="32"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw">
+                                <rect key="frame" x="20" y="66" width="560" height="428"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR9-9p-XDn">
+                                <rect key="frame" x="13" y="27" width="26" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="np2-J1-fPa"/>
                                     <constraint firstAttribute="width" constant="26" id="uNE-0y-q4u"/>
@@ -548,10 +552,10 @@
                                             <color key="textColor" red="0.54160657050000005" green="0.54160657050000005" blue="0.54160657050000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="omJ-RK-Y9m">
-                                            <rect key="frame" x="563" y="30" width="29" height="29"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-17-oeL">
+                                            <rect key="frame" x="563" y="34" width="29" height="29"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="29" id="uQe-Uq-JLW"/>
+                                                <constraint firstAttribute="width" constant="29" id="pqF-y3-ghu"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>

@@ -147,11 +147,16 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     //Check if receipt is already scanned by the user
     private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
         var receiptAlreadyScanned = false
+        var receiptScannedByOtherUser = false
         DataService.service.returnUserReceipt(receipt).observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots{
                     let receiptEAN = snap.key
                     if receiptEAN == receipt.receiptEAN{
+                        //check all receipts.-----------------------------
+
+                        
+                        //------------------------------------------------
                         //INSERT TIME CHECK HERE
                         receiptAlreadyScanned = true
                     }
