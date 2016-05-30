@@ -62,7 +62,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         //textField.borderStyle = UITextBorderStyle.Line
         textField.borderStyle = UITextBorderStyle.RoundedRect
         //textField.layer.masksToBounds = true
-        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 200/255).CGColor
+        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 100/255).CGColor
         textField.layer.borderWidth = 1
     }
 
@@ -132,7 +132,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
             DataService.service.rootRef.createUser(email, password: password, withValueCompletionBlock: {error, result in
                 
                 if error != nil{
-                    print("Fel vid skapande av konto. Vänligen försök igen!")
+                    print("Fel vid skapande av konto. Vänligen försök igen! \(error)")
                 }else{
                         DataService.service.rootRef.authUser(email, password: password, withCompletionBlock: {
                         err, authData in

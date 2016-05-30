@@ -21,19 +21,10 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logoutUser(sender: UIButton) {
-        DataService.service.currentUserRef.unauth()
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
-        
-        let loginView = self.storyboard!.instantiateViewControllerWithIdentifier("Login")
-        UIApplication.sharedApplication().keyWindow?.rootViewController = loginView
-    }
-    
     @IBAction func backButton(sender: UIButton) {
         let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
         UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
     }
-    
 
     /*
     // MARK: - Navigation

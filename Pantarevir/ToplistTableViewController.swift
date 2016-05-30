@@ -30,8 +30,9 @@ class ToplistTableViewController: UITableViewController {
     func loadUsers() {
         DataService.service.userRef.observeEventType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                self.users.removeAll()
                 for snap in snapshots {
-                    
+            
                     let firstName = snap.value.objectForKey("name") as! String
                     let surname = snap.value.objectForKey("surname") as! String
                     let total = snap.value.objectForKey("total") as! Double
@@ -41,8 +42,8 @@ class ToplistTableViewController: UITableViewController {
                     let provider = snap.value.objectForKey("provider") as! String
                     let email = snap.value.objectForKey("email") as! String
                     let userID = snap.key
-                    
-                    
+                        
+                        
                     //För att fixa FB-profilbilderna
                     if provider == "facebook" {
                         let facebookProfilePictureURL = NSURL(string: "https://graph.facebook.com/\(fbID)/picture?type=square")
@@ -51,10 +52,12 @@ class ToplistTableViewController: UITableViewController {
                         self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture!, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
                     }
                     else {
-                        let pic : UIImage = UIImage(named: "empty.png")!
+                        let pic : UIImage = UIImage(named: "revirprofilbild.png")!
                         let profilePicture = UIImageView(image: pic)
                         
-                        self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
+                        if (self.users.count < 98) {
+                            self.users.insert(UserInfo(firstName: firstName, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: fbID, provider: provider, email: email, userID: userID), atIndex: 0)
+                        }
                     }
                 }
             }
@@ -64,9 +67,9 @@ class ToplistTableViewController: UITableViewController {
             else {
                 self.users.sortInPlace({ $0.total > $1.total })
             }
-            
             self.tableView.reloadData()
         })
+        
     }
     
     func setProfileImage(imageURL : NSURL) -> UIImageView {

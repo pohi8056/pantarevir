@@ -17,13 +17,6 @@ class StatisticsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*DataService.service.currentUserRef.observeEventType(.Value, withBlock: { snapshot in
-            self.amount = snapshot.value.objectForKey("total") as! Double
-            print ("HEJ!!! \(self.amount)")
-            //self.amount = totalOfCurrentUser
-        })*/
-        
-        print("HEJ HEJ!!! \(self.amount)")
         loadStatistics()
     }
     
@@ -149,6 +142,22 @@ class StatisticsTableViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsetsZero
                 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        
+        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height))
+        
+        view.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
+        view.layer.opacity = 50
+        view.layer.masksToBounds = false
+        
+        cell.contentView.addSubview(view)
+        cell.contentView.sendSubviewToBack(view)
+        
+        //tableView.tableFooterView = UIView(frame: .zero)
     }
     
     /*

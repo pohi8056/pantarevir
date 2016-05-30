@@ -90,6 +90,13 @@ class MainMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logoutButton(sender: UIButton) {
+        DataService.service.currentUserRef.unauth()
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        
+        let loginView = self.storyboard!.instantiateViewControllerWithIdentifier("Login")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginView
+    }
 
     /*
     // MARK: - Navigation

@@ -33,6 +33,12 @@
 		636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */; };
 		636E4C8F1CCBE2C300904A43 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */; };
 		636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636E4C901CD79BDD00904A43 /* MapViewController.swift */; };
+		63A790B21CFB7A07001463DA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */; };
+		63A790B41CFBD057001463DA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A790B31CFBD057001463DA /* TextField.swift */; };
+		63FECA751CE53F980091A682 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA741CE53F980091A682 /* StoresTableViewController.swift */; };
+		63FECA771CE53FE00091A682 /* StoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */; };
+		63FECA7B1CE549580091A682 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA7A1CE549580091A682 /* Store.swift */; };
+		63FECA7D1CE554040091A682 /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FECA7C1CE554040091A682 /* StoresViewController.swift */; };
 		B0F363B11CD9148E000D6D30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F363B01CD9148E000D6D30 /* MapKit.framework */; };
 		B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */; };
 		B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F363B81CD91746000D6D30 /* RevirAnnotationView.swift */; };
@@ -90,6 +96,12 @@
 		636E4C8C1CC50D4100904A43 /* ToplistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToplistTableViewController.swift; sourceTree = "<group>"; };
 		636E4C8E1CCBE2C300904A43 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		636E4C901CD79BDD00904A43 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		63A790B31CFBD057001463DA /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		63FECA741CE53F980091A682 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewController.swift; sourceTree = "<group>"; };
+		63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresTableViewCell.swift; sourceTree = "<group>"; };
+		63FECA7A1CE549580091A682 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		63FECA7C1CE554040091A682 /* StoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
 		B0F363AC1CD913C4000D6D30 /* Pantarevir-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pantarevir-Bridging-Header.h"; sourceTree = "<group>"; };
 		B0F363B01CD9148E000D6D30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B0F363B61CD91746000D6D30 /* MKRevirAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRevirAnnotation.swift; sourceTree = "<group>"; };
@@ -153,20 +165,15 @@
 			isa = PBXGroup;
 			children = (
 				3A50AB261CBD1C5000BD7B1B /* Main.storyboard */,
-				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
 				3A50AB221CBD1C5000BD7B1B /* AppDelegate.swift */,
-				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
-				3A9412AE1CDA712E00F13CDD /* Receipt.swift */,
+				3ADA9C491CE5593E00A9C84D /* Authentication */,
 				B0F363AB1CD91133000D6D30 /* Scan */,
 				B0F363A91CD9109A000D6D30 /* Settings */,
 				B0F363AA1CD9111C000D6D30 /* Menu */,
 				B0F363A81CD9103D000D6D30 /* Toplist */,
 				6300E0021CDA81DC00A4F4E2 /* Statistics */,
 				B0F363B21CD91531000D6D30 /* RevirMaps */,
-				3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */,
-				3A90A8BC1CBD2D4600D32D65 /* DataService.swift */,
-				3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */,
-				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
+				3ADA9C4A1CE5597100A9C84D /* Helpers */,
 				3A50AB291CBD1C5100BD7B1B /* Assets.xcassets */,
 				3A50AB2B1CBD1C5100BD7B1B /* LaunchScreen.storyboard */,
 				3A50AB2E1CBD1C5100BD7B1B /* Info.plist */,
@@ -191,6 +198,28 @@
 				3A50AB441CBD1C5100BD7B1B /* Info.plist */,
 			);
 			path = PantarevirUITests;
+			sourceTree = "<group>";
+		};
+		3ADA9C491CE5593E00A9C84D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3A90A8B81CBD2B0F00D32D65 /* CreateAccountViewController.swift */,
+				3A50AB521CBD299300BD7B1B /* ForgotPasswordViewController.swift */,
+				3A50AB241CBD1C5000BD7B1B /* LoginViewController.swift */,
+				63A790B11CFB7A07001463DA /* ChangePasswordViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		3ADA9C4A1CE5597100A9C84D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A90A8BA1CBD2D2F00D32D65 /* Constants.swift */,
+				63A790B31CFBD057001463DA /* TextField.swift */,
+				3A90A8BC1CBD2D4600D32D65 /* DataService.swift */,
+				3A90A8BE1CBD2D5A00D32D65 /* UserInfo.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		6300E0021CDA81DC00A4F4E2 /* Statistics */ = {
@@ -234,7 +263,12 @@
 		B0F363AB1CD91133000D6D30 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				3A9412AE1CDA712E00F13CDD /* Receipt.swift */,
 				3ADFB5211CCFE64700AA47C0 /* ScanReceiptViewController.swift */,
+				63FECA7C1CE554040091A682 /* StoresViewController.swift */,
+				63FECA761CE53FE00091A682 /* StoresTableViewCell.swift */,
+				63FECA741CE53F980091A682 /* StoresTableViewController.swift */,
+				63FECA7A1CE549580091A682 /* Store.swift */,
 			);
 			name = Scan;
 			sourceTree = "<group>";
@@ -457,9 +491,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FECA7D1CE554040091A682 /* StoresViewController.swift in Sources */,
 				3A9412AF1CDA712E00F13CDD /* Receipt.swift in Sources */,
 				B0F363C01CD91837000D6D30 /* MKRevirCircleRenderer.swift in Sources */,
+				63A790B41CFBD057001463DA /* TextField.swift in Sources */,
 				635DDA1C1CC06D8C00AA6503 /* MenuController.swift in Sources */,
+				63FECA7B1CE549580091A682 /* Store.swift in Sources */,
 				6300E00E1CDD55C000A4F4E2 /* StatisticsViewController.swift in Sources */,
 				3A90A8B91CBD2B0F00D32D65 /* CreateAccountViewController.swift in Sources */,
 				3A90A8BD1CBD2D4600D32D65 /* DataService.swift in Sources */,
@@ -467,6 +504,7 @@
 				3A90A8B51CBD2A2D00D32D65 /* MainMenuViewController.swift in Sources */,
 				3A50AB251CBD1C5000BD7B1B /* LoginViewController.swift in Sources */,
 				B0F363BD1CD91746000D6D30 /* RevirAnnotationView.swift in Sources */,
+				63A790B21CFB7A07001463DA /* ChangePasswordViewController.swift in Sources */,
 				3A90A8BF1CBD2D5A00D32D65 /* UserInfo.swift in Sources */,
 				636E4C8D1CC50D4100904A43 /* ToplistTableViewController.swift in Sources */,
 				3A50AB231CBD1C5000BD7B1B /* AppDelegate.swift in Sources */,
@@ -476,10 +514,12 @@
 				3A90A8BB1CBD2D2F00D32D65 /* Constants.swift in Sources */,
 				B0F363C21CD918A5000D6D30 /* Revir.swift in Sources */,
 				B0F363BB1CD91746000D6D30 /* MKRevirAnnotation.swift in Sources */,
+				63FECA771CE53FE00091A682 /* StoresTableViewCell.swift in Sources */,
 				3ADFB5221CCFE64700AA47C0 /* ScanReceiptViewController.swift in Sources */,
 				6300E00A1CDD009900A4F4E2 /* ActivityInfo.swift in Sources */,
 				6300E0081CDB770B00A4F4E2 /* StatisticsTableViewCell.swift in Sources */,
 				632264BE1CC50A48008D7A86 /* ToplistTableViewCell.swift in Sources */,
+				63FECA751CE53F980091A682 /* StoresTableViewController.swift in Sources */,
 				636E4C911CD79BDD00904A43 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

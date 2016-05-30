@@ -35,20 +35,20 @@ class ActivityInfo{
             self.title = "Svenskt medelhus"
         case "shower":
             self.dataInt = Int((amount / 0.44).roundToPlaces(0))
-            self.description = "...Att slå på"
+            self.description = "...Att använda"
             self.title = "Duschen"
         case "dryer":
             self.dataInt = Int((amount / 0.027).roundToPlaces(0))
-            self.description = "...Att torka håret med"
+            self.description = "...Att torka håret med en"
             self.title = "Hårfön"
         case "microwave":
             self.dataInt = Int((amount / 0.02333333333).roundToPlaces(0))
-            self.description = "...Att värma din matlåda i"
+            self.description = "...Att värma din matlåda i en"
             self.title = "Mikrovågsugn"
         case "charger":
             self.dataInt = Int((amount / 0.0001666666667).roundToPlaces(0))
-            self.description = "...Att ladda"
-            self.title = "Mobilen"
+            self.description = "...Att ladda din"
+            self.title = "Mobil"
         case "computer":
             self.dataInt = Int((amount / 0.0008333333333).roundToPlaces(0))
             self.description = "...Att ha igång din"
@@ -71,8 +71,8 @@ class ActivityInfo{
             self.title = "Göteborg-Stockholm"
         case "food":
             self.dataInt = Int((amount / 1.8).roundToPlaces(0))
-            self.description = "...Utsläppen från en"
-            self.title = "Hamburgermeny"
+            self.description = "...Utsläppen från ett antal"
+            self.title = "Hamburgermenyer"
         default:
             self.data = 0
         }
