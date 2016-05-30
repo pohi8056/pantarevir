@@ -625,11 +625,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="gHf-hh-pyZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="gHf-hh-pyZ2">
                                 <rect key="frame" x="20" y="0.0" width="560" height="600"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="FXK-LJ-odQ"/>
-                                    <constraint firstAttribute="width" constant="560" id="uij-ff-PpZ"/>
+                                    <constraint firstAttribute="height" constant="600" id="FXK-LJ-odQ2"/>
+                                    <constraint firstAttribute="width" constant="560" id="uij-ff-PpZ2"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGj-Wv-miw2">
