@@ -18,22 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_moreblur" translatesAutoresizingMaskIntoConstraints="NO" id="cFc-gb-cTy">
-                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="cuq-Zn-Zfa"/>
-                                    <constraint firstAttribute="width" constant="560" id="xEG-nJ-r6m"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_new" translatesAutoresizingMaskIntoConstraints="NO" id="BR3-5v-PMS">
+                                <rect key="frame" x="-40" y="0.0" width="681" height="729"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cFc-gb-cTy" secondAttribute="bottom" id="aZq-gw-Mqf"/>
-                            <constraint firstItem="cFc-gb-cTy" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="jmT-tO-5BV"/>
-                            <constraint firstItem="cFc-gb-cTy" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="s9S-FO-ymf"/>
-                            <constraint firstItem="cFc-gb-cTy" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="x7a-dY-Gp1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BR3-5v-PMS" secondAttribute="trailing" constant="-61" id="30y-35-SIU"/>
+                            <constraint firstItem="BR3-5v-PMS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-60" id="LKl-h2-0sf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="BR3-5v-PMS" secondAttribute="bottom" constant="-129" id="Voc-h7-FjH"/>
+                            <constraint firstItem="BR3-5v-PMS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="mx9-8e-gqt"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -43,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_moreblur" width="2362" height="1581"/>
+        <image name="bg_new" width="2593" height="3000"/>
     </resources>
 </document>
