@@ -133,12 +133,13 @@ class DataService{
 
                 let obtainedData = snapshot.childSnapshotForPath("\(receipt.userUID)").value.objectForKey(Data.Value.Belopp.rawValue) as! Double
                 print("C")
-                
+            
                 let newAmount = obtainedData + receipt.amount
+                
                 self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Name.rawValue : receipt.name])
                 print("D")
                 
-                self.updateStoreOwner(city, receipt: receipt, newValue: newAmount)
+                self.updateStoreOwner(city, receipt: receipt, newAmount: newAmount)
                 
             }else {
                 self.returnCityUserRef(city, store: receipt.store).childByAppendingPath(receipt.userUID).setValue([Data.Value.Belopp.rawValue : receipt.amount, Data.Value.Name.rawValue : receipt.name])
@@ -151,24 +152,22 @@ class DataService{
         })
     }
     
-    func updateStoreOwner(city : String, receipt : Receipt, newValue: Double){
+    func updateStoreOwner(city : String, receipt : Receipt, newAmount: Double){
         
         DataService.service.returnCityStoreRef(city, store: receipt.store).observeSingleEventOfType(.Value, withBlock: { snapshot in
 
                 
             let oldValue = snapshot.childSnapshotForPath("belopp").value as! Double
             
-            if oldValue < newValue{
+            if oldValue < newAmount{
                 //OBS: radie ökning med multipel 2
-                
-                //let uid = receipt.userUID.substringWithRange(Range<String.Index>(receipt.userUID.startIndex.advancedBy(7)..<receipt.userUID.endIndex)) as AnyObject
-                self.returnCityStoreRef(city, store: receipt.store).updateChildValues([Data.Value.Belopp.rawValue : newValue, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newValue*2, Data.Value.Uid.rawValue: receipt.userUID])
+                self.returnCityStoreRef(city, store: receipt.store).updateChildValues([Data.Value.Belopp.rawValue : newAmount, Data.Value.Owner.rawValue : receipt.name, Data.Value.Radius.rawValue: newAmount*2, Data.Value.Uid.rawValue: receipt.userUID])
             }
             
             
             
             }, withCancelBlock: { error in
-                print("Error with the storeowner")
+                print("Error with dataservice.updatestoreowner")
                 
         })
     }

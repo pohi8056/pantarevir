@@ -35,9 +35,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
             
-            //TEMP bortkommenterade
-            //let userLocation = locationManager.location
-            //centerMapOnLocation(userLocation!)
+            let userLocation = locationManager.location
+            centerMapOnLocation(userLocation!)
             
         } else {
             locationManager.requestWhenInUseAuthorization()
@@ -161,7 +160,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let value  = rest.childSnapshotForPath("belopp").value as! Double
 
                 
-                let subtitle = "Ägare: \(playerName) | Belopp: \(value)kr"
+                let subtitle = "Ägare: \(playerName) | \(value)kr"
                 print("UPDATE_REVIR_ARRAY_DATASERVICE:")
                 print(nam)
                 print(lat)
