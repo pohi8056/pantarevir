@@ -34,8 +34,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
-            let userLocation = locationManager.location
-            centerMapOnLocation(userLocation!)
+            
+            //TEMP bortkommenterade
+            //let userLocation = locationManager.location
+            //centerMapOnLocation(userLocation!)
+            
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
@@ -226,7 +229,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     }
                     else {
                         
-                        let pic = UIImage(named: "empty.png")!
+                        let pic = UIImage(named: "revirprofilbild.png")!
                         profilePicture = UIImageView(image: pic)
                         self.users.append(
                             UserInfo(firstName: name, surname: surname, total: total, weekly: weekly, profilePicture: profilePicture, city: city, fbID: facebookID, provider: loginService, email: email,userID: userID))
