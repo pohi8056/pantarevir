@@ -100,10 +100,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   */
     //Login via facebook.
     @IBAction func loginUserFacebook(sender: UIButton) {
-        
+        /* COULD BE DANGEROUS //The Pope */
         FBSDKAccessToken.setCurrentAccessToken(nil)
         FBSDKProfile.setCurrentProfile(nil)
-        
+        /*-----------------------------*/
         let loginViaFacebook = FBSDKLoginManager()
         
         loginViaFacebook.logInWithReadPermissions(["email"], fromViewController: self ,handler: {
