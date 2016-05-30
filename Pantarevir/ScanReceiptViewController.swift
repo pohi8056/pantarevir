@@ -143,15 +143,20 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     }
  
     //note to self: Glöm inte kolla om ean redan finns
-    
+    /*
     //Check if receipt is already scanned by the user
     private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
         var receiptAlreadyScanned = false
+        var receiptScannedByOtherUser = false
         DataService.service.returnUserReceipt(receipt).observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 for snap in snapshots{
                     let receiptEAN = snap.key
                     if receiptEAN == receipt.receiptEAN{
+                        //check all receipts.-----------------------------
+
+                        
+                        //------------------------------------------------
                         //INSERT TIME CHECK HERE
                         receiptAlreadyScanned = true
                     }
@@ -168,14 +173,82 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
 
             
         })
-        
-        
+    }
+    */
+    
+    //Convert String to NSDate using the same format as in the receipt
+    private func getDateAndTimeFromFirebase(timestamp : String) -> NSDate{
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmm"
+        let date = formatter.dateFromString(timestamp)
+        return date!
+    }
+    
+    private func compareDates(time1 : NSDate, time2 : NSDate) -> Int{
+        let timeDifference = time1.timeIntervalSinceDate(time2)
+        let timeDifferenceInSeconds = Int(timeDifference)
+        return timeDifferenceInSeconds
+    }
+    
+    
+    private func checkForPreviousReceiptsInFirebase(receipt : Receipt){
+        var receiptAlreadyScanned = false
+        var receiptScannedByOtherUser = false
+        DataService.service.rootRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            /*----------------Check this user.-------------------*/
+            if let snapshots = snapshot.childSnapshotForPath("users/\(receipt.userUID)/receipts").children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots{
+                    let receiptEAN = snap.key
+                    if receiptEAN == receipt.receiptEAN{
 
-        
+                        receiptAlreadyScanned = true
+                    }
+                }
+            }
+            /*---------------------------------------------------*/
+
+            /*-------------Check all receipts scanned by all users ----------------*/
+
+            if let snapshots = snapshot.childSnapshotForPath("receipts/").children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots{
+                    let receiptEAN = snap.key
+                    if receiptEAN == receipt.receiptEAN{
+                        let timeOfOldReceipt = snap.childSnapshotForPath("time").value as! String
+                        let timeOfCurrentReceipt = self.getDateAndTimeFromFirebase(receipt.timeStamp)
+                        
+                        print("Time of that receipt is: \(timeOfOldReceipt)")
+                        let timeOfOldReceiptNSDate = self.getDateAndTimeFromFirebase(timeOfOldReceipt)
+                        let timeDifference = self.compareDates(timeOfCurrentReceipt, time2: timeOfOldReceiptNSDate)
+                        print("Time of old receipt in date format: \(timeOfOldReceiptNSDate)")
+                        print("Time of new receipt in date format: \(timeOfCurrentReceipt)")
+
+                        print("Time difference: \(timeDifference)")
+                        if timeDifference < 240{
+                            receiptScannedByOtherUser = true
+                        }
+                    }
+                }
+            }
+            /*---------------------------------------------------*/
+
+            
+            
+            if receiptAlreadyScanned == false && receiptScannedByOtherUser == false{
+                DataService.service.addReceipt(receipt)
+                self.returnToMainMenu()
+            }else{
+                print("Scanned by this user: \(receiptAlreadyScanned)")
+                print("Scanned by another user within 3 minutes: \(receiptScannedByOtherUser)")
+                self.errorLabel.text = "Kvitto redan skannat."
+                self.errorLabel.textColor = UIColor.yellowColor()
+            }
+            
+            
+        })
     }
     
     //Validate the amount and key numbers in the EAN. True if all is ok.
-    private func validateReceiptBarcode(barcode : String) -> Bool{
+    private func validateReceiptBarcode(barcode : String, type: String) -> Bool{
         let barcodePrefix = barcode.substringToIndex(barcode.startIndex.advancedBy(1))
         let barcodeAmount = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(8)..<barcode.endIndex.advancedBy(-1)))
         let barcodeAmountHigh = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(5)..<barcode.endIndex.advancedBy(-5))) //KAN VARA FEL I VISSA BUTIKER med advanceby(5) då det ibland borde vara 4, fix here if probs.
@@ -227,14 +300,15 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     //Validate the receipt type. Only the type org.gs1.EAN-13 is used for receipts in Sweden.
     private func validateReceiptType(barcode : String, barcodeType : String) -> Bool{
         print("Validating if barcode is of type EAN-13...")
-        if barcodeType == validReceiptType{
+        if barcodeType == validReceiptType || barcodeType == validReceiptTypeReferenceSystem{
             print("Barcode type OK.")
-            if validateReceiptBarcode(barcode) == true{
+            if validateReceiptBarcode(barcode, type: barcodeType) == true{
                 return true
             }
         }else{
             errorLabel.text = "EJ ETT GILTIGT PANTKVITTO"
             errorLabel.textColor = UIColor.redColor()
+            print(barcodeType)
             print("Not a valid barcode type.")
         }
         return false
