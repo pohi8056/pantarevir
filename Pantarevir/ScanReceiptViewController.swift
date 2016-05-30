@@ -205,8 +205,6 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                     }
                 }
             }
-            /*---------------------------------------------------*/
-
             /*-------------Check all receipts scanned by all users ----------------*/
 
             if let snapshots = snapshot.childSnapshotForPath("receipts/").children.allObjects as? [FDataSnapshot] {
