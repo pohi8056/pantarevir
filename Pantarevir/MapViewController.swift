@@ -117,9 +117,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
             
             let circleRenderer = MKRevirCircleRenderer(overlay: overlay, color: color!)
-            circleRenderer.fillColor = color!.colorWithAlphaComponent(0.1)
-            circleRenderer.strokeColor = color
-            circleRenderer.lineWidth = 2
+            circleRenderer.fillColor = color!.colorWithAlphaComponent(0.2)
+            //circleRenderer.strokeColor = color
+            //circleRenderer.lineWidth = 2
             return circleRenderer
         }
         
