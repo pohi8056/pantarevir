@@ -281,6 +281,8 @@ extension MapViewController {
             print("annotaionimage load before print")
             print(users.count)
             let annot = annotation as! MKRevirAnnotation
+            image = UIImage(named: "logo")!
+
             for item in users {
                 if item.userID != nil && item.userID == annot.id{
                 //if item.fbID != nil && item.fbID == annot.id{
@@ -289,9 +291,10 @@ extension MapViewController {
                 
                     image = item.profilePicture!.image
                     
-                }else{
-                    image = UIImage(named: "logo")!
                 }
+                /*else{
+                    image = UIImage(named: "logo")!
+                }*/
                 
             }
             
