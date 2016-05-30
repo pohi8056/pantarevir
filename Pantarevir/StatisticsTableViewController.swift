@@ -144,6 +144,22 @@ class StatisticsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        
+        let view : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height))
+        
+        view.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0, 0, 0, 0])
+        view.layer.opacity = 50
+        view.layer.masksToBounds = false
+        
+        cell.contentView.addSubview(view)
+        cell.contentView.sendSubviewToBack(view)
+        
+        //tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -38,22 +38,21 @@ class ToplistViewController: UIViewController {
     
     @IBAction func veckaButton(sender: UIButton) {
         containedVC.setVeckaState(true)
-        veckaOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        totaltOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        veckaOutlet.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        totaltOutlet.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
 
     }
     
     @IBAction func totaltButton(sender: UIButton) {
         containedVC.setVeckaState(false)
-        totaltOutlet.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        veckaOutlet.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        totaltOutlet.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        veckaOutlet.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
     }
     
     @IBAction func backButton(sender: UIButton) {
         let menuView = self.storyboard!.instantiateViewControllerWithIdentifier("MainMenu")
         UIApplication.sharedApplication().keyWindow?.rootViewController = menuView
     }
-    
     
     /*
     // MARK: - Navigation
