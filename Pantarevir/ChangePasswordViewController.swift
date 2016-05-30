@@ -14,6 +14,7 @@ class ChangePasswordViewController: UIViewController {
     
     @IBOutlet weak var tempPasswordTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
+    @IBOutlet weak var newPasswordConfirmTextField: UITextField!
     
     var email: String = ""
     
@@ -31,24 +32,63 @@ class ChangePasswordViewController: UIViewController {
     @IBAction func changePasswordButton(sender: UIButton) {
         let oldPassword = tempPasswordTextField.text
         let newPassword = newPasswordTextField.text
+        /*if (self.validateTextField(self.newPasswordTextField.text!) ||
+            self.validateTextField(self.newPasswordConfirmTextField.text!) ||
+            self.newPasswordTextField.text! != self.newPasswordConfirmTextField.text!) {
+            self.setTextFieldBorderColor(self.newPasswordTextField)
+            self.setTextFieldBorderColor(self.newPasswordConfirmTextField)
+        }*/
+        
         ref.changePasswordForUser(self.email, fromOld: oldPassword,
                                   toNew: newPassword, withCompletionBlock: { error in
-                                    if error != nil {
-                                        print("Felmeddelande")
-                                        let alertPopup = UIAlertController(title: "Fel", message: "Det temporära lösenordet stämmer inte.", preferredStyle: UIAlertControllerStyle.Alert)
-                                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
-                                            //confirmedAmount = true
-                                            //dispatch_semaphore_signal(semaphore)
-                                        })
+                                    if (error != nil) {
+                                        print("ERROR: \(error)")
+                                        if (!(error.code == -6)) {
+                                            self.setTextFieldBorderColor(self.tempPasswordTextField)
+                                            let alertPopup = UIAlertController(title: "Fel", message: "Den temporära koden stämmer inte.", preferredStyle: UIAlertControllerStyle.Alert)
+                                            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+                                                //confirmedAmount = true
+                                                //dispatch_semaphore_signal(semaphore)
+                                            })
+                                            
+                                            //dispatch_async(backgroundQueue, {
+                                            alertPopup.addAction(okAction)
+                                            self.presentViewController(alertPopup, animated: true, completion: nil)
+                                        }
+                                        else if (self.validateTextField(self.newPasswordTextField.text!) ||
+                                            self.validateTextField(self.newPasswordConfirmTextField.text!) ||
+                                            self.newPasswordTextField.text! != self.newPasswordConfirmTextField.text!) {
+                                            self.setTextFieldBorderColor(self.newPasswordTextField)
+                                            self.setTextFieldBorderColor(self.newPasswordConfirmTextField)
+                                        }
+                                    } else {
                                         
-                                        //dispatch_async(backgroundQueue, {
+                                        let alertPopup = UIAlertController(title: "", message: "Ditt lösenord har ändrats.", preferredStyle: UIAlertControllerStyle.Alert)
+                                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+                                            self.performSegueWithIdentifier("fromChangePasswordToLoginSegue", sender: nil)
+                                        })
+                                                
                                         alertPopup.addAction(okAction)
                                         self.presentViewController(alertPopup, animated: true, completion: nil)
-                                    } else {
-                                        print("Lösenordet har ändrats")
-                                        self.performSegueWithIdentifier("fromForgotPasswordToChangePasswordSegue", sender: nil)
                                     }
         })
+        
+     }
+    
+    func validateTextField(textField : String) -> Bool{
+        if textField == ""{
+            return true
+        }else{
+            return false
+        }
+    }
+
+    func setTextFieldBorderColor(textField: UITextField){
+        //textField.borderStyle = UITextBorderStyle.Line
+        textField.borderStyle = UITextBorderStyle.RoundedRect
+        //textField.layer.masksToBounds = true
+        textField.layer.borderColor = UIColor(red: 210/255, green: 0/255, blue: 0/255, alpha: 100/255).CGColor
+        textField.layer.borderWidth = 1
     }
     
     @IBAction func cancelButton(sender: UIButton) {
