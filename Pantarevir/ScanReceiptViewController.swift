@@ -162,7 +162,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 DataService.service.addReceipt(receipt)
                 self.returnToMainMenu()
             }else{
-                self.errorLabel.text = "Kvitto redan skannat."
+                self.errorLabel.text = "KVITTO REDAN SKANNAT"
                 self.errorLabel.textColor = UIColor.yellowColor()
             }
 
@@ -189,7 +189,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
         let barcodeReferenceSystem = barcode.substringWithRange(Range<String.Index>(barcode.startIndex.advancedBy(1)..<barcode.startIndex.advancedBy(2)))
         
         if (barcodeReferenceSystem != "9" || barcodeReferenceSystem != "8") && barcode23 != "99"{
-            errorLabel.text = "Tjänst ej tillgänglig i denna butik."
+            errorLabel.text = "TJÄNST EJ TILLGÄNGLIG I DENNA BUTIK"
             errorLabel.textColor = UIColor.orangeColor()
             print("Not a valid store - Store uses a reference system.")
         }else{
@@ -198,12 +198,12 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             print("Checking initial value...")
             
             if barcodePrefix != "9" || calculateBarcodeChecksum(barcode) != true || validateAmountOfReceipt(barcodeAmount) != true{
-                errorLabel.text = "Ej giltligt kvitto scannat."
+                errorLabel.text = "EJ GILTIGT KVITTO SKANNAT"
                 errorLabel.textColor = UIColor.redColor()
                 print("Not a valid prefix or amount.")
             }else{
                 errorLabel.textColor = UIColor.greenColor()
-                errorLabel.text = "Pantkvitto OK."
+                errorLabel.text = "PANTKVITTO SKANNAT."
                 print("Everything ok!")
                 
                 //inc.
@@ -233,7 +233,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 return true
             }
         }else{
-            errorLabel.text = "Inte ett giltligt pantkvitto"
+            errorLabel.text = "EJ ETT GILTIGT PANTKVITTO"
             errorLabel.textColor = UIColor.redColor()
             print("Not a valid barcode type.")
         }
@@ -322,6 +322,4 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
     @IBAction func backButton(sender: UIButton) {
         returnToMainMenu()
     }
-    
-    
 }
