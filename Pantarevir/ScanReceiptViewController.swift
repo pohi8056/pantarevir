@@ -14,7 +14,9 @@ import Firebase
 class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate{
     
     @IBOutlet weak var cameraView: UIView!
+    
     @IBOutlet weak var errorLabel: UILabel!
+    
     
     var storeName: String?
     
@@ -239,7 +241,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
             }else{
                 print("Scanned by this user: \(receiptAlreadyScanned)")
                 print("Scanned by another user within 3 minutes: \(receiptScannedByOtherUser)")
-                self.errorLabel.text = "Kvitto redan skannat."
+                self.errorLabel.text = "KVITTO REDAN SKANNAT"
                 self.errorLabel.textColor = UIColor.yellowColor()
             }
             
@@ -276,7 +278,7 @@ class ScanReceiptViewController: UIViewController, AVCaptureMetadataOutputObject
                 print("Not a valid prefix or amount.")
             }else{
                 errorLabel.textColor = UIColor.greenColor()
-                errorLabel.text = "PANTKVITTO SKANNAT."
+                errorLabel.text = "PANTKVITTO SKANNAT"
                 print("Everything ok!")
                 
                 //inc.
