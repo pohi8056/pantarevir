@@ -20,10 +20,12 @@ class RevirAnnotationView: MKAnnotationView {
         let revirAnnotation = self.annotation as! MKRevirAnnotation
         switch (revirAnnotation.type) {
         case .free:
-            let imageView = UIImageView(frame: CGRectMake(0, 0, 43, 43))
-            image = UIImage(named: "icon_recyclestation")
-            imageView.contentMode = .ScaleAspectFill
-            imageView.image = image
+            image = UIImage(named: "icon_recyclestation_pin")
+            let size = CGSize(width: 100, height: 100)
+            UIGraphicsBeginImageContext(size)
+            image!.drawInRect(CGRectMake(0, 0, size.width, size.height))
+            image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
         default:
             image = UIImage(named: "playermarker")
         }
