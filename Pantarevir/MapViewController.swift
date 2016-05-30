@@ -35,9 +35,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
             
-            //TEMP bortkommenterade
-            //let userLocation = locationManager.location
-            //centerMapOnLocation(userLocation!)
+            let userLocation = locationManager.location
+            centerMapOnLocation(userLocation!)
             
         } else {
             locationManager.requestWhenInUseAuthorization()
@@ -161,7 +160,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let value  = rest.childSnapshotForPath("belopp").value as! Double
 
                 
-                let subtitle = "Ägare: \(playerName) | Belopp: \(value)kr"
+                let subtitle = "Ägare: \(playerName) | \(value)kr"
                 print("UPDATE_REVIR_ARRAY_DATASERVICE:")
                 print(nam)
                 print(lat)
@@ -284,6 +283,8 @@ extension MapViewController {
             print("annotaionimage load before print")
             print(users.count)
             let annot = annotation as! MKRevirAnnotation
+            image = UIImage(named: "icon_unclaimed")!
+
             for item in users {
                 if item.userID != nil && item.userID == annot.id{
                 //if item.fbID != nil && item.fbID == annot.id{
@@ -292,9 +293,10 @@ extension MapViewController {
                 
                     image = item.profilePicture!.image
                     
-                }else{
-                    image = UIImage(named: "logo")!
                 }
+                /*else{
+                    image = UIImage(named: "logo")!
+                }*/
                 
             }
             
