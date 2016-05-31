@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_new" translatesAutoresizingMaskIntoConstraints="NO" id="BR3-5v-PMS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg" translatesAutoresizingMaskIntoConstraints="NO" id="BR3-5v-PMS">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="729"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_new" width="2593" height="3000"/>
+        <image name="new_bg" width="2593" height="3000"/>
     </resources>
 </document>

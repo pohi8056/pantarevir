@@ -12,6 +12,8 @@ import Firebase
 class ForgotPasswordViewController: UIViewController {
 
     var userEmails = [String]()
+    var userFBEmails = [String]()
+    
     let ref = Firebase(url: "https://pantarevir.firebaseio.com")
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -39,10 +41,11 @@ class ForgotPasswordViewController: UIViewController {
                     
                     if (provider != "facebook") {
                         self.userEmails.insert(userEmail, atIndex: 0)
-                        print("INTE FB")
+                        //print("INTE FB")
                     }
                     else {
-                        print("FB")
+                        self.userFBEmails.insert(userEmail, atIndex: 0)
+                        //print("FB")
                     }
                 }
             }
@@ -51,11 +54,20 @@ class ForgotPasswordViewController: UIViewController {
     
     func checkEmailExistance(email: String) -> Bool {
         if self.userEmails.contains(email) {
-            print("TRUEEH")
+            //print("TRUEEH")
             return true
         }
         else {
-            print("FALSEEE")
+            //print("FALSEEE")
+            return false
+        }
+    }
+    
+    func checkFBUserExistance(email: String) -> Bool {
+        if self.userFBEmails.contains(email) {
+            return true
+        }
+        else {
             return false
         }
     }
@@ -64,16 +76,30 @@ class ForgotPasswordViewController: UIViewController {
         let email = emailTextField.text
         
         if (checkEmailExistance(email!) == false) {
-            let alertPopup = UIAlertController(title: "Fel", message: "Angiven e-postadress existerar ej.", preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
-                print("CONFIRMHERE")
-                //confirmedAmount = true
-                //dispatch_semaphore_signal(semaphore)
-            })
+            if (checkFBUserExistance(email!)) {
+                let alertPopup = UIAlertController(title: "Fel", message: "Angiven e-postadress är registrerad via Facebook.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+                    //print("CONFIRMHERE")
+                    //confirmedAmount = true
+                    //dispatch_semaphore_signal(semaphore)
+                })
+                
+                //dispatch_async(backgroundQueue, {
+                alertPopup.addAction(okAction)
+                self.presentViewController(alertPopup, animated: true, completion: nil)
+            }
+            else {
+                let alertPopup = UIAlertController(title: "Fel", message: "Angiven e-postadress existerar ej.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { Void in
+                    print("CONFIRMHERE")
+                    //confirmedAmount = true
+                    //dispatch_semaphore_signal(semaphore)
+                })
 
-            //dispatch_async(backgroundQueue, {
-            alertPopup.addAction(okAction)
-            self.presentViewController(alertPopup, animated: true, completion: nil)
+                //dispatch_async(backgroundQueue, {
+                alertPopup.addAction(okAction)
+                self.presentViewController(alertPopup, animated: true, completion: nil)
+            }
         }
             
         else {

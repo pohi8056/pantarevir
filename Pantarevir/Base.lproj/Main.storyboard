@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-hE-P5f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-hE-P5f">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_step_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="vWP-Qc-51x">
@@ -172,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="48B-Ki-x5a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="48B-Ki-x5a">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_step_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-D4-QQN">
@@ -365,7 +365,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_new" translatesAutoresizingMaskIntoConstraints="NO" id="Svd-zW-TPd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Svd-zW-TPd">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="729"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-postadress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiQ-sN-moI" customClass="TextField" customModule="Pantarevir" customModuleProvider="target">
@@ -513,7 +513,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_new" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-Iw-afB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-Iw-afB">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="729"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kd-O9-gx9">
@@ -737,7 +737,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="CB4-4E-mFu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="CB4-4E-mFu">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTq-yj-v9z">
@@ -897,7 +897,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-GZ-R8b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-GZ-R8b">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-XZ-hdl">
@@ -906,7 +906,7 @@
                                     <segue destination="npG-Wz-Ins" kind="embed" identifier="embedContainedStores" id="T9O-fN-Hrv"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Välj din butik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-fz-mDh">
                                 <rect key="frame" x="20" y="35" width="98" height="23"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1011,7 +1011,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-LU-FMc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-LU-FMc">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auj-OE-17P">
@@ -1154,7 +1154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="gXy-0J-uAh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="gXy-0J-uAh">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Din återvinning på 134 kr motsvarar..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-lD-DSG">
@@ -1223,7 +1223,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="Ri5-hY-OLk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="Ri5-hY-OLk">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-gL-V6b">
@@ -1432,7 +1432,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-zw-ZqM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-zw-ZqM">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-Jp-qaQ">
@@ -1606,8 +1606,6 @@
     </scenes>
     <resources>
         <image name="back_arrow" width="128" height="128"/>
-        <image name="bg_blur" width="2593" height="3000"/>
-        <image name="bg_new" width="2593" height="3000"/>
         <image name="forward_arrow" width="128" height="128"/>
         <image name="icon_logout" width="471" height="471"/>
         <image name="icon_map" width="471" height="471"/>
@@ -1618,6 +1616,8 @@
         <image name="icon_step_inactive" width="471" height="471"/>
         <image name="icon_toplist" width="471" height="471"/>
         <image name="logo_titletext" width="1925" height="394"/>
+        <image name="new_bg" width="2593" height="3000"/>
+        <image name="new_bg_blur" width="2593" height="3000"/>
         <image name="revirprofilbild" width="77" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
