@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-hE-P5f">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-hE-P5f">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_step_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="vWP-Qc-51x">
@@ -172,7 +172,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="48B-Ki-x5a">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="48B-Ki-x5a">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_step_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-D4-QQN">
@@ -513,9 +513,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-Iw-afB">
-                                <rect key="frame" x="-40" y="0.0" width="681" height="729"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="G9T-Iw-afB">
+                                <rect key="frame" x="-40" y="-129" width="681" height="729"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="729" id="gRo-wB-ECa"/>
+                                </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-5x-aiu">
+                                <rect key="frame" x="9" y="524" width="54" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="737-sY-Meg"/>
+                                    <constraint firstAttribute="width" constant="54" id="SXO-9n-mDf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-kh-gUl">
+                                <rect key="frame" x="0.0" y="519" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="KhL-ii-laQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="LOGGA UT">
+                                    <color key="titleColor" red="0.98553685897435894" green="0.98553685897435894" blue="0.98553685897435894" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="E3K-9V-w0u"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_toplist" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-wS-3MH">
+                                <rect key="frame" x="5" y="358" width="54" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7Ew-jW-4Uu"/>
+                                    <constraint firstAttribute="width" constant="54" id="F6T-UZ-J52"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCe-Je-Cgp">
+                                <rect key="frame" x="0.0" y="352" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ex0-vC-ts8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="TOPPLISTA">
+                                    <color key="titleColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="N1K-pk-cBC" kind="show" identifier="fromMainMenuToToplistSegue" id="eXz-aD-YKv"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_map" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-lg-d5v">
+                                <rect key="frame" x="7" y="222" width="53" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="Bi3-HD-oUv"/>
+                                    <constraint firstAttribute="height" constant="50" id="ygb-Ot-wn5"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWj-NW-E6M">
+                                <rect key="frame" x="0.0" y="216" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="oRs-Bt-jL7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="REVIRKARTA">
+                                    <color key="titleColor" red="0.19242788461538463" green="0.19242788461538463" blue="0.19242788461538463" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dct-Hk-P9l" kind="show" identifier="fromMainMenuToMapSegue" id="Fqg-wP-Jis"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_scan" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-k8-FNX">
+                                <rect key="frame" x="10" y="154" width="47" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="xhf-7E-Bxl"/>
+                                    <constraint firstAttribute="height" constant="47" id="yrq-rK-xIz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCy-bG-vc6">
+                                <rect key="frame" x="0.0" y="148" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.041945043103448279" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IOV-0k-MqF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="PANTA DITT REVIR">
+                                    <color key="titleColor" red="0.19242788461538463" green="0.19242788461538463" blue="0.19242788461538463" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dqi-06-AlV" kind="show" id="Y1X-0L-FDH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_statistics" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-lG-CYM">
+                                <rect key="frame" x="9" y="289" width="47" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="Ao2-OF-dSQ"/>
+                                    <constraint firstAttribute="height" constant="48" id="aPv-kn-9Xt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-b7-bgi">
+                                <rect key="frame" x="0.0" y="284" width="600" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tgq-LY-NrK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="DIN STATISTIK">
+                                    <color key="titleColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8ic-k0-KXd" kind="show" identifier="fromMainMenuToStatisticsSegue" id="Cwm-xe-C39"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kd-O9-gx9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                 <subviews>
@@ -563,121 +681,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ehq-7j-WyS" secondAttribute="trailing" constant="8" id="sVQ-QN-nUH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHe-b7-bgi">
-                                <rect key="frame" x="0.0" y="284" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="tgq-LY-NrK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="DIN STATISTIK">
-                                    <color key="titleColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="8ic-k0-KXd" kind="show" identifier="fromMainMenuToStatisticsSegue" id="Cwm-xe-C39"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_statistics" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-lG-CYM">
-                                <rect key="frame" x="9" y="289" width="47" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="Ao2-OF-dSQ"/>
-                                    <constraint firstAttribute="height" constant="48" id="aPv-kn-9Xt"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCy-bG-vc6">
-                                <rect key="frame" x="0.0" y="148" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.041945043103448279" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="IOV-0k-MqF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="PANTA DITT REVIR">
-                                    <color key="titleColor" red="0.19242788461538463" green="0.19242788461538463" blue="0.19242788461538463" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dqi-06-AlV" kind="show" id="Y1X-0L-FDH"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_scan" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-k8-FNX">
-                                <rect key="frame" x="10" y="154" width="47" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="xhf-7E-Bxl"/>
-                                    <constraint firstAttribute="height" constant="47" id="yrq-rK-xIz"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWj-NW-E6M">
-                                <rect key="frame" x="0.0" y="216" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="oRs-Bt-jL7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="REVIRKARTA">
-                                    <color key="titleColor" red="0.19242788461538463" green="0.19242788461538463" blue="0.19242788461538463" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dct-Hk-P9l" kind="show" identifier="fromMainMenuToMapSegue" id="Fqg-wP-Jis"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_map" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-lg-d5v">
-                                <rect key="frame" x="7" y="222" width="53" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="Bi3-HD-oUv"/>
-                                    <constraint firstAttribute="height" constant="50" id="ygb-Ot-wn5"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCe-Je-Cgp">
-                                <rect key="frame" x="0.0" y="352" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.040000000000000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Ex0-vC-ts8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="TOPPLISTA">
-                                    <color key="titleColor" red="0.19242788459999999" green="0.19242788459999999" blue="0.19242788459999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="N1K-pk-cBC" kind="show" identifier="fromMainMenuToToplistSegue" id="eXz-aD-YKv"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_toplist" translatesAutoresizingMaskIntoConstraints="NO" id="ICh-wS-3MH">
-                                <rect key="frame" x="5" y="358" width="54" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="7Ew-jW-4Uu"/>
-                                    <constraint firstAttribute="width" constant="54" id="F6T-UZ-J52"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JV-kh-gUl">
-                                <rect key="frame" x="0.0" y="519" width="600" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="KhL-ii-laQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="LOGGA UT">
-                                    <color key="titleColor" red="0.98553685897435894" green="0.98553685897435894" blue="0.98553685897435894" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="mFN-gL-Uup" eventType="touchUpInside" id="E3K-9V-w0u"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-5x-aiu">
-                                <rect key="frame" x="9" y="524" width="54" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="737-sY-Meg"/>
-                                    <constraint firstAttribute="width" constant="54" id="SXO-9n-mDf"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -685,32 +688,31 @@
                             <constraint firstItem="4Kd-O9-gx9" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="1Jb-hw-ae2"/>
                             <constraint firstItem="4Kd-O9-gx9" firstAttribute="top" secondItem="oZU-XK-DQB" secondAttribute="topMargin" id="38j-fd-E8U"/>
                             <constraint firstItem="uCe-Je-Cgp" firstAttribute="top" secondItem="oHe-b7-bgi" secondAttribute="bottom" constant="8" id="3mb-L0-eMo"/>
-                            <constraint firstItem="G9T-Iw-afB" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-60" id="6FG-WI-HLv"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="trailing" secondItem="uCe-Je-Cgp" secondAttribute="trailing" id="9NU-u5-tus"/>
                             <constraint firstItem="lDV-CE-j1R" firstAttribute="top" secondItem="3JV-kh-gUl" secondAttribute="bottom" constant="21" id="Agr-fV-WNA"/>
                             <constraint firstItem="uCe-Je-Cgp" firstAttribute="leading" secondItem="ICh-wS-3MH" secondAttribute="trailing" constant="-59" id="ArU-hu-p5g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G9T-Iw-afB" secondAttribute="trailing" constant="-61" id="Blf-Up-bUC"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="trailing" secondItem="oHe-b7-bgi" secondAttribute="trailing" id="EA6-fn-uT8"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="trailing" secondItem="4Kd-O9-gx9" secondAttribute="trailing" id="Foj-eC-E3o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Kd-O9-gx9" secondAttribute="trailing" constant="-20" id="LDp-7K-Id9"/>
                             <constraint firstItem="oHe-b7-bgi" firstAttribute="leading" secondItem="cMC-lG-CYM" secondAttribute="trailing" constant="-56" id="MCV-BU-djZ"/>
                             <constraint firstItem="pWj-NW-E6M" firstAttribute="leading" secondItem="Cjt-lg-d5v" secondAttribute="trailing" constant="-60" id="OZ4-DV-0nO"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="leading" secondItem="uCe-Je-Cgp" secondAttribute="leading" id="QWj-lZ-KFu"/>
+                            <constraint firstItem="G9T-Iw-afB" firstAttribute="bottom" secondItem="lDV-CE-j1R" secondAttribute="top" id="R5a-rX-NGH"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="leading" secondItem="4Kd-O9-gx9" secondAttribute="leading" id="TH4-QI-NLO"/>
                             <constraint firstItem="3JV-kh-gUl" firstAttribute="leading" secondItem="hlP-5x-aiu" secondAttribute="trailing" constant="-63" id="UHO-vx-baX"/>
                             <constraint firstItem="3JV-kh-gUl" firstAttribute="top" secondItem="hlP-5x-aiu" secondAttribute="bottom" constant="-53" id="UmS-5x-fcR"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="trailing" secondItem="pWj-NW-E6M" secondAttribute="trailing" id="YK7-IL-fWB"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="top" secondItem="4Kd-O9-gx9" secondAttribute="bottom" constant="73" id="YNG-MR-HXy"/>
+                            <constraint firstItem="G9T-Iw-afB" firstAttribute="centerX" secondItem="DCy-bG-vc6" secondAttribute="centerX" id="aNd-y5-XX1"/>
                             <constraint firstItem="oHe-b7-bgi" firstAttribute="top" secondItem="pWj-NW-E6M" secondAttribute="bottom" constant="8" id="bjx-qj-csC"/>
                             <constraint firstItem="3JV-kh-gUl" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-20" id="e7m-XL-xiK"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="G9T-Iw-afB" secondAttribute="bottom" constant="-129" id="h6l-aA-ah0"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="centerY" secondItem="JHD-k8-FNX" secondAttribute="centerY" id="hFl-40-LOV"/>
                             <constraint firstItem="JHD-k8-FNX" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-10" id="kGp-A7-9kp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3JV-kh-gUl" secondAttribute="trailing" constant="-20" id="mMP-mY-Ia7"/>
                             <constraint firstItem="Cjt-lg-d5v" firstAttribute="top" secondItem="pWj-NW-E6M" secondAttribute="bottom" constant="-54" id="qg1-t7-TKs"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="leading" secondItem="pWj-NW-E6M" secondAttribute="leading" id="sbm-TM-fet"/>
+                            <constraint firstItem="G9T-Iw-afB" firstAttribute="leading" secondItem="oZU-XK-DQB" secondAttribute="leadingMargin" constant="-60" id="tSZ-K7-N9Q"/>
                             <constraint firstItem="pWj-NW-E6M" firstAttribute="top" secondItem="DCy-bG-vc6" secondAttribute="bottom" constant="8" symbolic="YES" id="tpV-0R-QBC"/>
-                            <constraint firstItem="G9T-Iw-afB" firstAttribute="top" secondItem="oZU-XK-DQB" secondAttribute="topMargin" id="wHC-Rt-Z8m"/>
                             <constraint firstItem="oHe-b7-bgi" firstAttribute="top" secondItem="cMC-lG-CYM" secondAttribute="bottom" constant="-53" id="xoR-RP-dyi"/>
                             <constraint firstItem="DCy-bG-vc6" firstAttribute="leading" secondItem="oHe-b7-bgi" secondAttribute="leading" id="zt4-Nb-YUv"/>
                         </constraints>
@@ -737,7 +739,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="CB4-4E-mFu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="CB4-4E-mFu">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTq-yj-v9z">
@@ -897,7 +899,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-GZ-R8b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="aQ1-GZ-R8b">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-XZ-hdl">
@@ -1011,7 +1013,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-LU-FMc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-LU-FMc">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auj-OE-17P">
@@ -1157,7 +1159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="gXy-0J-uAh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="gXy-0J-uAh">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Din återvinning på 134 kr motsvarar..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-lD-DSG">
@@ -1435,7 +1437,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-zw-ZqM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bg_blur_brighter" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-zw-ZqM">
                                 <rect key="frame" x="-40" y="0.0" width="681" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOl-Jp-qaQ">
@@ -1621,9 +1623,10 @@
         <image name="logo_titletext" width="1925" height="394"/>
         <image name="new_bg" width="2593" height="3000"/>
         <image name="new_bg_blur" width="2593" height="3000"/>
+        <image name="new_bg_blur_brighter" width="2593" height="3000"/>
         <image name="revirprofilbild" width="77" height="77"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eVu-1h-u4X"/>
+        <segue reference="A6K-mf-QLG"/>
     </inferredMetricsTieBreakers>
 </document>

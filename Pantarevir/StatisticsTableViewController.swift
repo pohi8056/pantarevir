@@ -90,7 +90,6 @@ class StatisticsTableViewController: UITableViewController {
         self.activities.insert(ActivityInfo(type: "charger", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "lamp", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "car", amount: convertAmount(self.amount)), atIndex: 0)
-        self.activities.insert(ActivityInfo(type: "flight", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "bus", amount: convertAmount(self.amount)), atIndex: 0)
         self.activities.insert(ActivityInfo(type: "food", amount: convertAmount(self.amount)), atIndex: 0)
         
